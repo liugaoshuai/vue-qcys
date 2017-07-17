@@ -1,30 +1,26 @@
-# vue_qcys
+# Mahayana后台管理
 
-> A Vue.js project
+## 技术栈
 
-## Build Setup
+        Vue + Element-ui 
 
-``` bash
-# install dependencies
-npm install
+## 进展
 
-# serve with hot reload at localhost:8080
-npm run dev
+### Day1
 
-# build for production with minification
-npm run build
+        选好技术栈Webpack脚手架直接生成项目，引入ElementUI框架，样式设计参考AdminLTE的风格设计。
+        基本路由
+            1.首页
+            2.登录页
+            3.新闻页
+            4.作品页
+            5.公众号页
+            6.招聘信息页
+            7.其他页
+        接口比较杂后期划分
+        图片计划用七牛云/又拍云
+        Day2计划完成新闻页列表和富文本插件导入
 
-# build for production and view the bundle analyzer report
-npm run build --report
+        
 
-# run unit tests
-npm run unit
 
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
