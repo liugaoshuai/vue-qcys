@@ -5,12 +5,16 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
+import VueQuillEditor from 'vue-quill-editor'
 
 import './style/common.css'
 import './style/reset.css'
 
 
 Vue.use(ElementUI)
+// mount with global
+Vue.use(VueQuillEditor)
+
 
 Vue.config.productionTip = false
 

@@ -2,20 +2,24 @@
     <div id="news">
         <h2>新闻中心</h2>
         <div class="common-btn">
-            <el-button>新增</el-button>
+            <el-button @click="$router.push('/news/add')">新增</el-button>
         </div>
-        <el-table :data="newsListData"
+        <el-table :data="newsList"
                   border
                   style="width: 100%">
             <el-table-column type="index"
                              width="50">
             </el-table-column>
-            <el-table-column prop="newsListData"
+            <el-table-column prop="title"
+                             label="新闻标题">
+            </el-table-column>
+            <el-table-column prop="date"
                              label="发布日期"
                              width="180">
             </el-table-column>
-            <el-table-column prop="title"
-                             label="标题"
+            
+            <el-table-column prop="type"
+                             label="新闻类型"
                              width="180">
             </el-table-column>
             <el-table-column prop="address"
@@ -35,7 +39,14 @@ export default {
     name: 'hello',
     data() {
         return {
-            newsListData: [], 
+            newsList: [
+                {
+                    title: '新闻测试标题',
+                    date: '2017-08-09',
+                    type: 1,
+                }
+            ], 
+
         }
     }
 }
@@ -43,23 +54,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped="">
-h1,
-h2 {
-    font-weight: normal;
-}
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-a {
-    color: #42b983;
-}
 </style>
-Î
