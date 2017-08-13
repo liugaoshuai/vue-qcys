@@ -1,10 +1,10 @@
 <template>
     <div id="news">
-        <h2>新闻聚焦</h2>
+        <h2>投资者关系</h2>
         <div class="common-btn">
-            <el-button @click="$router.push('/news/add')">新增</el-button>
+            <el-button @click="$router.push('/invest/add')">新增</el-button>
         </div>
-        <el-table :data="NEWS_LIST"
+        <el-table :data="INVEST_LIST"
                   border
                   style="width: 100%">
             <el-table-column type="index"
@@ -16,15 +16,6 @@
             <el-table-column prop="date"
                              label="发布日期"
                              width="220">
-            </el-table-column>
-            <el-table-column label="新闻类型"
-                             width="120">
-                <template scope="scope">
-                    <el-tag v-if="scope.row.type == 1">新剧新鲜事</el-tag>
-                    <el-tag v-if="scope.row.type == 2">明星娱乐</el-tag>
-                    <el-tag v-if="scope.row.type == 3">行业聚焦</el-tag>
-                    </el-popover>
-                </template>
             </el-table-column>
             <el-table-column prop="address"
                              label="操作">
@@ -43,36 +34,35 @@
 export default {
     data() {
         return {
-            NEWS_LIST: [],
+            INVEST_LIST: [],
         }
     },
     mounted: function () {
-        this.getNews();
+        this.getInvest();
     },
     methods: {
         // 获取新闻
-        getNews: function () {
+        getInvest: function () {
             var self = this;
-            this.$http.get('/api/news/get').then(function (res) {
-                self.NEWS_LIST = res.data.data;
+            this.$http.get('/api/invest/get').then(function (res) {
+                self.INVEST_LIST = res.data.data;
             });
         },
         // 删除新闻
-        deleteNews: function (id) {
+        deleteInvest: function (id) {
             var self = this;
-
             this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
                 confirmButtonText: '确定',
                 cancelButtonText: '取消',
                 type: 'warning'
             }).then(() => {
-                this.$http.get('/api/news/delete?id=' + id).then(function (res) {
+                this.$http.get('/api/invest/delete?id=' + id).then(function (res) {
                     if (res.data.code == 0) {
                         self.$message({
                             type: 'success',
                             message: '删除成功!'
                         });
-                        self.getNews();
+                        self.getInvest();
                     }
                 });
 
@@ -82,8 +72,8 @@ export default {
 
         },
         // 查看新闻
-        openNews: function (id){
-            window.open('localhost:9000/news/detail/' + id)
+        openInvest: function (id){
+            window.open('localhost:9000/invest/detail/' + id)
         }
     }
 }
