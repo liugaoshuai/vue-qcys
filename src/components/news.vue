@@ -2,7 +2,7 @@
     <div id="news">
         <h2>新闻聚焦</h2>
         <div class="common-btn">
-            <el-button @click="$router.push('/news/add')">新增</el-button>
+            <el-button @click="$router.push('/node/news/add')">新增</el-button>
         </div>
         <el-table :data="NEWS_LIST"
                   border

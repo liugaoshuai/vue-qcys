@@ -1,0 +1,58 @@
+extends ../layout
+
+block content
+    //- h1 #{title}
+    div.app
+        div.slide 1920x640
+        div.work
+            ul.clearfix.common
+                    li 
+                        img.news-left-item-img(src=data.workImg01,style="height: 200px;width: 160px;background: #25232b;")
+                    li 
+                        img.news-left-item-img(src=data.workImg01,style="height: 200px;width: 160px;background: #25232b;")
+                    li 
+                        img.news-left-item-img(src=data.workImg01,style="height: 200px;width: 160px;background: #25232b;")
+                    li 
+                        img.news-left-item-img(src=data.workImg01,style="height: 200px;width: 160px;background: #25232b;")
+                    li 
+                        img.news-left-item-img(src=data.workImg01,style="height: 200px;width: 160px;background: #25232b;")
+                    li 
+                        img.news-left-item-img(src=data.workImg01,style="height: 200px;width: 160px;background: #25232b;")
+        div.video
+            div.video-box
+        div.news
+            div.common.clearfix
+                div.left
+                    span 最新新闻
+                    ul
+                        each item in news
+                            li 
+                                i.news-img 200x120
+                                p.news-nav #{item.nav}
+                                p.news-con #{item.con}
+                div.right
+                    span 公众号精选
+                    ul
+                        each item in wx
+                            li
+                                i.news-img 200x120
+                                p.news-nav #{item.nav}
+                                p.news-con #{item.con}
+        div.photo
+            div.common
+                div.photo-a.clearfix
+                    div.photo-a-top(style="width: 400px; height: 200px;") 400x200
+                    div.photo-a-bottom(style="width: 400px; height: 400px;") 400x400
+                div.photo-b.clearfix
+                    div.photo-b-left(style="width: 280px; height: 300px;") 280x300
+                    div.photo-b-right(style="width: 520px; height: 300px;") 520x300
+                div.photo-c.clearfix
+                    div.photo-c-left(style="width: 180px; height: 300px;") 180x300
+                    div.photo-c-middle(style="width: 400px; height: 300px;") 400x300
+                    div.photo-c-right(style="width: 220px; height: 300px;") 220x300
+                div.photo-d.clearfix
+                    div.photo-d-left(style="width: 360px; height: 300px;") 360x300
+                    div.photo-d-middle(style="width: 340px; height: 300px;") 340x300
+                    div.photo-d-right(style="width: 500px; height: 300px;") 500x300
+        
+                                

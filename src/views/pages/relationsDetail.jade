@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+    div.app-news.common.clearfix
+        div.news-left.news-left-detail
+            div.news-left-title #{data.title}
+            div.news-left-subtitle
+                span.orange #{data.createTime}
+                span.news-left-subtitle-span 责任编辑：
+                span.orange #{data.editName}
+            div.news-left-con
+                p #{data.con}
+        div.news-right
+            div.news-right-new
+                h3 最新新闻
+                ul
+                    each item in news
+                        li
+                            div
+                                div.news-right-new-img(style="height: 150px;width: 150px;background: #25232b;")
+                            span #{item}
+                

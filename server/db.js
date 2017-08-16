@@ -9,6 +9,29 @@ db.once('error',() => console.log('Mongo connection error'));
 db.once('open',() => console.log('Mongo connection successed'));
 /************** 定义模式newsList **************/
 
+//主页
+const INDEX_DATA = mongoose.Schema({
+    bannerImg01: String,// 轮播图
+    bannerImg02: String,// 轮播图
+    bannerImg03: String,// 轮播图
+
+    workImg01: String,// 作品图
+    workImg02: String,// 作品图
+    workImg03: String,// 作品图
+    workImg04: String,// 作品图
+    workImg05: String,// 作品图
+    workImg06: String,// 作品图
+
+    boxImg01: String,// 剧照图
+    boxImg02: String,// 剧照图
+    boxImg03: String,// 剧照图
+    boxImg04: String,// 剧照图
+    
+    music: String,// 音乐
+    video: String,// 视频    
+    title: String,// 标题    
+    
+});
 //新闻
 const NEWS_DATA = mongoose.Schema({
     title: String,// 标题
@@ -38,6 +61,7 @@ const INVEST_DATA = mongoose.Schema({
 
 /************** 定义模型Model **************/
 const Models = {
+    INDEX_DATA : mongoose.model('INDEX_DATA',INDEX_DATA),
     NEWS_DATA : mongoose.model('NEWS_DATA',NEWS_DATA),
     INVEST_DATA : mongoose.model('INVEST_DATA',INVEST_DATA)
     

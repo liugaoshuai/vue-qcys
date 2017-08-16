@@ -20,10 +20,10 @@
             <el-table-column prop="address"
                              label="操作">
                 <template scope="scope">
-                    <el-button type="text" @click="openNews(scope.row._id)">查看</el-button>
+                    <el-button type="text" @click="openInvest(scope.row._id)">查看</el-button>
                     <!--<el-button type="text">修改</el-button>-->
                     <el-button type="text"
-                               @click="deleteNews(scope.row._id)">删除</el-button>
+                               @click="deleteInvest(scope.row._id)">删除</el-button>
                 </template>
             </el-table-column>
         </el-table>

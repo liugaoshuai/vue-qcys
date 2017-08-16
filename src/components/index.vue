@@ -1,37 +1,123 @@
 <template>
-  <div class="hello">
-      <h2>主页</h2>
+  <div id="news">
+    <h2>主页-新增</h2>
+    <el-form :model="INDEX_ADD_FORM"
+             label-width="160px">
+      <el-form-item label="轮播图01(1920*640)">
+        <el-input v-model="INDEX_ADD_FORM.bannerImg01"></el-input>
+      </el-form-item>
+      <el-form-item label="轮播图02(1920*640)">
+        <el-input v-model="INDEX_ADD_FORM.bannerImg02"></el-input>
+      </el-form-item>
+      <el-form-item label="轮播图03(1920*640)">
+        <el-input v-model="INDEX_ADD_FORM.bannerImg03"></el-input>
+      </el-form-item>
+  
+      <el-form-item label="作品图01(160*200)">
+        <el-input v-model="INDEX_ADD_FORM.workImg01"></el-input>
+      </el-form-item>
+      <el-form-item label="作品图02(160*200)">
+        <el-input v-model="INDEX_ADD_FORM.workImg02"></el-input>
+      </el-form-item>
+      <el-form-item label="作品图03(160*200)">
+        <el-input v-model="INDEX_ADD_FORM.workImg03"></el-input>
+      </el-form-item>
+      <el-form-item label="作品图04(160*200)">
+        <el-input v-model="INDEX_ADD_FORM.workImg04"></el-input>
+      </el-form-item>
+      <el-form-item label="作品图05(160*200)">
+        <el-input v-model="INDEX_ADD_FORM.workImg05"></el-input>
+      </el-form-item>
+      <el-form-item label="作品图06(160*200)">
+        <el-input v-model="INDEX_ADD_FORM.workImg06"></el-input>
+      </el-form-item>
+  
+      <el-form-item label="剧照图01(800*300)">
+        <el-input v-model="INDEX_ADD_FORM.boxImg01"></el-input>
+      </el-form-item>
+      <el-form-item label="剧照图02(800*300)">
+        <el-input v-model="INDEX_ADD_FORM.boxImg02"></el-input>
+      </el-form-item>
+      <el-form-item label="剧照图03(400*600)">
+        <el-input v-model="INDEX_ADD_FORM.boxImg03"></el-input>
+      </el-form-item>
+      <el-form-item label="剧照图04(1200*300)">
+        <el-input v-model="INDEX_ADD_FORM.boxImg04"></el-input>
+      </el-form-item>
+  
+      <el-form-item label="音乐">
+        <el-input v-model="INDEX_ADD_FORM.music"></el-input>
+      </el-form-item>
+      <el-form-item label="视频">
+        <el-input v-model="INDEX_ADD_FORM.video"></el-input>
+      </el-form-item>
+  
+      <el-form-item>
+        <el-button type="primary"
+                   @click="addIndex">确定修改</el-button>
+      </el-form-item>
+    </el-form>
+  
   </div>
 </template>
 
 <script>
 export default {
-  name: 'hello',
-  data () {
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      INDEX_ADD_FORM: {
+        bannerImg01: '',// 轮播图
+        bannerImg02: '',// 轮播图
+        bannerImg03: '',// 轮播图
+
+        workImg01: '',// 作品图
+        workImg02: '',// 作品图
+        workImg03: '',// 作品图
+        workImg04: '',// 作品图
+        workImg05: '',// 作品图
+        workImg06: '',// 作品图
+
+        boxImg01: '',// 剧照图
+        boxImg02: '',// 剧照图
+        boxImg03: '',// 剧照图
+        boxImg04: '',// 剧照图
+
+        music: '',// 音乐
+        video: '',// 视频   
+        title: 'index'
+      }
     }
+  },
+  mounted: function () {
+    this.getIndex();
+  },
+  methods: {
+    // 获取
+    getIndex: function () {
+      var self = this;
+      this.$http.get('/api/index/get').then(function (res) {
+        if (res.data.code == 0 && res.data.data.length > 0) {
+          self.INDEX_ADD_FORM = res.data.data[0];
+        }
+      });
+    },
+    // 修改
+    addIndex: function () {
+      var self = this;
+      var params = {
+        form: self.INDEX_ADD_FORM,
+      };
+      this.$http.post('/api/index/create', params).then(function (res) {
+        if (res.data.code == 0) {
+          self.$message({
+            type: 'success',
+            message: '添加成功!'
+          });
+        }
+      });
+
+    },
+
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped="">
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-</style>

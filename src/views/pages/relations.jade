@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+    div.app-news.common.clearfix
+        div.news-left
+            each item in list
+                div.news-left-item.clearfix
+                    div.news-left-item-imgDiv
+                        div.news-left-item-img(style="height: 230px;width: 370px;background: #25232b;")
+                    div.news-left-item-conDiv
+                        div.news-left-item-title #{item.title}
+                        div.news-left-item-subtitle
+                            span.orange #{item.createTime}
+                            span.news-left-item-subtitle-span 责任编辑：
+                            span.orange #{item.editName}
+                        div.news-left-item-con #{item.con}
+                        a.orange 了解更多
+        div.news-right
+            div.news-right-new
+                h3 最新新闻
+                ul
+                    each item in news
+                        li
+                            div
+                                div.news-right-new-img(style="height: 150px;width: 150px;background: #25232b;")
+                            span #{item}
+                

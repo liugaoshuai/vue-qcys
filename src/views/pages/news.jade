@@ -1,0 +1,34 @@
+extends ../layout
+
+block content
+    div.app-news.common.clearfix
+        div.news-left
+            each item in news_data_arr
+                div.news-left-item.clearfix
+                    div.news-left-item-imgDiv
+                        img.news-left-item-img(style="height: 230px;width: 370px;background: #25232b;",src=item.img03)
+                    div.news-left-item-conDiv
+                        div.news-left-item-title #{item.title}
+                        div.news-left-item-subtitle
+                            span.orange #{item.date}
+                            span.news-left-item-subtitle-span 责任编辑：
+                            span.orange 千乘影视
+                        div.news-left-item-con #{item.about}
+                        a.orange(href="/news/detail/" + item._id) 了解更多
+        div.news-right
+            div.news-right-cla
+                h3 新闻分类
+                ul
+                    each item in cla
+                        li.news-right-cla-li
+                            i.iconfont &#xe62b;
+                            a #{item}
+            div.news-right-new
+                h3 最新新闻
+                ul
+                    each item in news_data_arr
+                        li
+                            div
+                                img.news-right-new-img(style="height: 150px;width: 150px;background: #25232b;",src=item.img03)
+                            span #{item.title}
+                

@@ -8,8 +8,10 @@ import 'element-ui/lib/theme-default/index.css'
 import VueQuillEditor from 'vue-quill-editor'
 import axios from 'axios'
 
-import './style/common.css'
 import './style/reset.css'
+import './style/common.css'
+import './style/main.css'
+
 
 Vue.prototype.$http = axios
 
