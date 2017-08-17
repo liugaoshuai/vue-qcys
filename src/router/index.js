@@ -12,7 +12,8 @@ import nodeInvestAdd from '@/components/investAdd'
 import webApp from '@/webpages/app'
 import webIndex from '@/webpages/index'
 import webNews from '@/webpages/news'
-import webNewsDetail from '@/webpages/newsDetail'
+import webInvest from '@/webpages/invest'
+
 
 
 
@@ -67,9 +68,9 @@ export default new Router({
           path: '/web/news',
           component: webNews
         },{
-          path: '/web/news/:id',
-          component: webNewsDetail
-        }
+          path: '/web/invest',
+          component: webInvest
+        },
       ]
     },
 

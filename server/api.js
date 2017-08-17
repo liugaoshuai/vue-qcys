@@ -89,6 +89,20 @@ router.get('/api/news/get', (req, res) => {
         }
     });
 });
+// 读取类别新闻
+router.get('/api/news/get/type', (req, res) => {
+    console.log(req.query.type)
+    models.NEWS_DATA.find({"type": req.query.type},(err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({
+                code: 0,
+                data: data
+            });
+        }
+    });
+});
 // 删除新闻
 router.get('/api/news/delete', (req, res) => {
     models.NEWS_DATA.findOneAndRemove({ _id: req.query.id }).exec((err, data) => {

@@ -15,12 +15,6 @@
                         div.news-left-item-con {{item.about}}
                         a.orange(@click="getDetail(item)") 阅读全文
             div.news-right
-                div.news-right-cla
-                    h3 新闻分类
-                    ul
-                        li.news-right-cla-li(v-for='item in newsType',@click="getNewsType(item.value)")
-                            i.iconfont &#xe647;
-                            a {{item.label}}
                 div.news-right-new
                     h3 最新新闻
                     ul
@@ -40,12 +34,6 @@
                     div(v-html="newsDetailData.content")
                 img.news-left-footimg(style="width: 100%;background: #25232b;",:src="newsDetailData.bottomImg",v-if="newsDetailData.bottomImg")
             div.news-right
-                div.news-right-cla
-                    h3 新闻分类
-                    ul
-                        li.news-right-cla-li(v-for='item in newsType')
-                            i.iconfont &#xe647;
-                            a {{item.label}}
                 div.news-right-new
                     h3 最新新闻
                     ul
@@ -62,18 +50,6 @@ export default {
             newsData: {
 
             },
-            newsType: [
-                {
-                    value: 1,
-                    label: '新剧新鲜事',
-                }, {
-                    value: 2,
-                    label: '明星娱乐',
-                }, {
-                    value: 3,
-                    label: '行业聚焦',
-                },
-            ],
             newsDetailData: {
 
             },
@@ -87,20 +63,10 @@ export default {
         // 获取
         getNews: function () {
             var self = this;
-            this.$http.get('/api/news/get').then(function (res) {
+            this.$http.get('/api/invest/get').then(function (res) {
                 if (res.data.code == 0 && res.data.data.length > 0) {
                     self.newsData = res.data.data;
                     console.log(self.newsData)
-                }
-            });
-        },
-        // 获取
-        getNewsType: function (type) {
-            var self = this;
-            this.$http.get('/api/news/get/type?type=' + type).then(function (res) {
-                if (res.data.code == 0 && res.data.data.length > 0) {
-                    self.newsData = res.data.data;
-                    self.newsDetailShow = false;
                 }
             });
         },

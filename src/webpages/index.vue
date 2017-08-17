@@ -29,21 +29,22 @@
                 div.left
                     span 最新新闻
                     ul
-                        li(v-for="item in newsData")
+                        li(v-for="(item,index) in newsData",v-if="index<2")
                             img.news-img(style="height: 120px;width: 200px;background: #25232b;",:src='item.indexImg')
                             p.news-nav {{item.title}}
                             p.news-con {{item.about}}
                 div.right
                     span 公众号精选
                     ul
-                        li(v-for="item in newsData")
+                        li(v-for="(item,index) in newsData",v-if="index<2")
                             img.news-img(style="height: 120px;width: 200px;background: #25232b;",:src='item.indexImg')
                             p.news-nav {{item.title}}
                             p.news-con {{item.about}}
         div.photo
             div.common
                 div.photo-a.clearfix
-                    img.photo-a-top(:src='indexData.boxImg03',style="width: 400px; height: 600px;")
+                    img.photo-a-top(:src='indexData.boxImg03',style="width: 400px; height: 480px;")
+                    div.photo-a-bottom(style="width: 400px; height: 120px;background: #")
                 div.photo-b.clearfix
                     img.photo-b-left(:src='indexData.boxImg01',style="width: 800px; height: 300px;")
                 div.photo-c.clearfix

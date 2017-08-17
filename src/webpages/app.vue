@@ -7,9 +7,11 @@ div
             router-link(to='/web/index') 影视作品
             router-link(to='/web/index') 公众号精选
             router-link(to='/web/news') 新闻聚集
-            router-link(to='/web/index') 投资者关系
+            router-link(to='/web/invest') 投资者关系
             router-link(to='/web/index') 关于千乘
             router-link(to='/web/index') 联系我们
+            div.music
+                <embed class="" autoplay="true" src="http://oumlc5t88.bkt.clouddn.com/%E9%A3%8E%E4%B8%AD%E8%8A%AD%E8%95%BE+Mix003+MMM.mp3"  width="200" height="60" />
     router-view
     div.footer
     div.footer-top
