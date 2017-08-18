@@ -37,7 +37,7 @@ router.post('/api/index/create', (req, res) => {
             title: req.body.form.title,// 标题    
         }
     };
-    models.INDEX_DATA.update(oldValue, newData, function (err, data) {
+    models.INDEX_DATA.update(oldValue, newData,{upsert:true}, function (err, data) {
         if (err) {
             res.send(err);
         } else {
