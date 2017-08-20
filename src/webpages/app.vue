@@ -1,15 +1,15 @@
 <template lang="pug">
 div
-    div.header 1920x130
+    div.header(style='height: 120px; width: 100%; background: url("http://oumlc5t88.bkt.clouddn.com/%E9%A1%B6%E9%83%A8logo.jpg") center center no-repeat;')
     div.nav
         div.common.clearfix
             router-link(to='/web/index') 首页
-            router-link(to='/web/index') 影视作品
+            router-link(to='/web/work') 影视作品
             router-link(to='/web/index') 公众号精选
             router-link(to='/web/news') 新闻聚集
             router-link(to='/web/invest') 投资者关系
             router-link(to='/web/index') 关于千乘
-            router-link(to='/web/index') 联系我们
+            router-link(to='/web/contact') 联系我们
             div.music
                 <embed class="" autoplay="true" src="http://oumlc5t88.bkt.clouddn.com/%E9%A3%8E%E4%B8%AD%E8%8A%AD%E8%95%BE+Mix003+MMM.mp3"  width="200" height="60" />
     router-view

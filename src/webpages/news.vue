@@ -4,7 +4,7 @@
         div.app-news.common.clearfix(v-show="!newsDetailShow")
             div.news-left
                 div.news-left-item.clearfix(v-for="item in newsData")
-                    div.news-left-item-imgDiv
+                    div.news-left-item-imgDiv.boxshadow
                         img.news-left-item-img(style="height: 230px;width: 370px;background: #25232b;",:src='item.listImg')
                     div.news-left-item-conDiv
                         div.news-left-item-title {{item.title}}
@@ -25,7 +25,7 @@
                     h3 最新新闻
                     ul
                         li(v-for="item in newsData",@click="getDetail(item)")
-                            div
+                            div.boxshadow
                                 img.news-right-new-img(style="height: 150px;width: 150px;background: #25232b;",:src='item.smallImg')
                             span {{item.title}}
         div.app-news.common.clearfix(v-show="newsDetailShow")
@@ -47,7 +47,7 @@
                             i.iconfont &#xe647;
                             a {{item.label}}
                 div.news-right-new
-                    h3 最新新闻
+                    h3 最新新闻.boxshadow
                     ul
                         li(v-for="item in newsData",@click="getDetail(item)")
                             div

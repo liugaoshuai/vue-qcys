@@ -7,12 +7,19 @@ import nodeNews from '@/components/news'
 import nodeNewsAdd from '@/components/newsAdd'
 import nodeInvest from '@/components/invest'
 import nodeInvestAdd from '@/components/investAdd'
+import nodeWork from '@/components/work'
+import nodeWorkAdd from '@/components/workAdd'
+import nodeContact from '@/components/contact'
+import nodeContactAdd from '@/components/contactAdd'
 
 // pc端
 import webApp from '@/webpages/app'
 import webIndex from '@/webpages/index'
 import webNews from '@/webpages/news'
 import webInvest from '@/webpages/invest'
+import webWork from '@/webpages/work'
+import webContact from '@/webpages/contact'
+
 
 
 
@@ -22,37 +29,6 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [
-    // {
-    //   path: '/',//主页
-    //   name: 'index',
-    //   component: index
-    // }, {
-    //   path: '/loginpage',//登录页
-    //   name: 'loginpage',
-    //   component: loginpage
-    // }, {
-    //   path: '/news',//新闻列表页
-    //   name: 'news',
-    //   component: news
-    // }, {
-    //   path: '/news/add',//新闻新增页
-    //   name: 'newsAdd',
-    //   component: newsAdd
-    // }, {
-    //   path: '/invest',//新闻列表页
-    //   name: 'invest',
-    //   component: invest
-    // }, {
-    //   path: '/invest/add',//新闻新增页
-    //   name: 'investAdd',
-    //   component: investAdd
-    // },
-
-    // {
-    //   path: '/web/index',//PC主页
-    //   name: 'webIndex',
-    //   component: webIndex
-    // },
 
     // pc
 
@@ -70,6 +46,12 @@ export default new Router({
         },{
           path: '/web/invest',
           component: webInvest
+        },{
+          path: '/web/work',
+          component: webWork
+        },{
+          path: '/web/contact',
+          component: webContact
         },
       ]
     },
@@ -89,6 +71,26 @@ export default new Router({
         },{
           path: '/node/news/add',
           component: nodeNewsAdd
+        },{
+          path: '/node/invest',
+          component: nodeInvest
+        },{
+          path: '/node/invest/add',
+          component: nodeInvestAdd
+        },{
+          path: '/node/work',
+          component: nodeWork
+        },{
+          path: '/node/work/add',
+          name: 'nodeWorkAdd',
+          component: nodeWorkAdd
+        },{
+          path: '/node/contact',
+          component: nodeContact
+        },{
+          path: '/node/contact/add',
+          name: 'nodeContactAdd',
+          component: nodeContactAdd
         }
       ]
     },

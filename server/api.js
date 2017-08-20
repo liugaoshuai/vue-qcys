@@ -160,5 +160,89 @@ router.get('/api/invest/delete', (req, res) => {
     });
 });
 
+// 创建作品
+router.post('/api/work/create', (req, res) => {
+    let addWork = new models.WORK_DATA(req.body.form);
+    addWork.save((err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({
+                code: 0,
+                data: data
+            });
+        }
+    });
+});
+// 读取作品
+router.get('/api/work/get', (req, res) => {
+    models.WORK_DATA.find((err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({
+                code: 0,
+                data: data
+            });
+        }
+    });
+});
+// 删除作品
+router.get('/api/work/delete', (req, res) => {
+    models.WORK_DATA.findOneAndRemove({ _id: req.query.id }).exec((err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({
+                code: 0,
+                id: req.query.id,
+                message: '删除数据成功'
+            });
+        }
+    });
+});
+
+// 创建投资者关系
+router.post('/api/contact/create', (req, res) => {
+    let addContact = new models.CONTACT_DATA(req.body.form);
+    addContact.save((err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({
+                code: 0,
+                data: data
+            });
+        }
+    });
+});
+// 读取投资者关系
+router.get('/api/contact/get', (req, res) => {
+    models.CONTACT_DATA.find((err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({
+                code: 0,
+                data: data
+            });
+        }
+    });
+});
+// 删除投资者关系
+router.get('/api/contact/delete', (req, res) => {
+    models.CONTACT_DATA.findOneAndRemove({ _id: req.query.id }).exec((err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({
+                code: 0,
+                id: req.query.id,
+                message: '删除数据成功'
+            });
+        }
+    });
+});
+
 
 module.exports = router;

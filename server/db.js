@@ -32,6 +32,45 @@ const INDEX_DATA = mongoose.Schema({
     title: String,// 标题    
     
 });
+
+//作品
+const WORK_DATA = mongoose.Schema({
+    name: String,// 作品名称
+    tag: String,// 标签
+    producer: String,// 出品人
+    scenario: String,// 编剧
+    director: String,// 导演
+    starring: String,// 主演
+    filmer: String,// 制片人
+    time: String,// 首播时间
+    num: String,// 集数
+    length: String,// 每集长度
+    platform: String,// 在线播放平台
+    original: String,// 原著
+    author: String,// 作者
+    broadcasting: String,// 播出平台
+
+    introduction: String,// 剧情简介
+    // actor: [
+    //     {
+    //         headerImg: String,// 头像
+    //         name: String,// 姓名
+    //         role: String,// 角色
+    //     }
+    // ],// 主演
+    actor: String,// 主演
+    videoUrl01: String,// 视频
+    videoUrl02: String,// 视频
+    videoUrl03: String,// 视频
+    workImg01: String,// 剧照
+    workImg02: String,// 剧照
+    workImg03: String,// 剧照
+    workImg04: String,// 剧照
+    workImg05: String,// 剧照
+
+    listImg: String,// 列表剧照
+    bigImg: String,// 详情剧照
+})
 //新闻
 const NEWS_DATA = mongoose.Schema({
     title: String,// 标题
@@ -57,13 +96,20 @@ const INVEST_DATA = mongoose.Schema({
     smallImg: String,// 缩略
 });
 //公众号
-//影视作品
 
+//联系我们
+const CONTACT_DATA = mongoose.Schema({
+    name: String,// 职位名称
+    content: String,// 内容
+});
 /************** 定义模型Model **************/
 const Models = {
     INDEX_DATA : mongoose.model('INDEX_DATA',INDEX_DATA),
     NEWS_DATA : mongoose.model('NEWS_DATA',NEWS_DATA),
-    INVEST_DATA : mongoose.model('INVEST_DATA',INVEST_DATA)
+    INVEST_DATA : mongoose.model('INVEST_DATA',INVEST_DATA),
+    WORK_DATA : mongoose.model('WORK_DATA',WORK_DATA),
+    CONTACT_DATA : mongoose.model('CONTACT_DATA',CONTACT_DATA),
+    
     
 }
 

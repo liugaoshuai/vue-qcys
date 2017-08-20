@@ -35,7 +35,7 @@
             <el-form-item>
                 <el-button type="primary"
                            @click="addInvest">立即创建</el-button>
-                <el-button @click="$router.push('/invest')">取消</el-button>
+                <el-button @click="$router.push('/node/invest')">取消</el-button>
             </el-form-item>
         </el-form>
     
@@ -76,7 +76,7 @@ export default {
                         type: 'success',
                         message: '添加成功!'
                     });
-                    self.$router.push('/invest')
+                    self.$router.push('/node/invest')
                 }
             });
 
