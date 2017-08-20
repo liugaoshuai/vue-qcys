@@ -43,14 +43,16 @@
         div.photo
             div.common
                 div.photo-a.clearfix
-                    img.photo-a-top(:src='indexData.boxImg03',style="width: 400px; height: 480px;")
-                    div.photo-a-bottom(style="width: 400px; height: 120px;background: #")
+                    img.photo-a-top(:src='indexData.boxImg03',style="width: 400px; height: 600px;")
                 div.photo-b.clearfix
-                    img.photo-b-left(:src='indexData.boxImg01',style="width: 800px; height: 300px;")
+                    div.photo-b-right(style="width: 320px; height: 300px;background: #fff")
+                    img.photo-b-left(:src='indexData.boxImg01',style="width: 480px; height: 300px;")
                 div.photo-c.clearfix
-                    img.photo-c-left(:src='indexData.boxImg02',style="width: 800px; height: 300px;")
+                    img.photo-c-left(:src='indexData.boxImg02',style="width: 480px; height: 300px;")
+                    div.photo-c-right(style="width: 320px; height: 300px;background: #fff")
                 div.photo-d.clearfix
-                    img.photo-d-left(:src='indexData.boxImg04',style="width: 1200px; height: 300px;")
+                    div.photo-d-right(style="width: 480px; height: 300px;background: #ff")
+                    img.photo-d-left(:src='indexData.boxImg04',style="width: 720px; height: 300px;")
 </template>
 
 <script>
