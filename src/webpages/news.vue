@@ -47,10 +47,10 @@
                             i.iconfont &#xe647;
                             a {{item.label}}
                 div.news-right-new
-                    h3 最新新闻.boxshadow
+                    h3 最新新闻
                     ul
                         li(v-for="item in newsData",@click="getDetail(item)")
-                            div
+                            div.boxshadow
                                 img.news-right-new-img(style="height: 150px;width: 150px;background: #25232b;",:src='item.smallImg')
                             span {{item.title}}
 </template>

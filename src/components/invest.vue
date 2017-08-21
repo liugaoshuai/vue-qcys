@@ -8,17 +8,22 @@
                   border
                   style="width: 100%">
             <el-table-column type="index"
-                             width="80">
+                             width="80"
+                             align="center">
             </el-table-column>
             <el-table-column prop="title"
-                             label="新闻标题">
+                             label="投资者关系标题"
+                             width="500">
             </el-table-column>
-            <el-table-column prop="date"
-                             label="发布日期"
-                             width="220">
+            <el-table-column label="发布日期"
+                             align="center">
+                <template scope="scope">
+                    {{scope.row.date | date-filter}}
+                </template>
             </el-table-column>
             <el-table-column prop="address"
-                             label="操作">
+                             label="操作"
+                             align="center">
                 <template scope="scope">
                     <el-button type="text"
                                @click="openInvest(scope.row._id)">查看</el-button>

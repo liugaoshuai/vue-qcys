@@ -8,17 +8,21 @@
                   border
                   style="width: 100%">
             <el-table-column type="index"
-                             width="80">
+                             width="80"
+                             align="center">
             </el-table-column>
             <el-table-column prop="title"
-                             label="新闻标题">
+                             label="新闻标题"
+                             width="500">
             </el-table-column>
-            <el-table-column prop="date"
-                             label="发布日期"
-                             width="220">
+            <el-table-column label="发布日期"
+                             align="center">
+                <template scope="scope">
+                    {{scope.row.date | date-filter}}
+                </template>
             </el-table-column>
             <el-table-column label="新闻类型"
-                             width="120">
+                             align="center">
                 <template scope="scope">
                     <el-tag v-if="scope.row.type == 1">新剧新鲜事</el-tag>
                     <el-tag v-if="scope.row.type == 2">娱乐星动向</el-tag>
@@ -28,12 +32,17 @@
                 </template>
             </el-table-column>
             <el-table-column prop="address"
-                             label="操作">
+                             label="操作"
+                             align="center">
                 <template scope="scope">
-                    <el-button type="text" @click="openNews(scope.row._id)">查看</el-button>
-
+                    <el-button type="text"
+                               @click="openNews(scope.row._id)">查看</el-button>
+    
                     <!--<el-button type="text">修改</el-button>-->
-                                        <el-button type="text"><router-link type="text" :to="{ name: 'nodeNewsAdd', params: {form: scope.row}}">编辑</router-link></el-button>
+                    <el-button type="text">
+                        <router-link type="text"
+                                     :to="{ name: 'nodeNewsAdd', params: {form: scope.row}}">编辑</router-link>
+                    </el-button>
                     <el-button type="text"
                                @click="deleteNews(scope.row._id)">删除</el-button>
                 </template>
@@ -85,7 +94,7 @@ export default {
 
         },
         // 查看新闻
-        openNews: function (id){
+        openNews: function (id) {
             window.open('localhost:9000/news/detail/' + id)
         }
     }

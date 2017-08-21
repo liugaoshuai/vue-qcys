@@ -78,7 +78,7 @@ router.post('/api/news/create', (req, res) => {
 });
 // 读取新闻
 router.get('/api/news/get', (req, res) => {
-    models.NEWS_DATA.find((err, data) => {
+    models.NEWS_DATA.find().sort({'date': -1}).exec((err, data) => {
         if (err) {
             res.send(err);
         } else {
@@ -134,7 +134,7 @@ router.post('/api/invest/create', (req, res) => {
 });
 // 读取投资者关系
 router.get('/api/invest/get', (req, res) => {
-    models.INVEST_DATA.find((err, data) => {
+    models.INVEST_DATA.find().sort({'date': -1}).exec((err, data) => {
         if (err) {
             res.send(err);
         } else {
@@ -176,7 +176,8 @@ router.post('/api/work/create', (req, res) => {
 });
 // 读取作品
 router.get('/api/work/get', (req, res) => {
-    models.WORK_DATA.find((err, data) => {
+    models.WORK_DATA.find().sort({'date': -1}).exec((err, data) => {
+        
         if (err) {
             res.send(err);
         } else {

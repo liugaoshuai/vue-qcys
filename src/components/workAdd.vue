@@ -6,6 +6,12 @@
             <el-form-item label="作品名称">
                 <el-input v-model="WORK_ADD_FORM.name"></el-input>
             </el-form-item>
+            <el-form-item label="发布日期">
+                <el-date-picker type="date"
+                                placeholder="选择日期"
+                                v-model="WORK_ADD_FORM.date"
+                                ></el-date-picker>
+            </el-form-item>
             <el-form-item label="标签">
                 <el-input v-model="WORK_ADD_FORM.tag"></el-input>
             </el-form-item>
@@ -109,6 +115,7 @@ export default {
         return {
             WORK_ADD_FORM: {
                 name: '',// 作品名称
+                date: '',// 作品名称
                 tag: '',// 标签
                 producer: '',// 出品人
                 scenario: '',// 编剧

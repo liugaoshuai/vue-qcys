@@ -35,7 +35,9 @@ const INDEX_DATA = mongoose.Schema({
 
 //作品
 const WORK_DATA = mongoose.Schema({
+    index: Number,// 权重
     name: String,// 作品名称
+    date: String,//发布日期
     tag: String,// 标签
     producer: String,// 出品人
     scenario: String,// 编剧
@@ -76,6 +78,7 @@ const WORK_DATA = mongoose.Schema({
 })
 //新闻
 const NEWS_DATA = mongoose.Schema({
+    index: Number,// 权重
     title: String,// 标题
     about: String,// 简介
     date: String,// 日期
@@ -89,6 +92,7 @@ const NEWS_DATA = mongoose.Schema({
 });
 //投资者关系
 const INVEST_DATA = mongoose.Schema({
+    index: Number,// 权重
     title: String,// 标题
     about: String,// 简介
     date: String,// 日期

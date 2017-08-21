@@ -8,19 +8,22 @@
                   border
                   style="width: 100%">
             <el-table-column type="index"
-                             width="80">
+                             width="80"
+                             align="center">
             </el-table-column>
             <el-table-column prop="name"
-                             label="作品名称">
+                             label="作品名称"
+                             width="500">
             </el-table-column>
-            <el-table-column prop="director"
-                             label="导演">
-            </el-table-column>
-            <el-table-column prop="tag"
-                             label="标签">
+            <el-table-column label="发布日期"
+                             align="center">
+                <template scope="scope">
+                    {{scope.row.date | date-filter}}
+                </template>
             </el-table-column>
             <el-table-column prop="address"
-                             label="操作">
+                             label="操作"
+                             align="center">
                 <template scope="scope">
                     <el-button type="text" @click="openWork(scope.row._id)">查看</el-button>
                     <!--<el-button type="text">修改</el-button>-->
