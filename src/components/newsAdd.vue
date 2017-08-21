@@ -64,10 +64,13 @@ export default {
                     label: '新剧新鲜事',
                 }, {
                     value: 2,
-                    label: '明星娱乐',
+                    label: '娱乐星动向',
                 }, {
                     value: 3,
-                    label: '行业聚焦',
+                    label: '评论与专访',
+                },{
+                    value: 3,
+                    label: '行业新资讯',
                 },
             ],
             NEWS_ADD_FORM: {
@@ -81,6 +84,15 @@ export default {
                 listImg: '',// 列表
                 smallImg: '',// 缩略
                 indexImg: '',// 首页
+            }
+        }
+    },
+    mounted: function () {
+        if (this.$route.params.form) {
+            for (var key in this.NEWS_ADD_FORM) {
+                if (this.$route.params.form[key]) {
+                    this.NEWS_ADD_FORM[key] = this.$route.params.form[key];
+                }
             }
         }
     },

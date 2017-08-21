@@ -70,12 +70,14 @@ export default new Router({
           component: nodeNews
         },{
           path: '/node/news/add',
+          name: 'nodeNewsAdd',
           component: nodeNewsAdd
         },{
           path: '/node/invest',
           component: nodeInvest
         },{
           path: '/node/invest/add',
+          name: 'nodeInvestAdd',
           component: nodeInvestAdd
         },{
           path: '/node/work',

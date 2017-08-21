@@ -25,7 +25,10 @@
                 <el-input v-model="WORK_ADD_FORM.filmer"></el-input>
             </el-form-item>
             <el-form-item label="首播时间">
-                <el-input v-model="WORK_ADD_FORM.time"></el-input>
+                <el-date-picker type="date"
+                                placeholder="选择日期"
+                                v-model="WORK_ADD_FORM.time"
+                                ></el-date-picker>
             </el-form-item>
             <el-form-item label="集数">
                 <el-input v-model="WORK_ADD_FORM.num"></el-input>
@@ -54,11 +57,20 @@
             <el-form-item label="视频(380x240)">
                 <el-input v-model="WORK_ADD_FORM.videoUrl01"></el-input>
             </el-form-item>
+            <el-form-item label="视频url">
+                <el-input v-model="WORK_ADD_FORM.videoHref01"></el-input>
+            </el-form-item>
             <el-form-item label="视频(380x240)">
                 <el-input v-model="WORK_ADD_FORM.videoUrl02"></el-input>
             </el-form-item>
+            <el-form-item label="视频url">
+                <el-input v-model="WORK_ADD_FORM.videoHref02"></el-input>
+            </el-form-item>
             <el-form-item label="视频(380x240)">
                 <el-input v-model="WORK_ADD_FORM.videoUrl03"></el-input>
+            </el-form-item>
+            <el-form-item label="视频url">
+                <el-input v-model="WORK_ADD_FORM.videoHref03"></el-input>
             </el-form-item>
             <el-form-item label="剧照(380x240)">
                 <el-input v-model="WORK_ADD_FORM.workImg01"></el-input>

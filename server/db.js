@@ -62,6 +62,9 @@ const WORK_DATA = mongoose.Schema({
     videoUrl01: String,// 视频
     videoUrl02: String,// 视频
     videoUrl03: String,// 视频
+    videoHref01: String,// 视频url
+    videoHref02: String,// 视频url
+    videoHref03: String,// 视频url
     workImg01: String,// 剧照
     workImg02: String,// 剧照
     workImg03: String,// 剧照

@@ -60,6 +60,16 @@ export default {
             }
         }
     },
+    mounted: function () {
+        console.log(this.$route)
+        if (this.$route.params.form) {
+            for (var key in this.INVEST_ADD_FORM) {
+                if (this.$route.params.form[key]) {
+                    this.INVEST_ADD_FORM[key] = this.$route.params.form[key];
+                }
+            }
+        }
+    },
     methods: {
         // 新增文章
         addInvest: function () {

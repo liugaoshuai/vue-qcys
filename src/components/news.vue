@@ -21,8 +21,9 @@
                              width="120">
                 <template scope="scope">
                     <el-tag v-if="scope.row.type == 1">新剧新鲜事</el-tag>
-                    <el-tag v-if="scope.row.type == 2">明星娱乐</el-tag>
-                    <el-tag v-if="scope.row.type == 3">行业聚焦</el-tag>
+                    <el-tag v-if="scope.row.type == 2">娱乐星动向</el-tag>
+                    <el-tag v-if="scope.row.type == 3">评论与专访</el-tag>
+                    <el-tag v-if="scope.row.type == 4">行业新资讯</el-tag>
                     </el-popover>
                 </template>
             </el-table-column>
@@ -30,7 +31,9 @@
                              label="操作">
                 <template scope="scope">
                     <el-button type="text" @click="openNews(scope.row._id)">查看</el-button>
+
                     <!--<el-button type="text">修改</el-button>-->
+                                        <el-button type="text"><router-link type="text" :to="{ name: 'nodeNewsAdd', params: {form: scope.row}}">编辑</router-link></el-button>
                     <el-button type="text"
                                @click="deleteNews(scope.row._id)">删除</el-button>
                 </template>

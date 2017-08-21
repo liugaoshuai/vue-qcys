@@ -3,17 +3,17 @@
     div
         div.app-news.common.clearfix(v-show="!newsDetailShow")
             div.news-left
-                div.news-left-item.clearfix(v-for="item in newsData")
+                div.news-left-item.clearfix(v-for="item in newsData",@click="getDetail(item)")
                     div.news-left-item-imgDiv.boxshadow
                         img.news-left-item-img(style="height: 230px;width: 370px;background: #25232b;",:src='item.listImg')
                     div.news-left-item-conDiv
                         div.news-left-item-title {{item.title}}
                         div.news-left-item-subtitle
-                            span.orange {{item.date}}
+                            span.orange {{item.date | date-filter}}
                             span.news-left-item-subtitle-span 责任编辑：
                             span.orange 千乘影视
                         div.news-left-item-con {{item.about}}
-                        a.orange(@click="getDetail(item)") 阅读全文
+                        a.orange 阅读全文
             div.news-right
                 div.news-right-new
                     h3 最新新闻
@@ -27,7 +27,7 @@
                 img.news-left-headimg(style="width: 100%;background: #25232b;",:src="newsDetailData.topImg",v-if="newsDetailData.topImg")
                 div.news-left-title {{newsDetailData.title}}
                 div.news-left-subtitle
-                    span.orange {{newsDetailData.date}}
+                    span.orange {{newsDetailData.date | date-filter}}
                     span.news-left-subtitle-span 责任编辑：
                     span.orange 千乘影视
                 div.news-left-con

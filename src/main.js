@@ -12,11 +12,14 @@ import './style/reset.css'
 import './style/common.css'
 import './style/main.css'
 
+import Methods from './script/main.js'
+
+
 
 Vue.prototype.$http = axios
 
+Vue.use(Methods);
 Vue.use(ElementUI)
-// mount with global
 Vue.use(VueQuillEditor)
 
 

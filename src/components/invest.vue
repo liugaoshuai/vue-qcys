@@ -20,8 +20,14 @@
             <el-table-column prop="address"
                              label="操作">
                 <template scope="scope">
-                    <el-button type="text" @click="openInvest(scope.row._id)">查看</el-button>
+                    <el-button type="text"
+                               @click="openInvest(scope.row._id)">查看</el-button>
                     <!--<el-button type="text">修改</el-button>-->
+                    <el-button type="text">
+                        <router-link type="text"
+                                     :to="{ name: 'nodeInvestAdd', params: {form: scope.row}}">编辑</router-link>
+                    </el-button>
+    
                     <el-button type="text"
                                @click="deleteInvest(scope.row._id)">删除</el-button>
                 </template>
@@ -72,7 +78,7 @@ export default {
 
         },
         // 查看新闻
-        openInvest: function (id){
+        openInvest: function (id) {
             window.open('localhost:9000/invest/detail/' + id)
         }
     }
