@@ -11,7 +11,7 @@ div
             router-link(to='/web/index') 关于千乘
             router-link(to='/web/contact') 联系我们
             div.music
-                <embed class="" autoplay="true" src="http://oumlc5t88.bkt.clouddn.com/%E9%A3%8E%E4%B8%AD%E8%8A%AD%E8%95%BE+Mix003+MMM.mp3"  width="200" height="60" />
+                <embed class="" autoplay="true" src="http://oumlc5t88.bkt.clouddn.com/S-01%20%E4%B8%BB%E9%A2%98%E6%9B%B2.mp3"  width="200" height="60" />
     router-view
     div.footer
     div.footer-top

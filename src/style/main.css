@@ -104,9 +104,9 @@ body{font-weight: 200!important;}
 .news-right-cla-li a{color: #333;}
 
 .news-right-new h3{font-size: 30px;line-height: 50px;font-weight: normal;}
-.news-right-new ul li{width: 180px;float: left;padding: 10px 10px 0 0;cursor: pointer;}
+.news-right-new ul li{width: 180px;float: left;padding: 10px 10px 0 0;cursor: pointer;text-align: center;}
 .news-right-new ul li div{padding: 10px;}
-.news-right-new ul li span{line-height: 24px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.news-right-new ul li span{line-height: 30px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
 
 /*新闻列表页*/
 .news-left-item{padding-bottom: 30px;border-bottom: 1px solid #d6d5d5;position: relative;}
@@ -162,7 +162,7 @@ body{font-weight: 200!important;}
 .app-contact-con-post-div-bottomline{position: absolute;height: 2px;width: 350px;left: 175px;bottom: -2px;background: #fff;}
 .app-contact-con-nav{padding: 40px;position: relative;ion: relative;height: 804px;}
 .app-contact-con-nav>ul>li+li{margin-top: 60px;}
-.app-contact-con-nav li a{display: block;height: 200px;line-height: 200px;width: 200px;text-align: center;background: #ecebeb;border-radius: 100px;font-size: 36px;position: relative;}
+.app-contact-con-nav li a{display: block;height: 200px;line-height: 200px;width: 200px;text-align: center;background: #ecebeb;border-radius: 100px;font-size: 36px;position: relative;color: #333;}
 .app-contact-con-nav li a.active{background: #eb6233;color: #fff;}
 .app-contact-con-nav li a.active:after{content: " ";height: 2px;width: 260px;left: 200px;top: 99px;position: absolute;background: #eb6233;}
 
