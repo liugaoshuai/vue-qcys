@@ -50,13 +50,54 @@ router.post('/api/index/create', (req, res) => {
 });
 // 读取首页
 router.get('/api/index/get', (req, res) => {
-    models.INDEX_DATA.find((err, data) => {
+    models.INDEX_DATA.find((err, data) => { 
         if (err) {
             res.send(err);
         } else {
             res.send({
                 code: 0,
                 data: data
+            });
+        }
+    });
+});
+// 创建微信公众号
+router.post('/api/wechat/create', (req, res) => {
+    let NEWS_ADD_DATA = new models.WECHAT_DATA(req.body.form);
+    NEWS_ADD_DATA.save((err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({
+                code: 0,
+                data: data
+            });
+        }
+    });
+});
+// 读取微信公众号
+router.get('/api/wechat/get', (req, res) => {
+    models.WECHAT_DATA.find().sort({'date': -1}).exec((err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({
+                code: 0,
+                data: data
+            });
+        }
+    });
+});
+// 删除微信公众号
+router.get('/api/wechat/delete', (req, res) => {
+    models.WECHAT_DATA.findOneAndRemove({ _id: req.query.id }).exec((err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({
+                code: 0,
+                id: req.query.id,
+                message: '删除数据成功'
             });
         }
     });

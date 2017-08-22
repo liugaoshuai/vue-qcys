@@ -1,8 +1,7 @@
 <template>
     <div id="news">
         <h2>新闻聚焦-新增</h2>
-        <el-form 
-                 :model="NEWS_ADD_FORM"
+        <el-form :model="NEWS_ADD_FORM"
                  label-width="120px">
             <el-form-item label="文章标题">
                 <el-input v-model="NEWS_ADD_FORM.title"></el-input>
@@ -44,6 +43,9 @@
             <el-form-item label="首页图(200*120)">
                 <el-input v-model="NEWS_ADD_FORM.indexImg"></el-input>
             </el-form-item>
+            <el-form-item label="权重指数">
+                <el-input v-model="NEWS_ADD_FORM.index"></el-input>
+            </el-form-item>
             <el-form-item>
                 <el-button type="primary"
                            @click="addNews">立即创建</el-button>
@@ -68,13 +70,14 @@ export default {
                 }, {
                     value: 3,
                     label: '评论与专访',
-                },{
-                    value: 3,
+                }, {
+                    value: 4,
                     label: '行业新资讯',
                 },
             ],
             NEWS_ADD_FORM: {
                 title: '',// 标题
+                index: '',// 权重
                 about: '',// 简介
                 date: '',// 日期
                 type: '',// 类型
@@ -100,7 +103,7 @@ export default {
         // 新增新闻
         addNews: function () {
             var self = this;
-            if(self.NEWS_ADD_FORM.date){
+            if (self.NEWS_ADD_FORM.date) {
                 //时间转换
             }
             var params = {

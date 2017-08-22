@@ -31,7 +31,9 @@
             <el-form-item label="缩略图(150*150)">
                 <el-input v-model="INVEST_ADD_FORM.smallImg"></el-input>
             </el-form-item>
-            
+            <el-form-item label="权重指数">
+                <el-input v-model="WORK_ADD_FORM.index"></el-input>
+            </el-form-item>
             <el-form-item>
                 <el-button type="primary"
                            @click="addInvest">立即创建</el-button>
@@ -48,6 +50,7 @@ export default {
         return {
             INVEST_ADD_FORM: {
                 title: '',// 标题
+                index: '',// 权重
                 about: '',// 简介
                 date: '',// 日期
                 type: '',// 类型

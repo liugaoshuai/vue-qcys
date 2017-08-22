@@ -5,7 +5,7 @@ div
         div.common.clearfix
             router-link(to='/web/index') 首页
             router-link(to='/web/work') 影视作品
-            router-link(to='/web/index') 公众号精选
+            router-link(to='/web/wechat') 公众号精选
             router-link(to='/web/news') 新闻聚焦
             router-link(to='/web/invest') 投资者关系
             router-link(to='/web/index') 关于千乘

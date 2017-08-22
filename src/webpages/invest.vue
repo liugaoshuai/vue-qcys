@@ -18,7 +18,7 @@
                 div.news-right-new
                     h3 最新新闻
                     ul
-                        li(v-for="item in newsData",@click="getDetail(item)")
+                        li(v-for="(item,index) in newsData",@click="getDetail(item)",v-if="index < 6")
                             div.boxshadow
                                 img.news-right-new-img(style="height: 150px;width: 150px;background: #25232b;",:src='item.smallImg')
                             span {{item.title}}
@@ -37,7 +37,7 @@
                 div.news-right-new
                     h3 最新新闻
                     ul
-                        li(v-for="item in newsData",@click="getDetail(item)")
+                        li(v-for="(item,index) in newsData",@click="getDetail(item)",v-if="index < 6")
                             div.boxshadow
                                 img.news-right-new-img(style="height: 150px;width: 150px;background: #25232b;",:src='item.smallImg')
                             span {{item.title}}
@@ -47,9 +47,7 @@
 export default {
     data() {
         return {
-            newsData: {
-
-            },
+            newsData: [],
             newsDetailData: {
 
             },

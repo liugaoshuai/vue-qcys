@@ -56,6 +56,6 @@ body,html{
 }
 
 /*news.vue*/
-#news h2{
+.app-con h2{
     line-height: 60px;
 }

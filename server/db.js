@@ -26,6 +26,11 @@ const INDEX_DATA = mongoose.Schema({
     boxImg02: String,// 剧照图
     boxImg03: String,// 剧照图
     boxImg04: String,// 剧照图
+    boxImg05: String,// 剧照图
+    boxImg06: String,// 剧照图
+    boxImg07: String,// 剧照图
+    boxImg08: String,// 剧照图
+    
     
     music: String,// 音乐
     video: String,// 视频    
@@ -76,6 +81,18 @@ const WORK_DATA = mongoose.Schema({
     listImg: String,// 列表剧照
     bigImg: String,// 详情剧照
 })
+//微信公众号
+const WECHAT_DATA = mongoose.Schema({
+    title: String,// 标题
+    about: String,// 简介
+    date: String,// 日期
+    type: String,// 类型
+    content: String,// 内容
+    img01: String,// img01
+    img02: String,// img02
+    img03: String,// img03
+    
+});
 //新闻
 const NEWS_DATA = mongoose.Schema({
     index: Number,// 权重
@@ -116,6 +133,8 @@ const Models = {
     INVEST_DATA : mongoose.model('INVEST_DATA',INVEST_DATA),
     WORK_DATA : mongoose.model('WORK_DATA',WORK_DATA),
     CONTACT_DATA : mongoose.model('CONTACT_DATA',CONTACT_DATA),
+    WECHAT_DATA : mongoose.model('WECHAT_DATA',WECHAT_DATA),
+    
     
     
 }

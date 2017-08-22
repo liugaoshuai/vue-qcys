@@ -11,6 +11,8 @@ import nodeWork from '@/components/work'
 import nodeWorkAdd from '@/components/workAdd'
 import nodeContact from '@/components/contact'
 import nodeContactAdd from '@/components/contactAdd'
+import nodeWechat from '@/components/wechat'
+import nodeWechatAdd from '@/components/wechatAdd'
 
 // pc端
 import webApp from '@/webpages/app'
@@ -19,6 +21,8 @@ import webNews from '@/webpages/news'
 import webInvest from '@/webpages/invest'
 import webWork from '@/webpages/work'
 import webContact from '@/webpages/contact'
+import webWechat from '@/webpages/wechat'
+
 
 
 
@@ -52,6 +56,9 @@ export default new Router({
         },{
           path: '/web/contact',
           component: webContact
+        },{
+          path: '/web/wechat',
+          component: webWechat
         },
       ]
     },
@@ -93,6 +100,13 @@ export default new Router({
           path: '/node/contact/add',
           name: 'nodeContactAdd',
           component: nodeContactAdd
+        },{
+          path: '/node/wechat',
+          component: nodeWechat
+        },{
+          path: '/node/wechat/add',
+          name: 'nodeWechatAdd',
+          component: nodeWechatAdd
         }
       ]
     },
