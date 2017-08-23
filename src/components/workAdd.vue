@@ -138,6 +138,9 @@ export default {
                 videoUrl01: '',// 视频
                 videoUrl02: '',// 视频
                 videoUrl03: '',// 视频
+                videoHref01: '',// 视频
+                videoHref02: '',// 视频
+                videoHref03: '',// 视频
                 workImg01: '',// 剧照
                 workImg02: '',// 剧照
                 workImg03: '',// 剧照
