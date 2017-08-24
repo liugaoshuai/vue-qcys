@@ -87,7 +87,7 @@ const WECHAT_DATA = mongoose.Schema({
     about: String,// 简介
     date: String,// 日期
     type: String,// 类型
-    content: Text,// 内容
+    content: String,// 内容
     img01: String,// img01
     img02: String,// img02
     img03: String,// img03
