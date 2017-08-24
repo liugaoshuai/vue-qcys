@@ -42,16 +42,25 @@
                             p.news-con {{item.about}}
         div.photo
             div.common
-                div.photo-a.clearfix
+                div.photo-a.clearfix(style="position: relative;")
                     img.photo-a-top(:src='indexData.boxImg03',style="width: 400px; height: 600px;")
+                    div.photo-c-right(style="width: 400px; height: 160px;background: rgba(0,0,0,0.3);position: absolute;left: 0;bottom: 0;padding: 20px;")
+                        h3 {{indexData.boxTitle03}}
+                        p {{indexData.boxText03}}
                 div.photo-b.clearfix
-                    div.photo-b-right(style="width: 320px; height: 300px;background: #fff")
+                    div.photo-b-right(style="width: 320px; height: 300px;background: #fff;padding: 20px;")
+                        h3 {{indexData.boxTitle01}}
+                        p {{indexData.boxText01}}
                     img.photo-b-left(:src='indexData.boxImg01',style="width: 480px; height: 300px;")
                 div.photo-c.clearfix
                     img.photo-c-left(:src='indexData.boxImg02',style="width: 480px; height: 300px;")
-                    div.photo-c-right(style="width: 320px; height: 300px;background: #fff")
+                    div.photo-c-right(style="width: 320px; height: 300px;background: #fff;padding: 20px;")
+                        h3 {{indexData.boxTitle02}}
+                        p {{indexData.boxText02}}
                 div.photo-d.clearfix
-                    div.photo-d-right(style="width: 480px; height: 300px;background: #ff")
+                    div.photo-d-right(style="width: 480px; height: 300px;background: #fff;padding: 20px;")
+                        h3 {{indexData.boxTitle04}}
+                        p {{indexData.boxText04}}
                     img.photo-d-left(:src='indexData.boxImg04',style="width: 720px; height: 300px;")
 </template>
 
@@ -75,6 +84,15 @@ export default {
                 boxImg02: '',// 剧照图
                 boxImg03: '',// 剧照图
                 boxImg04: '',// 剧照图
+
+                boxTitle01: '',
+                boxTitle02: '',
+                boxTitle03: '',
+                boxTitle04: '',
+                boxText01: '',
+                boxText02: '',
+                boxText03: '',
+                boxText04: '',
 
                 music: '',// 音乐
                 video: '',// 视频   

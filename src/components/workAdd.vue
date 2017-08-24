@@ -9,8 +9,7 @@
             <el-form-item label="发布日期">
                 <el-date-picker type="date"
                                 placeholder="选择日期"
-                                v-model="WORK_ADD_FORM.date"
-                                ></el-date-picker>
+                                v-model="WORK_ADD_FORM.date"></el-date-picker>
             </el-form-item>
             <el-form-item label="标签">
                 <el-input v-model="WORK_ADD_FORM.tag"></el-input>
@@ -33,8 +32,7 @@
             <el-form-item label="首播时间">
                 <el-date-picker type="date"
                                 placeholder="选择日期"
-                                v-model="WORK_ADD_FORM.time"
-                                ></el-date-picker>
+                                v-model="WORK_ADD_FORM.time"></el-date-picker>
             </el-form-item>
             <el-form-item label="集数">
                 <el-input v-model="WORK_ADD_FORM.num"></el-input>
@@ -57,9 +55,78 @@
             <el-form-item label="剧情简介">
                 <el-input v-model="WORK_ADD_FORM.introduction"></el-input>
             </el-form-item>
-            <!--<el-form-item label="主演">
-                        <el-input v-model="WORK_ADD_FORM.actor"></el-input>
-                    </el-form-item>-->
+            <el-form-item label="主演01名字">
+                <el-input v-model="WORK_ADD_FORM.starName01"></el-input>
+            </el-form-item>
+            <el-form-item label="主演01角色">
+                <el-input v-model="WORK_ADD_FORM.starRole01"></el-input>
+            </el-form-item>
+            <el-form-item label="主演01照片(80x80)">
+                <el-input v-model="WORK_ADD_FORM.starImg01"></el-input>
+            </el-form-item>
+            <el-form-item label="主演02名字">
+                <el-input v-model="WORK_ADD_FORM.starName02"></el-input>
+            </el-form-item>
+            <el-form-item label="主演02角色">
+                <el-input v-model="WORK_ADD_FORM.starRole02"></el-input>
+            </el-form-item>
+            <el-form-item label="主演02照片(80x80)">
+                <el-input v-model="WORK_ADD_FORM.starImg02"></el-input>
+            </el-form-item>
+            <el-form-item label="主演03名字">
+                <el-input v-model="WORK_ADD_FORM.starName03"></el-input>
+            </el-form-item>
+            <el-form-item label="主演03角色">
+                <el-input v-model="WORK_ADD_FORM.starRole03"></el-input>
+            </el-form-item>
+            <el-form-item label="主演03照片(80x80)">
+                <el-input v-model="WORK_ADD_FORM.starImg03"></el-input>
+            </el-form-item>
+            <el-form-item label="主演04名字">
+                <el-input v-model="WORK_ADD_FORM.starName04"></el-input>
+            </el-form-item>
+            <el-form-item label="主演04角色">
+                <el-input v-model="WORK_ADD_FORM.starRole04"></el-input>
+            </el-form-item>
+            <el-form-item label="主演04照片(80x80)">
+                <el-input v-model="WORK_ADD_FORM.starImg04"></el-input>
+            </el-form-item>
+            <el-form-item label="主演05名字">
+                <el-input v-model="WORK_ADD_FORM.starName05"></el-input>
+            </el-form-item>
+            <el-form-item label="主演05角色">
+                <el-input v-model="WORK_ADD_FORM.starRole05"></el-input>
+            </el-form-item>
+            <el-form-item label="主演05照片(80x80)">
+                <el-input v-model="WORK_ADD_FORM.starImg05"></el-input>
+            </el-form-item>
+            <el-form-item label="主演06名字">
+                <el-input v-model="WORK_ADD_FORM.starName06"></el-input>
+            </el-form-item>
+            <el-form-item label="主演06角色">
+                <el-input v-model="WORK_ADD_FORM.starRole06"></el-input>
+            </el-form-item>
+            <el-form-item label="主演06照片(80x80)">
+                <el-input v-model="WORK_ADD_FORM.starImg06"></el-input>
+            </el-form-item>
+            <el-form-item label="主演07名字">
+                <el-input v-model="WORK_ADD_FORM.starName07"></el-input>
+            </el-form-item>
+            <el-form-item label="主演07角色">
+                <el-input v-model="WORK_ADD_FORM.starRole07"></el-input>
+            </el-form-item>
+            <el-form-item label="主演07照片(80x80)">
+                <el-input v-model="WORK_ADD_FORM.starImg07"></el-input>
+            </el-form-item>
+            <el-form-item label="主演08名字">
+                <el-input v-model="WORK_ADD_FORM.starName08"></el-input>
+            </el-form-item>
+            <el-form-item label="主演08角色">
+                <el-input v-model="WORK_ADD_FORM.starRole08"></el-input>
+            </el-form-item>
+            <el-form-item label="主演08照片(80x80)">
+                <el-input v-model="WORK_ADD_FORM.starImg08"></el-input>
+            </el-form-item>
             <el-form-item label="视频(380x240)">
                 <el-input v-model="WORK_ADD_FORM.videoUrl01"></el-input>
             </el-form-item>
@@ -147,6 +214,32 @@ export default {
                 workImg04: '',// 剧照
                 workImg05: '',// 剧照
 
+                starImg01: '',
+                starName01: '',
+                starRole01: '',
+                starImg02: '',
+                starName02: '',
+                starRole02: '',
+                starImg03: '',
+                starName03: '',
+                starRole03: '',
+                starImg04: '',
+                starName04: '',
+                starRole04: '',
+                starImg05: '',
+                starName05: '',
+                starRole05: '',
+                starImg06: '',
+                starName06: '',
+                starRole06: '',
+                starImg07: '',
+                starName07: '',
+                starRole07: '',
+                starImg08: '',
+                starName08: '',
+                starRole08: '',
+
+
                 listImg: '',// 列表剧照
                 bigImg: '',// 详情剧照
                 index: '',// 权重
@@ -156,7 +249,7 @@ export default {
     mounted: function () {
         console.log(this.$route)
         if (this.$route.params.form) {
-            console.log( 'for')
+            console.log('for')
             for (var key in this.WORK_ADD_FORM) {
                 if (this.$route.params.form[key]) {
                     this.WORK_ADD_FORM[key] = this.$route.params.form[key];

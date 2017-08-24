@@ -32,12 +32,21 @@ router.post('/api/index/create', (req, res) => {
             boxImg03: req.body.form.boxImg03,// 剧照图
             boxImg04: req.body.form.boxImg04,// 剧照图
 
+            boxTitle01: req.body.form.boxTitle01,
+            boxTitle02: req.body.form.boxTitle02,
+            boxTitle03: req.body.form.boxTitle03,
+            boxTitle04: req.body.form.boxTitle04,
+            boxText01: req.body.form.boxText01,
+            boxText02: req.body.form.boxText02,
+            boxText03: req.body.form.boxText03,
+            boxText04: req.body.form.boxText04,
+
             music: req.body.form.music,// 音乐
             video: req.body.form.video,// 视频    
             title: req.body.form.title,// 标题    
         }
     };
-    models.INDEX_DATA.update(oldValue, newData,{upsert:true}, function (err, data) {
+    models.INDEX_DATA.update(oldValue, newData, { upsert: true }, function (err, data) {
         if (err) {
             res.send(err);
         } else {
@@ -50,7 +59,7 @@ router.post('/api/index/create', (req, res) => {
 });
 // 读取首页
 router.get('/api/index/get', (req, res) => {
-    models.INDEX_DATA.find((err, data) => { 
+    models.INDEX_DATA.find((err, data) => {
         if (err) {
             res.send(err);
         } else {
@@ -77,7 +86,7 @@ router.post('/api/wechat/create', (req, res) => {
 });
 // 读取微信公众号
 router.get('/api/wechat/get', (req, res) => {
-    models.WECHAT_DATA.find().sort({'date': -1}).exec((err, data) => {
+    models.WECHAT_DATA.find().sort({ 'date': -1 }).exec((err, data) => {
         if (err) {
             res.send(err);
         } else {
@@ -119,7 +128,7 @@ router.post('/api/news/create', (req, res) => {
 });
 // 读取新闻
 router.get('/api/news/get', (req, res) => {
-    models.NEWS_DATA.find().sort({'date': -1}).exec((err, data) => {
+    models.NEWS_DATA.find().sort({ 'date': -1 }).exec((err, data) => {
         if (err) {
             res.send(err);
         } else {
@@ -133,7 +142,7 @@ router.get('/api/news/get', (req, res) => {
 // 读取类别新闻
 router.get('/api/news/get/type', (req, res) => {
     console.log(req.query.type)
-    models.NEWS_DATA.find({"type": req.query.type},(err, data) => {
+    models.NEWS_DATA.find({ "type": req.query.type }, (err, data) => {
         if (err) {
             res.send(err);
         } else {
@@ -175,7 +184,7 @@ router.post('/api/invest/create', (req, res) => {
 });
 // 读取投资者关系
 router.get('/api/invest/get', (req, res) => {
-    models.INVEST_DATA.find().sort({'date': -1}).exec((err, data) => {
+    models.INVEST_DATA.find().sort({ 'date': -1 }).exec((err, data) => {
         if (err) {
             res.send(err);
         } else {
@@ -217,8 +226,8 @@ router.post('/api/work/create', (req, res) => {
 });
 // 读取作品
 router.get('/api/work/get', (req, res) => {
-    models.WORK_DATA.find().sort({'date': -1}).exec((err, data) => {
-        
+    models.WORK_DATA.find().sort({ 'date': -1 }).exec((err, data) => {
+
         if (err) {
             res.send(err);
         } else {

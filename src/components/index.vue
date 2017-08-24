@@ -35,14 +35,38 @@
       <el-form-item label="剧照图01(800*300)">
         <el-input v-model="INDEX_ADD_FORM.boxImg01"></el-input>
       </el-form-item>
+      <el-form-item label="剧照图01标题">
+        <el-input v-model="INDEX_ADD_FORM.boxTitle01"></el-input>
+      </el-form-item>
+      <el-form-item label="剧照图01文字">
+        <el-input v-model="INDEX_ADD_FORM.boxText01"></el-input>
+      </el-form-item>
       <el-form-item label="剧照图02(800*300)">
         <el-input v-model="INDEX_ADD_FORM.boxImg02"></el-input>
+      </el-form-item>
+      <el-form-item label="剧照图02标题">
+        <el-input v-model="INDEX_ADD_FORM.boxTitle02"></el-input>
+      </el-form-item>
+      <el-form-item label="剧照图02文字">
+        <el-input v-model="INDEX_ADD_FORM.boxText02"></el-input>
       </el-form-item>
       <el-form-item label="剧照图03(400*600)">
         <el-input v-model="INDEX_ADD_FORM.boxImg03"></el-input>
       </el-form-item>
+      <el-form-item label="剧照图03标题">
+        <el-input v-model="INDEX_ADD_FORM.boxTitle03"></el-input>
+      </el-form-item>
+      <el-form-item label="剧照图03文字">
+        <el-input v-model="INDEX_ADD_FORM.boxText03"></el-input>
+      </el-form-item>
       <el-form-item label="剧照图04(1200*300)">
         <el-input v-model="INDEX_ADD_FORM.boxImg04"></el-input>
+      </el-form-item>
+      <el-form-item label="剧照图04标题">
+        <el-input v-model="INDEX_ADD_FORM.boxTitle04"></el-input>
+      </el-form-item>
+      <el-form-item label="剧照图04文字">
+        <el-input v-model="INDEX_ADD_FORM.boxText04"></el-input>
       </el-form-item>
   
       <el-form-item label="音乐">
@@ -81,6 +105,15 @@ export default {
         boxImg02: '',// 剧照图
         boxImg03: '',// 剧照图
         boxImg04: '',// 剧照图
+
+        boxTitle01: '',
+        boxTitle02: '',
+        boxTitle03: '',
+        boxTitle04: '',
+        boxText01: '',
+        boxText02: '',
+        boxText03: '',
+        boxText04: '',
 
         music: '',// 音乐
         video: '',// 视频   

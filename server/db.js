@@ -1,12 +1,12 @@
 // Schema、Model、Entity或者Documents的关系请牢记，Schema生成Model，Model创造Entity，Model和Entity都可对数据库操作造成影响，但Model比Entity更具操作性。
 const mongoose = require('mongoose');
 // 连接数据库 如果不自己创建 默认test数据库会自动生成
-mongoose.connect('mongodb://localhost/qcys',{useMongoClient:true});
+mongoose.connect('mongodb://localhost/qcys', { useMongoClient: true });
 
 // 为这次连接绑定事件
 const db = mongoose.connection;
-db.once('error',() => console.log('Mongo connection error'));
-db.once('open',() => console.log('Mongo connection successed'));
+db.once('error', () => console.log('Mongo connection error'));
+db.once('open', () => console.log('Mongo connection successed'));
 /************** 定义模式newsList **************/
 
 //主页
@@ -30,12 +30,20 @@ const INDEX_DATA = mongoose.Schema({
     boxImg06: String,// 剧照图
     boxImg07: String,// 剧照图
     boxImg08: String,// 剧照图
-    
-    
+
+    boxTitle01: String,
+    boxTitle02: String,
+    boxTitle03: String,
+    boxTitle04: String,
+    boxText01: String,
+    boxText02: String,
+    boxText03: String,
+    boxText04: String,
+
     music: String,// 音乐
     video: String,// 视频    
     title: String,// 标题    
-    
+
 });
 
 //作品
@@ -78,6 +86,31 @@ const WORK_DATA = mongoose.Schema({
     workImg04: String,// 剧照
     workImg05: String,// 剧照
 
+    starImg01: String,
+    starName01: String,
+    starRole01: String,
+    starImg02: String,
+    starName02: String,
+    starRole02: String,
+    starImg03: String,
+    starName03: String,
+    starRole03: String,
+    starImg04: String,
+    starName04: String,
+    starRole04: String,
+    starImg05: String,
+    starName05: String,
+    starRole05: String,
+    starImg06: String,
+    starName06: String,
+    starRole06: String,
+    starImg07: String,
+    starName07: String,
+    starRole07: String,
+    starImg08: String,
+    starName08: String,
+    starRole08: String,
+
     listImg: String,// 列表剧照
     bigImg: String,// 详情剧照
 })
@@ -91,7 +124,7 @@ const WECHAT_DATA = mongoose.Schema({
     img01: String,// img01
     img02: String,// img02
     img03: String,// img03
-    
+
 });
 //新闻
 const NEWS_DATA = mongoose.Schema({
@@ -128,15 +161,15 @@ const CONTACT_DATA = mongoose.Schema({
 });
 /************** 定义模型Model **************/
 const Models = {
-    INDEX_DATA : mongoose.model('INDEX_DATA',INDEX_DATA),
-    NEWS_DATA : mongoose.model('NEWS_DATA',NEWS_DATA),
-    INVEST_DATA : mongoose.model('INVEST_DATA',INVEST_DATA),
-    WORK_DATA : mongoose.model('WORK_DATA',WORK_DATA),
-    CONTACT_DATA : mongoose.model('CONTACT_DATA',CONTACT_DATA),
-    WECHAT_DATA : mongoose.model('WECHAT_DATA',WECHAT_DATA),
-    
-    
-    
+    INDEX_DATA: mongoose.model('INDEX_DATA', INDEX_DATA),
+    NEWS_DATA: mongoose.model('NEWS_DATA', NEWS_DATA),
+    INVEST_DATA: mongoose.model('INVEST_DATA', INVEST_DATA),
+    WORK_DATA: mongoose.model('WORK_DATA', WORK_DATA),
+    CONTACT_DATA: mongoose.model('CONTACT_DATA', CONTACT_DATA),
+    WECHAT_DATA: mongoose.model('WECHAT_DATA', WECHAT_DATA),
+
+
+
 }
 
 module.exports = Models;

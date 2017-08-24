@@ -44,13 +44,46 @@
                     div.app-works-detail-b-right
                         h3.orange 主演：
                         ul
-                            li.clearfix(v-for="item in workDetailData.actorData")
-                                i.app-works-detail-b-right-img
+                            li.clearfix(v-if="workDetailData.starName01")
+                                img.app-works-detail-b-right-img(style="height: 60px;width:60px;",:src='workDetailData.starImg01')
                                 div.app-works-detail-b-right-text
-                                    p.orange {{item.name}}
-                                    p.orange {{item.war}}
-                                    p 饰 {{item.role}}
-                                i.app-works-detail-b-right-img
+                                    p.orange {{workDetailData.starName01}}
+                                    p 饰 {{workDetailData.starRole01}}
+                            li.clearfix(v-if="workDetailData.starName02")
+                                img.app-works-detail-b-right-img(style="height: 60px;width:60px;",:src='workDetailData.starImg02')
+                                div.app-works-detail-b-right-text
+                                    p.orange {{workDetailData.starName02}}
+                                    p 饰 {{workDetailData.starRole02}}
+                            li.clearfix(v-if="workDetailData.starName03")
+                                img.app-works-detail-b-right-img(style="height: 60px;width:60px;",:src='workDetailData.starImg03')
+                                div.app-works-detail-b-right-text
+                                    p.orange {{workDetailData.starName03}}
+                                    p 饰 {{workDetailData.starRole03}}
+                            li.clearfix(v-if="workDetailData.starName04")
+                                img.app-works-detail-b-right-img(style="height: 60px;width:60px;",:src='workDetailData.starImg04')
+                                div.app-works-detail-b-right-text
+                                    p.orange {{workDetailData.starName04}}
+                                    p 饰 {{workDetailData.starRole04}}
+                            li.clearfix(v-if="workDetailData.starName05")
+                                img.app-works-detail-b-right-img(style="height: 60px;width:60px;",:src='workDetailData.starImg05')
+                                div.app-works-detail-b-right-text
+                                    p.orange {{workDetailData.starName05}}
+                                    p 饰 {{workDetailData.starRole05}}
+                            li.clearfix(v-if="workDetailData.starName06")
+                                img.app-works-detail-b-right-img(style="height: 60px;width:60px;",:src='workDetailData.starImg06')
+                                div.app-works-detail-b-right-text
+                                    p.orange {{workDetailData.starName06}}
+                                    p 饰 {{workDetailData.starRole06}}
+                            li.clearfix(v-if="workDetailData.starName07")
+                                img.app-works-detail-b-right-img(style="height: 60px;width:60px;",:src='workDetailData.starImg07')
+                                div.app-works-detail-b-right-text
+                                    p.orange {{workDetailData.starName07}}
+                                    p 饰 {{workDetailData.starRole07}}
+                            li.clearfix(v-if="workDetailData.starName08")
+                                img.app-works-detail-b-right-img(style="height: 60px;width:60px;",:src='workDetailData.starImg08')
+                                div.app-works-detail-b-right-text
+                                    p.orange {{workDetailData.starName08}}
+                                    p 饰 {{workDetailData.starRole08}}
                 div.app-works-detail-c(v-if="workDetailData.videoUrl01 || workDetailData.videoUrl02 || workDetailData.videoUrl03")
                     h3.orange 视频：
                     ul.clearfix
