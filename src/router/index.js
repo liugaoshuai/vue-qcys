@@ -23,6 +23,12 @@ import webWork from '@/webpages/work'
 import webContact from '@/webpages/contact'
 import webWechat from '@/webpages/wechat'
 
+import webWechatDetail from '@/webpages/wechatDetail'
+import webWorkDetail from '@/webpages/workDetail'
+import webNewsDetail from '@/webpages/newsDetail'
+import webInvestDetail from '@/webpages/investDetail'
+
+
 
 
 
@@ -59,6 +65,22 @@ export default new Router({
         },{
           path: '/web/wechat',
           component: webWechat
+        },{
+          path: '/web/wechat/detail',
+          name: 'webWechatDetail',
+          component: webWechatDetail
+        },{
+          path: '/web/news/detail',
+          name: 'webNewsDetail',
+          component: webNewsDetail
+        },{
+          path: '/web/work/detail',
+          name: 'webWorkDetail',
+          component: webWorkDetail
+        },{
+          path: '/web/invest/detail',
+          name: 'webInvestDetail',
+          component: webInvestDetail
         },
       ]
     },
