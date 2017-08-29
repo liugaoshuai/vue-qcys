@@ -57,7 +57,12 @@ export default {
             workDetailData: {
 
             },
-            wechatImgData: {},
+            wechatImgData: {
+                bannerImg01: '',
+                bannerImg02: '',
+                bannerImg03: '',
+                
+            },
             currentIndex: 1,
             timer: '',
         }
@@ -74,8 +79,8 @@ export default {
     methods: {
         autoPlay: function () {
             this.currentIndex++
-            if (this.currentIndex > this.slideList.length) {
-                this.currentIndex = 0
+            if (this.currentIndex > 3) {
+                this.currentIndex = 1
             }
         },
         // 获取
@@ -84,7 +89,6 @@ export default {
             this.$http.get('/api/work/get').then(function (res) {
                 if (res.data.code == 0 && res.data.data.length > 0) {
                     self.workData = res.data.data;
-                    console.log(self.workData)
                 }
             });
         },

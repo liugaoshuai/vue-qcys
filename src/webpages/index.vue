@@ -143,8 +143,8 @@ export default {
     methods: {
         autoPlay() {
 				this.currentIndex++
-				if (this.currentIndex > this.slideList.length ) {
-					this.currentIndex = 0
+				if (this.currentIndex > 3 ) {
+					this.currentIndex = 1
 				}
 			},
         // 获取
