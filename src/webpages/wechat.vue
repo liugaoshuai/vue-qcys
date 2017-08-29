@@ -4,6 +4,7 @@
         div.app-wechat
             div.common.clearfix
                 div.app-wechat-header
+                    
                 div.app-wechat-left
                     div.app-wechat-item-a(v-if="wechatData01.length>0",@click="getDetail(wechatData01[0])")
                         img(style="height: 180px;width: 270px;",:src="wechatData01[0].img01")
@@ -51,20 +52,27 @@ export default {
     },
     mounted: function () {
         this.getNews();
+
     },
     methods: {
+        autoPlay() {
+            this.currentIndex++
+            if (this.currentIndex > this.slideList.length) {
+                this.currentIndex = 0
+            }
+        },
         // 获取
         getNews: function () {
             var self = this;
             this.$http.get('/api/wechat/get').then(function (res) {
                 if (res.data.code == 0 && res.data.data.length > 0) {
                     var arr = res.data.data;
-                    for(var i=0;i<arr.length;i++){
-                        if(arr[i].type == 1){
+                    for (var i = 0; i < arr.length; i++) {
+                        if (arr[i].type == 1) {
                             self.wechatData01.push(arr[i]);
-                        }else if(arr[i].type == 2){
+                        } else if (arr[i].type == 2) {
                             self.wechatData02.push(arr[i]);
-                        }else{
+                        } else {
                             self.wechatData03.push(arr[i]);
                         }
                     }
@@ -73,8 +81,9 @@ export default {
                 }
             });
         },
+
         getDetail: function (item) {
-            this.$router.push({ name: 'webWechatDetail', params: {form: item}})
+            this.$router.push({ name: 'webWechatDetail', params: { form: item } })
         }
     }
 }

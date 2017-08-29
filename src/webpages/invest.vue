@@ -1,9 +1,9 @@
 <template lang="pug">
     //- h1 #{title}
     div
-        div.app-news.common.clearfix(v-show="!newsDetailShow")
+        div.app-news.common.clearfix
             div.news-left
-                div.news-left-item.clearfix(v-for="item in newsData")
+                div.news-left-item.clearfix(v-for="item in newsData",@click="getDetail(item)")
                     div.news-left-item-imgDiv.boxshadow
                         img.news-left-item-img(style="height: 230px;width: 370px;background: #25232b;",:src='item.listImg')
                     div.news-left-item-conDiv
@@ -13,16 +13,8 @@
                             span.news-left-item-subtitle-span 责任编辑：
                             span.orange 千乘影视
                         div.news-left-item-con {{item.about}}
-                        a.orange 阅读全文
-                    <router-link type="text" :to="{ name: 'webInvestDetail', params: {newsDetailData: item}}" class="router-box"></router-link>
+                        a.orange(@click="") 阅读全文
             div.news-right
-                div.news-right-new
-                    h3 最新新闻
-                    ul
-                        li(v-for="(item,index) in newsData",@click="getDetail(item)",v-if="index < 6")
-                            div.boxshadow
-                                img.news-right-new-img(style="height: 150px;width: 150px;background: #25232b;",:src='item.smallImg')
-                            span {{item.title}}
 </template>
 
 <script>
@@ -30,7 +22,9 @@ export default {
     data() {
         return {
             newsData: [],
-            
+            newsDetailData: {
+
+            },
         }
     },
     mounted: function () {
@@ -46,6 +40,10 @@ export default {
                 }
             });
         },
+       
+        getDetail: function (item) {
+                                    this.$router.push({ name: 'webInvestDetail', params: {form: item}})
+        }
     }
 }
 </script>

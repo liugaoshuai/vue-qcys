@@ -33,6 +33,24 @@
                 </template>
             </el-table-column>
         </el-table>
+         <h2>作品-轮播图</h2>
+        <el-form :model="WECHAT_IMG"
+                 label-width="160px">
+            <el-form-item label="轮播图01(1170*500)">
+                <el-input v-model="WECHAT_IMG.bannerImg01"></el-input>
+            </el-form-item>
+            <el-form-item label="轮播图02(1170*500)">
+                <el-input v-model="WECHAT_IMG.bannerImg02"></el-input>
+            </el-form-item>
+            <el-form-item label="轮播图03(1170*500)">
+                <el-input v-model="WECHAT_IMG.bannerImg03"></el-input>
+            </el-form-item>
+    
+            <el-form-item>
+                <el-button type="primary"
+                           @click="addIndex">确定修改</el-button>
+            </el-form-item>
+        </el-form>
     </div>
 </template>
 
@@ -41,10 +59,17 @@ export default {
     data() {
         return {
             WORK_LIST: [],
+            WECHAT_IMG: {
+                bannerImg01: '',
+                bannerImg02: '',
+                bannerImg03: '',
+                title: 'index'
+            },
         }
     },
     mounted: function () {
         this.getWork();
+                this.getIndex();
     },
     methods: {
         // 获取新闻
@@ -77,6 +102,30 @@ export default {
 
             });
 
+        },
+        // 获取
+        getIndex: function () {
+            var self = this;
+            this.$http.get('/api/wechatimg/get').then(function (res) {
+                if (res.data.code == 0 && res.data.data.length > 0) {
+                    self.WECHAT_IMG = res.data.data[0];
+                }
+            });
+        },
+        // 修改
+        addIndex: function () {
+            var self = this;
+            var params = {
+                form: self.WECHAT_IMG,
+            };
+            this.$http.post('/api/wechatimg/create', params).then(function (res) {
+                if (res.data.code == 0) {
+                    self.$message({
+                        type: 'success',
+                        message: '添加成功!'
+                    });
+                }
+            });
         },
         // 查看新闻
         openWork: function (id){

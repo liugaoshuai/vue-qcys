@@ -16,7 +16,7 @@ app.set('views', '../src/views/pages')
 app.set('view engine', 'jade')
 app.use(express.static(__dirname + '/public'))
 
-app.use(bodyParser.json({limit: '1000kb'}));
+app.use(bodyParser.json({limit: '100000kb'}));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(api);
 //handle request entity too large

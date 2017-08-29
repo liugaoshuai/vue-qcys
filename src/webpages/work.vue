@@ -3,8 +3,38 @@
     div
         div.app-works
             div.common
-                div.works-headimgDiv
-                    div.works-headimg(style="height: 500px;background: #25232b;")
+                div.works-headimgDiv.boxshadow
+                    transition-group(tag="ul",class="slide-ul" name="list")
+                        li(:key="1" v-show="1===currentIndex")
+                            div(
+                                style="height: 450px;width: 100%;",
+                                :style="{background: 'url('+wechatImgData.bannerImg01+') no-repeat center'}"
+                            )
+                        li(:key="2" v-show="2===currentIndex")
+                            div(
+                                style="height: 450px;width: 100%;",
+                                :style="{background: 'url('+wechatImgData.bannerImg02+') no-repeat center'}"
+                            )
+                        li(:key="3" v-show="3===currentIndex")
+                            div(
+                                style="height: 450px;width: 100%;",
+                                :style="{background: 'url('+wechatImgData.bannerImg03+') no-repeat center'}"
+                            )
+                        li(:key="4" v-show="4===currentIndex")
+                            div(
+                                style="height: 450px;width: 100%;",
+                                :style="{background: 'url('+wechatImgData.bannerImg01+') no-repeat center'}"
+                            )
+                        li(:key="5" v-show="5===currentIndex")
+                            div(
+                                style="height: 450px;width: 100%;",
+                                :style="{background: 'url('+wechatImgData.bannerImg02+') no-repeat center'}"
+                            )
+                        li(:key="6" v-show="6===currentIndex")
+                            div(
+                                style="height: 450px;width: 100%;",
+                                :style="{background: 'url('+wechatImgData.bannerImg03+') no-repeat center'}"
+                            )
                 div.works-list.clearfix
                     div.works-list-item.boxshadow(v-for="item in workData",@click="getDetail(item)")
                         img.works-list-item-img(style="height: 320px;background: #25232b;",:src='item.bigImg')
@@ -27,12 +57,27 @@ export default {
             workDetailData: {
 
             },
+            wechatImgData: {},
+            currentIndex: 1,
+            timer: '',
         }
     },
     mounted: function () {
         this.getNews();
+        this.getNewsImg();
+        this.$nextTick(() => {
+            this.timer = setInterval(() => {
+                this.autoPlay()
+            }, 5000)
+        })
     },
     methods: {
+        autoPlay: function () {
+            this.currentIndex++
+            if (this.currentIndex > this.slideList.length) {
+                this.currentIndex = 0
+            }
+        },
         // 获取
         getNews: function () {
             var self = this;
@@ -41,6 +86,12 @@ export default {
                     self.workData = res.data.data;
                     console.log(self.workData)
                 }
+            });
+        },
+        getNewsImg: function () {
+            var self = this;
+            this.$http.get('/api/wechatimg/get').then(function (res) {
+                self.wechatImgData = res.data.data[0];
             });
         },
         getDetail: function (item) {

@@ -2,10 +2,37 @@
     //- h1 #{title}
     div.app
         div.slide
-            div(
-                style="height: 640px;width: 100%;",
-                :style="{background: 'url('+indexData.bannerImg01+') no-repeat center'}"
-            )
+            transition-group(tag="ul",class="slide-ul" name="list")
+                li(:key="1" v-show="1===currentIndex")
+                    div(
+                        style="height: 640px;width: 100%;",
+                        :style="{background: 'url('+indexData.bannerImg01+') no-repeat center'}"
+                    )
+                li(:key="2" v-show="2===currentIndex")
+                    div(
+                        style="height: 640px;width: 100%;",
+                        :style="{background: 'url('+indexData.bannerImg02+') no-repeat center'}"
+                    )
+                li(:key="3" v-show="3===currentIndex")
+                    div(
+                        style="height: 640px;width: 100%;",
+                        :style="{background: 'url('+indexData.bannerImg03+') no-repeat center'}"
+                    )
+                li(:key="4" v-show="4===currentIndex")
+                    div(
+                        style="height: 640px;width: 100%;",
+                        :style="{background: 'url('+indexData.bannerImg01+') no-repeat center'}"
+                    )
+                li(:key="5" v-show="5===currentIndex")
+                    div(
+                        style="height: 640px;width: 100%;",
+                        :style="{background: 'url('+indexData.bannerImg02+') no-repeat center'}"
+                    )
+                li(:key="6" v-show="6===currentIndex")
+                    div(
+                        style="height: 640px;width: 100%;",
+                        :style="{background: 'url('+indexData.bannerImg03+') no-repeat center'}"
+                    )
         div.work
             ul.clearfix.common
                     li 
@@ -48,17 +75,17 @@
                         h3 {{indexData.boxTitle03}}
                         p {{indexData.boxText03}}
                 div.photo-b.clearfix
-                    div.photo-b-right(style="width: 320px; height: 300px;background: #fff;padding: 20px;")
+                    div.photo-b-right(style="width: 320px; height: 300px;padding: 20px;")
                         h3 {{indexData.boxTitle01}}
                         p {{indexData.boxText01}}
                     img.photo-b-left(:src='indexData.boxImg01',style="width: 480px; height: 300px;")
                 div.photo-c.clearfix
                     img.photo-c-left(:src='indexData.boxImg02',style="width: 480px; height: 300px;")
-                    div.photo-c-right(style="width: 320px; height: 300px;background: #fff;padding: 20px;")
+                    div.photo-c-right(style="width: 320px; height: 300px;padding: 20px;")
                         h3 {{indexData.boxTitle02}}
                         p {{indexData.boxText02}}
                 div.photo-d.clearfix
-                    div.photo-d-right(style="width: 480px; height: 300px;background: #fff;padding: 20px;")
+                    div.photo-d-right(style="width: 480px; height: 300px;padding: 20px;")
                         h3 {{indexData.boxTitle04}}
                         p {{indexData.boxText04}}
                     img.photo-d-left(:src='indexData.boxImg04',style="width: 720px; height: 300px;")
@@ -98,14 +125,28 @@ export default {
                 video: '',// 视频   
                 title: 'index'
             },
+                currentIndex: 1,
+				timer: '',
             newsData: [],
 
         }
     },
     mounted: function () {
         this.getIndex();
+        this.$nextTick(() => {
+				this.timer = setInterval(() => {
+					this.autoPlay()
+				}, 5000)
+			})
+        
     },
     methods: {
+        autoPlay() {
+				this.currentIndex++
+				if (this.currentIndex > this.slideList.length ) {
+					this.currentIndex = 0
+				}
+			},
         // 获取
         getIndex: function () {
             var self = this;

@@ -126,6 +126,12 @@ const WECHAT_DATA = mongoose.Schema({
     img03: String,// img03
 
 });
+const WECHAT_IMG_DATA = mongoose.Schema({
+    bannerImg01: String,// 轮播图
+    bannerImg02: String,// 轮播图
+    bannerImg03: String,// 轮播图
+    title: String,// 标题    
+});
 //新闻
 const NEWS_DATA = mongoose.Schema({
     index: Number,// 权重
@@ -167,9 +173,7 @@ const Models = {
     WORK_DATA: mongoose.model('WORK_DATA', WORK_DATA),
     CONTACT_DATA: mongoose.model('CONTACT_DATA', CONTACT_DATA),
     WECHAT_DATA: mongoose.model('WECHAT_DATA', WECHAT_DATA),
-
-
-
+    WECHAT_IMG_DATA: mongoose.model('WECHAT_IMG_DATA', WECHAT_IMG_DATA),
 }
 
 module.exports = Models;

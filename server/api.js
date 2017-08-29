@@ -70,6 +70,43 @@ router.get('/api/index/get', (req, res) => {
         }
     });
 });
+// 修改公众号轮播图
+router.post('/api/wechatimg/create', (req, res) => {
+    console.log('进来了')
+    // 原数据字段值
+    var oldValue = { title: "index" };
+    // 多条件更新
+    var newData = {
+        $set: {
+            bannerImg01: req.body.form.bannerImg01,// 轮播图
+            bannerImg02: req.body.form.bannerImg02,// 轮播图
+            bannerImg03: req.body.form.bannerImg03,// 轮播图
+        }
+    };
+    models.WECHAT_IMG_DATA.update(oldValue, newData, { upsert: true }, function (err, data) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({
+                code: 0,
+                data: data
+            });
+        }
+    });
+});
+// 读取公众号轮播图
+router.get('/api/wechatimg/get', (req, res) => {
+    models.WECHAT_IMG_DATA.find((err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({
+                code: 0,
+                data: data
+            });
+        }
+    });
+});
 // 创建微信公众号
 router.post('/api/wechat/create', (req, res) => {
     let NEWS_ADD_DATA = new models.WECHAT_DATA(req.body.form);

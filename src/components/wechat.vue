@@ -44,6 +44,7 @@
                 </template>
             </el-table-column>
         </el-table>
+       
     </div>
 </template>
 
@@ -52,6 +53,7 @@ export default {
     data() {
         return {
             WECHAT_LIST: [],
+            
         }
     },
     mounted: function () {
@@ -84,10 +86,9 @@ export default {
                 });
 
             }).catch(() => {
-
             });
-
         },
+        
     }
 }
 </script>
