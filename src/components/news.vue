@@ -48,6 +48,13 @@
                 </template>
             </el-table-column>
         </el-table>
+        <el-pagination 
+                       @current-change="getNews"
+                       :page-size="5"
+                       layout="total, prev, pager, next"
+                       :total="NEWS_PAGE.length"
+                       style="margin-top: 20px;">
+        </el-pagination>
     </div>
 </template>
 
@@ -56,6 +63,7 @@ export default {
     data() {
         return {
             NEWS_LIST: [],
+            NEWS_PAGE: {},
         }
     },
     mounted: function () {
@@ -63,10 +71,13 @@ export default {
     },
     methods: {
         // 获取新闻
-        getNews: function () {
+        getNews: function (n) {
             var self = this;
-            this.$http.get('/api/news/get').then(function (res) {
+            var s = 5;
+            var n = n ? n : '1';
+            this.$http.get("/api/news/get?n=" + n + "&s=" + s).then(function (res) {
                 self.NEWS_LIST = res.data.data;
+                self.NEWS_PAGE = res.data.page;
             });
         },
         // 删除新闻
