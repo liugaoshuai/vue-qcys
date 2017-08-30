@@ -61,14 +61,14 @@ body{font-weight: 200!important;}
 .news .news-con{font-size: 12px;text-overflow: -o-ellipsis-lastline;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;text-indent: 2em;line-height: 20px;cursor: pointer;}
 
 .photo-a-top{background: #fcce6a;}
-.photo-a-bottom{background: #fcce6a;}
+.photo-a-bottom{background: #fcce6a;text-align: center;padding-top: 40px;}
 .photo-b-left{background: #fcce6a;}
-.photo-b-right{background: #fcce6a;}
+.photo-b-right{background: #fcce6a;text-align: right;}
 .photo-c-left{background: #fcce6a;}
-.photo-c-right{background: #fcce6a;}
+.photo-c-right{background: #fcce6a;text-align: left;padding-top: 100px;}
 .photo-d-left{background: #fcce6a;}
 .photo-d-middle{background: #fcce6a;}
-.photo-d-right{background: #fcce6a;}
+.photo-d-right{background: #fcce6a;text-align: right;padding-top: 160px;}
 
 .photo .photo-a{float: right;}
 .photo-b-left{float: left;}

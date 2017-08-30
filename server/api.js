@@ -309,14 +309,28 @@ router.post('/api/work/create', (req, res) => {
 });
 // 读取作品
 router.get('/api/work/get', (req, res) => {
-    models.WORK_DATA.find().sort({ 'date': -1 }).exec((err, data) => {
-
+    var s = parseInt(req.query.s);
+    var n = parseInt(req.query.n);
+    var l;
+    models.WORK_DATA.count((err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            l = data
+        }
+    });
+    models.WORK_DATA.find().sort({ 'date': -1 }).skip(s * (n - 1)).limit(s).exec((err, data) => {
         if (err) {
             res.send(err);
         } else {
             res.send({
                 code: 0,
-                data: data
+                data: data,
+                page: {
+                    size: s,
+                    num: n,
+                    length: l,
+                }
             });
         }
     });

@@ -45,15 +45,14 @@
                         div.works-list-item-account
                             span.orange 剧情简介:
                             span {{item.introduction}}
+                el-pagination(@current-change="getNews",:page-size="10",layout="total, prev, pager, next",:total="workPage.length",style="text-align: center;")
 </template>
 
 <script>
 export default {
     data() {
         return {
-            workData: {
-
-            },
+            workData: [],
             workDetailData: {
 
             },
@@ -61,10 +60,11 @@ export default {
                 bannerImg01: '',
                 bannerImg02: '',
                 bannerImg03: '',
-                
+
             },
             currentIndex: 1,
             timer: '',
+            workPage:{}
         }
     },
     mounted: function () {
@@ -84,12 +84,13 @@ export default {
             }
         },
         // 获取
-        getNews: function () {
+        getNews: function (n) {
             var self = this;
-            this.$http.get('/api/work/get').then(function (res) {
-                if (res.data.code == 0 && res.data.data.length > 0) {
-                    self.workData = res.data.data;
-                }
+            var s = 8;
+            var n = n ? n : '1';
+            this.$http.get("/api/work/get?n=" + n + "&s=" + s).then(function (res) {
+                self.workData = res.data.data;
+                self.workPage = res.data.page;
             });
         },
         getNewsImg: function () {

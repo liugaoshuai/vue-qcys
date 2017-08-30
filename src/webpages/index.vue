@@ -63,7 +63,7 @@
                 div.right
                     span 公众号精选
                     ul
-                        li(v-for="(item,index) in newsData",v-if="index<2")
+                        li(v-for="(item,index) in wechatData",v-if="index<2")
                             img.news-img(style="height: 120px;width: 200px;background: #25232b;",:src='item.indexImg')
                             p.news-nav {{item.title}}
                             p.news-con {{item.about}}
@@ -71,7 +71,7 @@
             div.common
                 div.photo-a.clearfix(style="position: relative;")
                     img.photo-a-top(:src='indexData.boxImg03',style="width: 400px; height: 600px;")
-                    div.photo-c-right(style="width: 400px; height: 160px;background: rgba(0,0,0,0.3);position: absolute;left: 0;bottom: 0;padding: 20px;")
+                    div.photo-a-bottom(style="width: 400px; height: 160px;background: rgba(0,0,0,0.3);position: absolute;left: 0;bottom: 0;padding: 20px;")
                         h3 {{indexData.boxTitle03}}
                         p {{indexData.boxText03}}
                 div.photo-b.clearfix
@@ -128,6 +128,8 @@ export default {
                 currentIndex: 1,
 				timer: '',
             newsData: [],
+            wechatData: [],
+            
 
         }
     },
@@ -158,6 +160,11 @@ export default {
             this.$http.get('/api/news/get').then(function (res) {
                 if (res.data.code == 0 && res.data.data.length > 0) {
                     self.newsData = res.data.data;
+                }
+            });
+            this.$http.get('/api/wechat/get').then(function (res) {
+                if (res.data.code == 0 && res.data.data.length > 0) {
+                    self.wechatData = res.data.data;
                 }
             });
             
