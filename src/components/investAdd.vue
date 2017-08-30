@@ -16,7 +16,9 @@
                                 style="width: 200px;"></el-date-picker>
             </el-form-item>
             <el-form-item label="文章内容">
-                <quill-editor v-model="NEWS_ADD_FORM.content"></quill-editor>
+                <vue-html5-editor :content="NEWS_ADD_FORM.content"
+                                  :height="500"
+                                  @change="updateData"></vue-html5-editor>
             </el-form-item>
             <el-form-item label="头部图(740*300)">
                 <el-input v-model="NEWS_ADD_FORM.topImg"></el-input>
@@ -73,6 +75,9 @@ export default {
     },
     methods: {
         // 新增新闻
+        updateData: function (data) {
+            this.NEWS_ADD_FORM.content = data
+        },
         addNews: function () {
             var self = this;
             if (self.NEWS_ADD_FORM.date) {

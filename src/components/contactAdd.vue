@@ -8,7 +8,9 @@
                 <el-input v-model="CONTACT_ADD_FORM.name"></el-input>
             </el-form-item>
             <el-form-item label="职位内容">
-                <quill-editor v-model="CONTACT_ADD_FORM.content"></quill-editor>
+                <vue-html5-editor :content="NEWS_ADD_FORM.content"
+                                  :height="500"
+                                  @change="updateData"></vue-html5-editor>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary"
@@ -31,6 +33,10 @@ export default {
         }
     },
     methods: {
+        // 新增新闻
+        updateData: function (data) {
+            this.NEWS_ADD_FORM.content = data
+        },
         // 新增新闻
         addNews: function () {
             var self = this;

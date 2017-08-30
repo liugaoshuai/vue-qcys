@@ -44,7 +44,12 @@
                 </template>
             </el-table-column>
         </el-table>
-       
+       <el-pagination @current-change="getWechat"
+                       :page-size="10"
+                       layout="total, prev, pager, next"
+                       :total="WECHAT_PAGE.length"
+                       style="margin-top: 20px;">
+        </el-pagination>
     </div>
 </template>
 
@@ -53,7 +58,7 @@ export default {
     data() {
         return {
             WECHAT_LIST: [],
-            
+            WECHAT_PAGE: {},
         }
     },
     mounted: function () {
@@ -61,10 +66,13 @@ export default {
     },
     methods: {
         // 获取新闻
-        getWechat: function () {
+        getWechat: function (n) {
             var self = this;
-            this.$http.get('/api/wechat/get').then(function (res) {
+            var s = 10;
+            var n = n ? n : '1';
+            this.$http.get("/api/wechat/get?n=" + n + "&s=" + s).then(function (res) {
                 self.WECHAT_LIST = res.data.data;
+                self.WECHAT_PAGE = res.data.page;
             });
         },
         // 删除新闻

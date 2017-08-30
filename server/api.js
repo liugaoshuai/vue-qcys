@@ -123,13 +123,28 @@ router.post('/api/wechat/create', (req, res) => {
 });
 // 读取微信公众号
 router.get('/api/wechat/get', (req, res) => {
-    models.WECHAT_DATA.find().sort({ 'date': -1 }).exec((err, data) => {
+    var s = parseInt(req.query.s);
+    var n = parseInt(req.query.n);
+    var l;
+    models.WECHAT_DATA.count((err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            l = data
+        }
+    });
+    models.WECHAT_DATA.find().sort({ 'date': -1 }).skip(s * (n - 1)).limit(s).exec((err, data) => {
         if (err) {
             res.send(err);
         } else {
             res.send({
                 code: 0,
-                data: data
+                data: data,
+                page: {
+                    size: s,
+                    num: n,
+                    length: l,
+                }
             });
         }
     });
@@ -166,7 +181,7 @@ router.post('/api/news/create', (req, res) => {
 // 读取新闻
 router.get('/api/news/get', (req, res) => {
     var s = parseInt(req.query.s);
-    var n = parseInt(req.query.n); 
+    var n = parseInt(req.query.n);
     var l;
     models.NEWS_DATA.count((err, data) => {
         if (err) {
@@ -175,7 +190,7 @@ router.get('/api/news/get', (req, res) => {
             l = data
         }
     });
-    models.NEWS_DATA.find().sort({ 'date': -1 }).skip(s*(n-1)).limit(s).exec((err, data) => {
+    models.NEWS_DATA.find().sort({ 'date': -1 }).skip(s * (n - 1)).limit(s).exec((err, data) => {
         if (err) {
             res.send(err);
         } else {
@@ -190,7 +205,7 @@ router.get('/api/news/get', (req, res) => {
             });
         }
     });
-    
+
 });
 // 读取类别新闻
 router.get('/api/news/get/type', (req, res) => {
@@ -237,13 +252,28 @@ router.post('/api/invest/create', (req, res) => {
 });
 // 读取投资者关系
 router.get('/api/invest/get', (req, res) => {
-    models.INVEST_DATA.find().sort({ 'date': -1 }).exec((err, data) => {
+    var s = parseInt(req.query.s);
+    var n = parseInt(req.query.n);
+    var l;
+    models.INVEST_DATA.count((err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            l = data
+        }
+    });
+    models.INVEST_DATA.find().sort({ 'date': -1 }).skip(s * (n - 1)).limit(s).exec((err, data) => {
         if (err) {
             res.send(err);
         } else {
             res.send({
                 code: 0,
-                data: data
+                data: data,
+                page: {
+                    size: s,
+                    num: n,
+                    length: l,
+                }
             });
         }
     });

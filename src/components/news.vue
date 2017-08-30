@@ -50,7 +50,7 @@
         </el-table>
         <el-pagination 
                        @current-change="getNews"
-                       :page-size="5"
+                       :page-size="10"
                        layout="total, prev, pager, next"
                        :total="NEWS_PAGE.length"
                        style="margin-top: 20px;">
@@ -73,7 +73,7 @@ export default {
         // 获取新闻
         getNews: function (n) {
             var self = this;
-            var s = 5;
+            var s = 10;
             var n = n ? n : '1';
             this.$http.get("/api/news/get?n=" + n + "&s=" + s).then(function (res) {
                 self.NEWS_LIST = res.data.data;
