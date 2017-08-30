@@ -45,7 +45,7 @@
                         div.works-list-item-account
                             span.orange 剧情简介:
                             span {{item.introduction}}
-                el-pagination(@current-change="getNews",:page-size="10",layout="total, prev, pager, next",:total="workPage.length",style="text-align: center;")
+                el-pagination(@current-change="getNews",:page-size="8",layout="total, prev, pager, next",:total="workPage.length",style="text-align: center;")
 </template>
 
 <script>
