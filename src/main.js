@@ -26,7 +26,6 @@ Vue.prototype.$http = axios
 Vue.use(Methods);
 Vue.use(ElementUI)
 Vue.use(VueQuillEditor)
-Vue.component('icon', Icon)
 
 
 

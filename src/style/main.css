@@ -85,8 +85,9 @@ body{font-weight: 200!important;}
 
 
 .footer-top{height: 30px;line-height: 30px;text-align: center;background: #eb6133;color: #fff;}
-.footer-main{background: #3a3939;color: #fff;padding: 50px 0;}
-.footer-main-left p{line-height: 24px;}
+.footer-main{background: #3a3939;color: #fff;padding: 30px 0;}
+.footer-main-left{width: 600px;float: left;}
+.footer-main-left p{line-height: 32px;}
 .footer-main-right{float: right;}
 .footer-bottom{height: 50px;line-height: 50px;text-align: center;background: #111010;color: #fff;}
 
@@ -108,20 +109,19 @@ body{font-weight: 200!important;}
 .news-right-cla-li a{color: #333;}
 
 .news-right-new h3{font-size: 30px;line-height: 50px;font-weight: normal;}
-.news-right-new ul li{width: 180px;float: left;padding: 10px 10px 0 0;cursor: pointer;text-align: center;overflow: hidden;text-overflow: ellipsis;}
-.news-right-new ul li div{padding: 10px;}
+.news-right-new ul li{float: left;padding: 20px 20px 0 0;cursor: pointer;text-align: center;overflow: hidden;text-overflow: ellipsis;}
 .news-right-new ul li span{line-height: 24px;text-overflow: -o-ellipsis-lastline;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
 
 /*新闻列表页*/
 .news-left-item{padding-bottom: 30px;border-bottom: 1px solid #d6d5d5;position: relative;}
 .news-left-item+.news-left-item{padding-top: 50px;}
-.news-left-item-imgDiv{padding: 15px;width: 400px;float: left;}
+.news-left-item-imgDiv{float: left;}
 .news-left-item-conDiv{float: right;padding-left: 15px;width: 400px;}
 .news-left-item-conDiv a{position: absolute;right: 0;bottom: 30px;padding: 4px 10px;background: #eb6133;color: #fff;cursor: pointer;}
 .news-left-item-title{font-size: 30px;line-height: 40px;text-overflow: -o-ellipsis-lastline;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
 .news-left-item-subtitle{line-height: 30px;margin: 10px 0;}
 .news-left-item-con{line-height: 25px;text-overflow: -o-ellipsis-lastline;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;text-indent: 2em;}
-
+.news-right-work{margin: 0 0 20px 40px;}
 /*作品列表页*/
 .app-works{background: #e7e6e6;}
 .works-headimg{margin-bottom: 50px;}
@@ -187,7 +187,8 @@ body{font-weight: 200!important;}
 
 .app-wechat-item-b{width: 580px;float: left;height: 340px;margin-bottom: 40px;}
 .app-wechat-right-item{background: #fff;height: 720px;margin-bottom: 40px;overflow: auto;}
-.app-wechat-right-item-ewm{height: 340px;background: #fff;}
+.app-wechat-right-item-ewm{height: 340px;background: #8F8E8E;}
+.app-wechat-right-item-ewm p{color: #fff;line-height: 35px;text-align: right;padding-right: 20px;}
 .app-wechat-right-item ul{padding: 20px;}
 .app-wechat-right-item li{border-bottom: 1px solid #bdbbbb;position: relative;cursor: pointer;}
 .app-wechat-right-item li h3{font-size: 16px;padding: 0 10px;line-height: 40px;height: 40px;text-overflow: -o-ellipsis-lastline;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;}

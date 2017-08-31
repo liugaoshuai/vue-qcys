@@ -45,7 +45,7 @@
                         div.works-list-item-account
                             span.orange 剧情简介:
                             span {{item.introduction}}
-                el-pagination(@current-change="getNews",:page-size="8",layout="total, prev, pager, next",:total="workPage.length",style="text-align: center;")
+                el-pagination(@current-change="getNews",:page-size="8",layout="total, prev, pager, next",:total="workPage.length",style="text-align: center;padding-bottom: 20px;")
 </template>
 
 <script>
@@ -88,7 +88,7 @@ export default {
             var self = this;
             var s = 8;
             var n = n ? n : '1';
-            this.$http.get("/api/work/get?n=" + n + "&s=" + s).then(function (res) {
+            this.$http.get("/api/work/get?n=" + n + "&s=" + s + "&index=true").then(function (res) {
                 self.workData = res.data.data;
                 self.workPage = res.data.page;
             });

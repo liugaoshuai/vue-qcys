@@ -183,14 +183,22 @@ router.get('/api/news/get', (req, res) => {
     var s = parseInt(req.query.s);
     var n = parseInt(req.query.n);
     var l;
-    models.NEWS_DATA.count((err, data) => {
+    var t = {};
+    var sort = {'date': -1}
+    if(req.query.t){
+        t = {"type": req.query.t}
+    }
+    if(req.query.index){
+        sort = {'index': -1}
+    }
+    models.NEWS_DATA.find(t).count((err, data) => {
         if (err) {
             res.send(err);
         } else {
             l = data
         }
     });
-    models.NEWS_DATA.find().sort({ 'date': -1 }).skip(s * (n - 1)).limit(s).exec((err, data) => {
+    models.NEWS_DATA.find(t).sort(sort).skip(s * (n - 1)).limit(s).exec((err, data) => {
         if (err) {
             res.send(err);
         } else {
@@ -206,20 +214,6 @@ router.get('/api/news/get', (req, res) => {
         }
     });
 
-});
-// 读取类别新闻
-router.get('/api/news/get/type', (req, res) => {
-    console.log(req.query.type)
-    models.NEWS_DATA.find({ "type": req.query.type }, (err, data) => {
-        if (err) {
-            res.send(err);
-        } else {
-            res.send({
-                code: 0,
-                data: data
-            });
-        }
-    });
 });
 // 删除新闻
 router.get('/api/news/delete', (req, res) => {
@@ -312,6 +306,10 @@ router.get('/api/work/get', (req, res) => {
     var s = parseInt(req.query.s);
     var n = parseInt(req.query.n);
     var l;
+    var sort = {'date': -1}
+    if(req.query.index){
+        sort = {'index': -1}
+    }
     models.WORK_DATA.count((err, data) => {
         if (err) {
             res.send(err);
@@ -319,7 +317,7 @@ router.get('/api/work/get', (req, res) => {
             l = data
         }
     });
-    models.WORK_DATA.find().sort({ 'date': -1 }).skip(s * (n - 1)).limit(s).exec((err, data) => {
+    models.WORK_DATA.find().sort(sort).skip(s * (n - 1)).limit(s).exec((err, data) => {
         if (err) {
             res.send(err);
         } else {

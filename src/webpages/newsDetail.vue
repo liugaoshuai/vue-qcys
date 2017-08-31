@@ -13,12 +13,6 @@
                     div(v-html="newsDetailData.content")
                 img.news-left-footimg(style="width: 100%;background: #25232b;",:src="newsDetailData.bottomImg",v-if="newsDetailData.bottomImg")
             div.news-right
-                div.news-right-cla
-                    h3 新闻分类
-                    ul
-                        li.news-right-cla-li(v-for='item in newsType')
-                            i.iconfont &#xe647;
-                            a {{item.label}}
                 div.news-right-new
                     h3 最新新闻
                     ul
@@ -80,7 +74,7 @@ export default {
             });
         },
         getDetail: function (item) {
-                        this.$router.go({ name: 'webNewsDetail', params: {form: item}})
+            this.newsDetailData = item
         }
     }
 }

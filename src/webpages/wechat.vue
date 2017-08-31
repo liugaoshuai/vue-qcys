@@ -33,7 +33,7 @@
                                 p.con {{item.about}}
                                 p.orange.date {{item.date | date-filter}}
                     div.app-wechat-right-item-ewm
-                        img
+                        img(style="height: 270px;width: 270px;",src="http://ovdz4whc3.bkt.clouddn.com/%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg")
                         p Follow Us
                         p 联系我们
 </template>

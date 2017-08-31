@@ -3,7 +3,7 @@
     div
         div.app-news.common.clearfix
             div.news-left
-                div.news-left-item.clearfix(v-for="item in newsData",@click="getDetail(item)")
+                div.news-left-item.clearfix(v-for="item in newsIndexData",@click="getDetail(item)")
                     div.news-left-item-imgDiv.boxshadow
                         img.news-left-item-img(style="height: 230px;width: 370px;background: #25232b;",:src='item.listImg')
                     div.news-left-item-conDiv
@@ -14,6 +14,7 @@
                             span.orange 千乘影视
                         div.news-left-item-con {{item.about}}
                         a.orange(@click="") 阅读全文
+                el-pagination(@current-change="getNews",:page-size="5",layout="total, prev, pager, next",:total="newsPage.length",style="text-align: center;padding-top: 20px;")
             div.news-right
                 div.news-right-cla
                     h3 新闻分类
@@ -35,6 +36,8 @@ export default {
     data() {
         return {
             newsData: [],
+            newsIndexData: [],
+                        newsPage:{},
             newsType: [
                 {
                     value: 1,
@@ -57,25 +60,37 @@ export default {
     },
     mounted: function () {
         this.getNews();
+        this.getNewsIndex();
     },
     methods: {
         // 获取
-        getNews: function () {
+        getNews: function (n) {
             var self = this;
-            this.$http.get('/api/news/get').then(function (res) {
-                if (res.data.code == 0 && res.data.data.length > 0) {
-                    self.newsData = res.data.data;
-                }
+            var s = 5;
+            var n = n ? n : '1';
+            this.$http.get("/api/news/get?n=" + n + "&s=" + s).then(function (res) {
+                self.newsData = res.data.data;
+                self.newsPage = res.data.page;
+            });
+        },
+        // 获取
+        getNewsIndex: function (n) {
+            var self = this;
+            var s = 5;
+            var n = n ? n : '1';
+            this.$http.get("/api/news/get?n=" + n + "&s=" + s + "&index=true").then(function (res) {
+                self.newsIndexData = res.data.data;
             });
         },
         // 获取
         getNewsType: function (type) {
             var self = this;
-            this.$http.get('/api/news/get/type?type=' + type).then(function (res) {
-                if (res.data.code == 0 && res.data.data.length > 0) {
-                    self.newsData = res.data.data;
-                    self.newsDetailShow = false;
-                }
+            var s = 5;
+            var t = type;
+            var n = n ? n : '1';
+            this.$http.get("/api/news/get?n=" + n + "&s=" + s + "&t=" + t).then(function (res) {
+                self.newsData = res.data.data;
+                self.newsPage = res.data.page;
             });
         },
         getDetail: function (item) {

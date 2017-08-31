@@ -17,7 +17,7 @@ div
     div.footer-top
         p 和千乘影视在一起煲剧，分享最新行业资讯。
     div.footer-main
-        div.common
+        div.common.clearfix
             div.footer-main-left
                 p 联系我们
                     span.orange Contact Us
@@ -26,7 +26,7 @@ div
                 p 电话：0571 85159721
                 p E-mail：240659227@qq.com
             div.footer-main-right
-                div.footer-main-right-ewm
+                div.footer-main-right-ewm(style='height: 120px; width: 120px; background: url("http://oumlc5t88.bkt.clouddn.com/%E5%BA%95%E9%83%A8%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg") center center no-repeat;')
                 p 联系我们
                     span.orange Follow Us
                 p 麻小酱煲剧

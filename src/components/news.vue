@@ -21,6 +21,10 @@
                     {{scope.row.date | date-filter}}
                 </template>
             </el-table-column>
+            <el-table-column prop="index"
+                             label="权重"
+                             align="center">
+            </el-table-column>
             <el-table-column label="新闻类型"
                              align="center">
                 <template scope="scope">

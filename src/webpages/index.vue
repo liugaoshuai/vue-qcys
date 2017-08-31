@@ -56,14 +56,14 @@
                 div.left
                     span 最新新闻
                     ul
-                        li(v-for="(item,index) in newsData",v-if="index<2")
+                        li(v-for="(item,index) in newsData",v-if="index<2",@click="getNewsDetail(item)")
                             img.news-img(style="height: 120px;width: 200px;background: #25232b;",:src='item.indexImg')
                             p.news-nav {{item.title}}
                             p.news-con {{item.about}}
                 div.right
                     span 公众号精选
                     ul
-                        li(v-for="(item,index) in wechatData",v-if="index<2")
+                        li(v-for="(item,index) in wechatData",v-if="index<2",@click="getWechatDetail(item)")
                             img.news-img(style="height: 120px;width: 200px;background: #25232b;",:src='item.indexImg')
                             p.news-nav {{item.title}}
                             p.news-con {{item.about}}
@@ -169,6 +169,12 @@ export default {
             });
             
         },
+        getNewsDetail: function (item) {
+            this.$router.push({ name: 'webNewsDetail', params: { form: item } })
+        },
+        getWechatDetail: function (item) {
+            this.$router.push({ name: 'webWechatDetail', params: { form: item } })
+        }
     }
 }
 </script>
