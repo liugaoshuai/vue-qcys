@@ -27,7 +27,7 @@
     
                 </el-form-item>
                 <el-form-item label="文章内容">
-                    <vue-html5-editor :content="NEWS_ADD_FORM.content"
+                    <vue-html5-editor :content="WECHAT_ADD_FORM.content"
                                       :height="500"
                                       @change="updateData"></vue-html5-editor>
                 </el-form-item>

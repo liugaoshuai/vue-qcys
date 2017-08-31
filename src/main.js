@@ -11,15 +11,6 @@ import VueHtml5Editor from 'vue-html5-editor'
 import 'font-awesome/css/font-awesome.css'
 /* Pick one way between the 2 following ways */
 
-// only import the icons you use to reduce bundle size
-import 'vue-awesome/icons/flag'
-
-// or import all icons if you don't care about bundle size
-import 'vue-awesome/icons'
-
-/* Register component with one of 2 methods */
-
-import Icon from 'vue-awesome/components/Icon'
 
 // globally (in your main .js file)
 import './style/reset.css'
@@ -182,5 +173,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App ,Icon}
+  components: { App}
 })
