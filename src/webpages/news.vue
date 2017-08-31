@@ -14,7 +14,7 @@
                             span.orange 千乘影视
                         div.news-left-item-con {{item.about}}
                         a.orange(@click="") 阅读全文
-                el-pagination(@current-change="getNews",:page-size="5",layout="total, prev, pager, next",:total="newsPage.length",style="text-align: center;padding-top: 20px;")
+                el-pagination(@current-change="getNewsIndex",:page-size="5",layout="total, prev, pager, next",:total="newsPage.length",style="text-align: center;padding-top: 20px;")
             div.news-right
                 div.news-right-cla
                     h3 新闻分类
@@ -70,7 +70,6 @@ export default {
             var n = n ? n : '1';
             this.$http.get("/api/news/get?n=" + n + "&s=" + s).then(function (res) {
                 self.newsData = res.data.data;
-                self.newsPage = res.data.page;
             });
         },
         // 获取
@@ -80,6 +79,7 @@ export default {
             var n = n ? n : '1';
             this.$http.get("/api/news/get?n=" + n + "&s=" + s + "&index=true").then(function (res) {
                 self.newsIndexData = res.data.data;
+                self.newsPage = res.data.page;
             });
         },
         // 获取

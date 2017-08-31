@@ -35,18 +35,8 @@
                     )
         div.work
             ul.clearfix.common
-                    li 
-                        img.news-left-item-img(:src='indexData.workImg01',style="height: 200px;width: 160px;")
-                    li 
-                        img.news-left-item-img(:src='indexData.workImg02',style="height: 200px;width: 160px;")
-                    li 
-                        img.news-left-item-img(:src='indexData.workImg03',style="height: 200px;width: 160px;")
-                    li 
-                        img.news-left-item-img(:src='indexData.workImg04',style="height: 200px;width: 160px;")
-                    li 
-                        img.news-left-item-img(:src='indexData.workImg05',style="height: 200px;width: 160px;")
-                    li 
-                        img.news-left-item-img(:src='indexData.workImg06',style="height: 200px;width: 160px;")
+                    li(v-for="item in workData",@click="getWorkDetail(item)")
+                        img.news-left-item-img(:src='item.indexImg',style="height: 200px;width: 160px;")
         div.video
             div.video-box
                 //- <iframe frameborder="0" width="800" height="320" src="https://v.qq.com/iframe/player.html?vid=l00201haat8&tiny=0&auto=0" allowfullscreen></iframe>
@@ -64,7 +54,7 @@
                     span 公众号精选
                     ul
                         li(v-for="(item,index) in wechatData",v-if="index<2",@click="getWechatDetail(item)")
-                            img.news-img(style="height: 120px;width: 200px;background: #25232b;",:src='item.indexImg')
+                            img.news-img(style="height: 120px;width: 200px;background: #25232b;",:src='item.img03')
                             p.news-nav {{item.title}}
                             p.news-con {{item.about}}
         div.photo
@@ -75,17 +65,17 @@
                         h3 {{indexData.boxTitle03}}
                         p {{indexData.boxText03}}
                 div.photo-b.clearfix
-                    div.photo-b-right(style="width: 320px; height: 300px;padding: 20px;")
+                    div.photo-b-right(style="width: 320px; height: 300px;padding: 100px 60px 20px 20px;")
                         h3 {{indexData.boxTitle01}}
                         p {{indexData.boxText01}}
                     img.photo-b-left(:src='indexData.boxImg01',style="width: 480px; height: 300px;")
                 div.photo-c.clearfix
                     img.photo-c-left(:src='indexData.boxImg02',style="width: 480px; height: 300px;")
-                    div.photo-c-right(style="width: 320px; height: 300px;padding: 20px;")
+                    div.photo-c-right(style="width: 320px; height: 300px;padding: 100px 20px 20px 60px;")
                         h3 {{indexData.boxTitle02}}
                         p {{indexData.boxText02}}
                 div.photo-d.clearfix
-                    div.photo-d-right(style="width: 480px; height: 300px;padding: 20px;")
+                    div.photo-d-right(style="width: 480px; height: 300px;padding: 100px 60px 20px 20px;")
                         h3 {{indexData.boxTitle04}}
                         p {{indexData.boxText04}}
                     img.photo-d-left(:src='indexData.boxImg04',style="width: 720px; height: 300px;")
@@ -99,13 +89,6 @@ export default {
                 bannerImg01: '',// 轮播图
                 bannerImg02: '',// 轮播图
                 bannerImg03: '',// 轮播图
-
-                workImg01: '',// 作品图
-                workImg02: '',// 作品图
-                workImg03: '',// 作品图
-                workImg04: '',// 作品图
-                workImg05: '',// 作品图
-                workImg06: '',// 作品图
 
                 boxImg01: '',// 剧照图
                 boxImg02: '',// 剧照图
@@ -129,6 +112,7 @@ export default {
 				timer: '',
             newsData: [],
             wechatData: [],
+            workData: [],
             
 
         }
@@ -167,6 +151,12 @@ export default {
                     self.wechatData = res.data.data;
                 }
             });
+            this.$http.get('/api/work/get').then(function (res) {
+                if (res.data.code == 0 && res.data.data.length > 0) {
+                    self.workData = res.data.data;
+                }
+            });
+            
             
         },
         getNewsDetail: function (item) {
@@ -174,6 +164,9 @@ export default {
         },
         getWechatDetail: function (item) {
             this.$router.push({ name: 'webWechatDetail', params: { form: item } })
+        }
+        getWorkDetail: function (item) {
+            this.$router.push({ name: 'webWorkDetail', params: { form: item } })
         }
     }
 }

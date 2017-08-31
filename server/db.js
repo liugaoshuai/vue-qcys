@@ -15,13 +15,6 @@ const INDEX_DATA = mongoose.Schema({
     bannerImg02: String,// 轮播图
     bannerImg03: String,// 轮播图
 
-    workImg01: String,// 作品图
-    workImg02: String,// 作品图
-    workImg03: String,// 作品图
-    workImg04: String,// 作品图
-    workImg05: String,// 作品图
-    workImg06: String,// 作品图
-
     boxImg01: String,// 剧照图
     boxImg02: String,// 剧照图
     boxImg03: String,// 剧照图
@@ -113,6 +106,7 @@ const WORK_DATA = mongoose.Schema({
 
     listImg: String,// 列表剧照
     bigImg: String,// 详情剧照
+    indexImg: String,
 })
 //微信公众号
 const WECHAT_DATA = mongoose.Schema({

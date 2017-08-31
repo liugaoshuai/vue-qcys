@@ -13,25 +13,6 @@
         <el-input v-model="INDEX_ADD_FORM.bannerImg03"></el-input>
       </el-form-item>
   
-      <el-form-item label="作品图01(160*200)">
-        <el-input v-model="INDEX_ADD_FORM.workImg01"></el-input>
-      </el-form-item>
-      <el-form-item label="作品图02(160*200)">
-        <el-input v-model="INDEX_ADD_FORM.workImg02"></el-input>
-      </el-form-item>
-      <el-form-item label="作品图03(160*200)">
-        <el-input v-model="INDEX_ADD_FORM.workImg03"></el-input>
-      </el-form-item>
-      <el-form-item label="作品图04(160*200)">
-        <el-input v-model="INDEX_ADD_FORM.workImg04"></el-input>
-      </el-form-item>
-      <el-form-item label="作品图05(160*200)">
-        <el-input v-model="INDEX_ADD_FORM.workImg05"></el-input>
-      </el-form-item>
-      <el-form-item label="作品图06(160*200)">
-        <el-input v-model="INDEX_ADD_FORM.workImg06"></el-input>
-      </el-form-item>
-  
       <el-form-item label="剧照图01(800*300)">
         <el-input v-model="INDEX_ADD_FORM.boxImg01"></el-input>
       </el-form-item>
@@ -94,12 +75,6 @@ export default {
         bannerImg02: '',// 轮播图
         bannerImg03: '',// 轮播图
 
-        workImg01: '',// 作品图
-        workImg02: '',// 作品图
-        workImg03: '',// 作品图
-        workImg04: '',// 作品图
-        workImg05: '',// 作品图
-        workImg06: '',// 作品图
 
         boxImg01: '',// 剧照图
         boxImg02: '',// 剧照图

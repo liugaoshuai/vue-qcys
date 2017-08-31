@@ -166,6 +166,9 @@
             <el-form-item label="详情剧照(320x450)">
                 <el-input v-model="WORK_ADD_FORM.bigImg"></el-input>
             </el-form-item>
+            <el-form-item label="首页(160x200)">
+                <el-input v-model="WORK_ADD_FORM.indexImg"></el-input>
+            </el-form-item>
             <el-form-item label="权重指数">
                 <el-input v-model="WORK_ADD_FORM.index"></el-input>
             </el-form-item>
@@ -242,6 +245,7 @@ export default {
 
                 listImg: '',// 列表剧照
                 bigImg: '',// 详情剧照
+                indexImg: '',
                 index: '',// 权重
             }
         }
