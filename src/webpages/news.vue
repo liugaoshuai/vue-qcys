@@ -66,7 +66,7 @@ export default {
         // 获取
         getNews: function (n) {
             var self = this;
-            var s = 5;
+            var s = 6;
             var n = n ? n : '1';
             this.$http.get("/api/news/get?n=" + n + "&s=" + s).then(function (res) {
                 self.newsData = res.data.data;
@@ -89,7 +89,7 @@ export default {
             var t = type;
             var n = n ? n : '1';
             this.$http.get("/api/news/get?n=" + n + "&s=" + s + "&t=" + t).then(function (res) {
-                self.newsData = res.data.data;
+                self.newsIndexData = res.data.data;
                 self.newsPage = res.data.page;
             });
         },
