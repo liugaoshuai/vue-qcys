@@ -164,7 +164,7 @@ export default {
         },
         getWechatDetail: function (item) {
             this.$router.push({ name: 'webWechatDetail', params: { form: item } })
-        }
+        },
         getWorkDetail: function (item) {
             this.$router.push({ name: 'webWorkDetail', params: { form: item } })
         }
