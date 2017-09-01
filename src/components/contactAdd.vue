@@ -1,6 +1,6 @@
 <template>
     <div id="news">
-        <h2>新闻聚焦-新增</h2>
+        <h2>联系我们-新增</h2>
         <el-form 
                  :model="CONTACT_ADD_FORM"
                  label-width="120px">
@@ -35,7 +35,7 @@ export default {
     methods: {
         // 新增新闻
         updateData: function (data) {
-            this.NEWS_ADD_FORM.content = data
+            this.CONTACT_ADD_FORM.content = data
         },
         // 新增新闻
         addNews: function () {
