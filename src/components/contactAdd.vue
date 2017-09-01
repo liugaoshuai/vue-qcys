@@ -8,7 +8,7 @@
                 <el-input v-model="CONTACT_ADD_FORM.name"></el-input>
             </el-form-item>
             <el-form-item label="职位内容">
-                <vue-html5-editor :content="NEWS_ADD_FORM.content"
+                <vue-html5-editor :content="CONTACT_ADD_FORM.content"
                                   :height="500"
                                   @change="updateData"></vue-html5-editor>
             </el-form-item>

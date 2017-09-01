@@ -35,7 +35,7 @@
                     )
         div.work
             ul.clearfix.common
-                    li(v-for="(item,index) in workData",@click="getWorkDetail(item)",v-if="index<2")
+                    li(v-for="(item,index) in workData",@click="getWorkDetail(item)",v-if="index<6")
                         img.news-left-item-img(:src='item.indexImg',style="height: 200px;width: 160px;")
         div.video
             div.video-box
