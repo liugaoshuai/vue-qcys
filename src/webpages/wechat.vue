@@ -20,9 +20,9 @@
                         p.orange.date {{wechatData01[1].date | date-filter}}
                     div.app-wechat-item-a(v-if="wechatData01.length>2",@click="getDetail(wechatData01[2])")
                         img(style="height: 180px;width: 270px;",:src="wechatData01[2].img01")
-                        h3.orange {{wechatData01[0].title}}
-                        p.con {{wechatData01[0].about}}
-                        p.orange.date {{wechatData01[0].date | date-filter}}
+                        h3.orange {{wechatData01[2].title}}
+                        p.con {{wechatData01[2].about}}
+                        p.orange.date {{wechatData01[2].date | date-filter}}
                     img.app-wechat-item-b(style="height: 340px;width: 580px;",:src="wechatData02[2].img02",v-if="wechatData02.length>2",@click="getDetail(wechatData02[2])")
                 div.app-wechat-right
                     div.app-wechat-right-item
