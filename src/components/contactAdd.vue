@@ -32,6 +32,15 @@ export default {
             }
         }
     },
+    mounted: function () {
+        if (this.$route.params.form) {
+            for (var key in this.CONTACT_ADD_FORM) {
+                if (this.$route.params.form[key]) {
+                    this.CONTACT_ADD_FORM[key] = this.$route.params.form[key];
+                }
+            }
+        }
+    },
     methods: {
         // 新增新闻
         updateData: function (data) {
