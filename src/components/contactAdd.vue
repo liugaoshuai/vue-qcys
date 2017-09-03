@@ -52,7 +52,7 @@ export default {
             var params = {
                 form: self.CONTACT_ADD_FORM,
             };
-            this.$http.post('http://localhost:8088/api/contact/create', params).then(function (res) {
+            this.$http.post('/api/contact/create', params).then(function (res) {
                 if (res.data.code == 0) {
                     self.$message({
                         type: 'success',

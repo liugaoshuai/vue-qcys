@@ -73,7 +73,7 @@ export default {
         // 获取新闻
         getWork: function () {
             var self = this;
-            this.$http.get('http://localhost:8088/api/work/get').then(function (res) {
+            this.$http.get('/api/work/get').then(function (res) {
                 self.WORK_LIST = res.data.data;
             });
         },
@@ -86,7 +86,7 @@ export default {
                 cancelButtonText: '取消',
                 type: 'warning'
             }).then(() => {
-                this.$http.get('http://localhost:8088/api/work/delete?id=' + id).then(function (res) {
+                this.$http.get('/api/work/delete?id=' + id).then(function (res) {
                     if (res.data.code == 0) {
                         self.$message({
                             type: 'success',
@@ -104,7 +104,7 @@ export default {
         // 获取
         getIndex: function () {
             var self = this;
-            this.$http.get('http://localhost:8088/api/wechatimg/get').then(function (res) {
+            this.$http.get('/api/wechatimg/get').then(function (res) {
                 if (res.data.code == 0 && res.data.data.length > 0) {
                     self.WECHAT_IMG = res.data.data[0];
                 }
@@ -116,7 +116,7 @@ export default {
             var params = {
                 form: self.WECHAT_IMG,
             };
-            this.$http.post('http://localhost:8088/api/wechatimg/create', params).then(function (res) {
+            this.$http.post('/api/wechatimg/create', params).then(function (res) {
                 if (res.data.code == 0) {
                     self.$message({
                         type: 'success',

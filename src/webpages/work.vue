@@ -88,14 +88,14 @@ export default {
             var self = this;
             var s = 8;
             var n = n ? n : '1';
-            this.$http.get("http://localhost:8088/api/work/get?n=" + n + "&s=" + s + "&index=true").then(function (res) {
+            this.$http.get("/api/work/get?n=" + n + "&s=" + s + "&index=true").then(function (res) {
                 self.workData = res.data.data;
                 self.workPage = res.data.page;
             });
         },
         getNewsImg: function () {
             var self = this;
-            this.$http.get('http://localhost:8088/api/wechatimg/get').then(function (res) {
+            this.$http.get('/api/wechatimg/get').then(function (res) {
                 self.wechatImgData = res.data.data[0];
             });
         },

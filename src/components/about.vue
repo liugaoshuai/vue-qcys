@@ -106,7 +106,7 @@ export default {
         // 获取新闻
         getWork: function () {
             var self = this;
-            this.$http.get('http://localhost:8088/api/about/table/get').then(function (res) {
+            this.$http.get('/api/about/table/get').then(function (res) {
                 self.ABOUT_TABLE_LIST = res.data.data;
             });
         },
@@ -119,7 +119,7 @@ export default {
                 cancelButtonText: '取消',
                 type: 'warning'
             }).then(() => {
-                this.$http.get('http://localhost:8088/api/about/table/delete?id=' + id).then(function (res) {
+                this.$http.get('/api/about/table/delete?id=' + id).then(function (res) {
                     if (res.data.code == 0) {
                         self.$message({
                             type: 'success',
@@ -137,7 +137,7 @@ export default {
         // 获取
         getIndex: function () {
             var self = this;
-            this.$http.get('http://localhost:8088/api/about/get').then(function (res) {
+            this.$http.get('/api/about/get').then(function (res) {
                 if (res.data.code == 0 && res.data.data.length > 0) {
                     self.ABOUT_DATA = res.data.data[0];
                 }
@@ -149,7 +149,7 @@ export default {
             var params = {
                 form: self.ABOUT_DATA,
             };
-            this.$http.post('http://localhost:8088/api/about/create', params).then(function (res) {
+            this.$http.post('/api/about/create', params).then(function (res) {
                 if (res.data.code == 0) {
                     self.$message({
                         type: 'success',

@@ -70,7 +70,7 @@ export default {
             var self = this;
             var s = 10;
             var n = n ? n : '1';
-            this.$http.get("http://localhost:8088/api/wechat/get?n=" + n + "&s=" + s).then(function (res) {
+            this.$http.get("/api/wechat/get?n=" + n + "&s=" + s).then(function (res) {
                 self.WECHAT_LIST = res.data.data;
                 self.WECHAT_PAGE = res.data.page;
             });
@@ -83,7 +83,7 @@ export default {
                 cancelButtonText: '取消',
                 type: 'warning'
             }).then(() => {
-                this.$http.get('http://localhost:8088/api/wechat/delete?id=' + id).then(function (res) {
+                this.$http.get('/api/wechat/delete?id=' + id).then(function (res) {
                     if (res.data.code == 0) {
                         self.$message({
                             type: 'success',

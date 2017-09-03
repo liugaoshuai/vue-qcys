@@ -39,7 +39,7 @@ export default {
         // 获取新闻
         getContact: function () {
             var self = this;
-            this.$http.get('http://localhost:8088/api/contact/get').then(function (res) {
+            this.$http.get('/api/contact/get').then(function (res) {
                 self.CONTACT_LIST = res.data.data;
             });
         },
@@ -51,7 +51,7 @@ export default {
                 cancelButtonText: '取消',
                 type: 'warning'
             }).then(() => {
-                this.$http.get('http://localhost:8088/api/contact/delete?id=' + id).then(function (res) {
+                this.$http.get('/api/contact/delete?id=' + id).then(function (res) {
                     if (res.data.code == 0) {
                         self.$message({
                             type: 'success',

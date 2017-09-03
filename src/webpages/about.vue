@@ -75,13 +75,13 @@ export default {
          // 获取
         getAboutTable: function () {
             var self = this;
-            this.$http.get("http://localhost:8088/api/about/get").then(function (res) {
+            this.$http.get("/api/about/get").then(function (res) {
                 self.aboutData = res.data.data[0];
             });
         },
         getAbout: function () {
             var self = this;
-            this.$http.get('http://localhost:8088/api/about/table/get').then(function (res) {
+            this.$http.get('/api/about/table/get').then(function (res) {
                 self.aboutTableList = res.data.data;
             });
         },
@@ -90,7 +90,7 @@ export default {
             var self = this;
             var s = 8;
             var n = n ? n : '1';
-            this.$http.get("http://localhost:8088/api/work/get?n=" + n + "&s=" + s).then(function (res) {
+            this.$http.get("/api/work/get?n=" + n + "&s=" + s).then(function (res) {
                 self.workData = res.data.data;
             });
         },

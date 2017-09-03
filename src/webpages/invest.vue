@@ -41,7 +41,7 @@ export default {
             var self = this;
             var s = 5;
             var n = n ? n : '1';
-            this.$http.get("http://localhost:8088/api/invest/get?n=" + n + "&s=" + s).then(function (res) {
+            this.$http.get("/api/invest/get?n=" + n + "&s=" + s).then(function (res) {
                 self.newsData = res.data.data;
                 self.newsPage = res.data.page;
             });
@@ -51,7 +51,7 @@ export default {
             var self = this;
             var s = 4;
             var n = n ? n : '1';
-            this.$http.get("http://localhost:8088/api/work/get?n=" + n + "&s=" + s).then(function (res) {
+            this.$http.get("/api/work/get?n=" + n + "&s=" + s).then(function (res) {
                 self.workData = res.data.data;
             });
         },

@@ -275,7 +275,7 @@ export default {
             var params = {
                 form: self.WORK_ADD_FORM,
             };
-            this.$http.post('http://localhost:8088/api/work/create', params).then(function (res) {
+            this.$http.post('/api/work/create', params).then(function (res) {
                 if (res.data.code == 0) {
                     self.$message({
                         type: 'success',

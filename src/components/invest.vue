@@ -60,7 +60,7 @@ export default {
             var self = this;
             var s = 10;
             var n = n ? n : '1';
-            this.$http.get("http://localhost:8088/api/invest/get?n=" + n + "&s=" + s).then(function (res) {
+            this.$http.get("/api/invest/get?n=" + n + "&s=" + s).then(function (res) {
                 self.NEWS_LIST = res.data.data;
                 self.NEWS_PAGE = res.data.page;
             });
@@ -74,7 +74,7 @@ export default {
                 cancelButtonText: '取消',
                 type: 'warning'
             }).then(() => {
-                this.$http.get('http://localhost:8088/api/invest/delete?id=' + id).then(function (res) {
+                this.$http.get('/api/invest/delete?id=' + id).then(function (res) {
                     if (res.data.code == 0) {
                         self.$message({
                             type: 'success',

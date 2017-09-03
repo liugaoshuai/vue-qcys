@@ -64,7 +64,7 @@ export default {
         // 获取
         getNews: function () {
             var self = this;
-            this.$http.get('http://localhost:8088/api/wechat/get').then(function (res) {
+            this.$http.get('/api/wechat/get').then(function (res) {
                 if (res.data.code == 0 && res.data.data.length > 0) {
                     var arr = res.data.data;
                     for (var i = 0; i < arr.length; i++) {

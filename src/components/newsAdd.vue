@@ -114,7 +114,7 @@ export default {
             var params = {
                 form: self.NEWS_ADD_FORM,
             };
-            this.$http.post('http://localhost:8088/api/news/create', params).then(function (res) {
+            this.$http.post('/api/news/create', params).then(function (res) {
                 if (res.data.code == 0) {
                     self.$message({
                         type: 'success',
