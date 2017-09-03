@@ -1,7 +1,9 @@
 <template lang="pug">
     //- h1 {{title}
     div
-        div.app-about-header
+        div.app-about-header(
+                :style="{background: 'url(http://oumlc5t88.bkt.clouddn.com/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC%E9%A1%B61.jpg) no-repeat center'}"
+            )
         div.app-about-item
             div.common.clearfix
                 div.app-about-item-name 公司介绍
@@ -14,10 +16,16 @@
 
         div.app-about-b
             h2.app-about-title 发展战略
-            ul
+            ul.common.clearfix
                 li
-                    div.app-about-b-title
-                    p
+                    div.app-about-b-title {{aboutData.fzzlTitle01}}
+                    p {{aboutData.fzzlContent01}}
+                li
+                    div.app-about-b-title {{aboutData.fzzlTitle02}}
+                    p {{aboutData.fzzlContent02}}
+                li
+                    div.app-about-b-title {{aboutData.fzzlTitle03}}
+                    p {{aboutData.fzzlContent03}}
             div.app-about-item
                 div.common.clearfix
                     div.app-about-item-name 公司介绍
@@ -67,13 +75,13 @@ export default {
          // 获取
         getAboutTable: function () {
             var self = this;
-            this.$http.get("/api/about/get").then(function (res) {
+            this.$http.get("http://localhost:8088/api/about/get").then(function (res) {
                 self.aboutData = res.data.data[0];
             });
         },
         getAbout: function () {
             var self = this;
-            this.$http.get('/api/about/table/get').then(function (res) {
+            this.$http.get('http://localhost:8088/api/about/table/get').then(function (res) {
                 self.aboutTableList = res.data.data;
             });
         },
@@ -82,7 +90,7 @@ export default {
             var self = this;
             var s = 8;
             var n = n ? n : '1';
-            this.$http.get("/api/work/get?n=" + n + "&s=" + s).then(function (res) {
+            this.$http.get("http://localhost:8088/api/work/get?n=" + n + "&s=" + s).then(function (res) {
                 self.workData = res.data.data;
             });
         },

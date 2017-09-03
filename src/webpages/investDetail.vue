@@ -13,7 +13,7 @@
                     div(v-html="newsDetailData.content")
                 img.news-left-footimg(style="width: 100%;background: #25232b;",:src="newsDetailData.bottomImg",v-if="newsDetailData.bottomImg")
             div.news-right
-                img.news-right-work(v-for="item in workData",:src="item.bigImg",@click="getWorkDetail(item)")
+                img.news-right-work.boxshadow(v-for="item in workData",:src="item.bigImg",@click="getWorkDetail(item)")
 </template>
 
 <script>
@@ -38,7 +38,7 @@ export default {
         // 获取
         getNews: function () {
             var self = this;
-            this.$http.get('/api/invest/get').then(function (res) {
+            this.$http.get('http://localhost:8088/api/invest/get').then(function (res) {
                 if (res.data.code == 0 && res.data.data.length > 0) {
                     self.newsData = res.data.data;
                 }
@@ -49,7 +49,7 @@ export default {
             var self = this;
             var s = 4;
             var n = n ? n : '1';
-            this.$http.get("/api/work/get?n=" + n + "&s=" + s).then(function (res) {
+            this.$http.get("http://localhost:8088/api/work/get?n=" + n + "&s=" + s).then(function (res) {
                 self.workData = res.data.data;
             });
         },

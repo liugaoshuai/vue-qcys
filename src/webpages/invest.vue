@@ -16,7 +16,7 @@
                         a.orange(@click="") 阅读全文
                 el-pagination(@current-change="getNews",:page-size="5",layout="total, prev, pager, next",:total="newsPage.length",style="text-align: center;padding-top: 20px;")
             div.news-right
-                img.news-right-work(v-for="item in workData",:src="item.bigImg",@click="getWorkDetail(item)")
+                img.news-right-work.boxshadow(v-for="item in workData",:src="item.bigImg",@click="getWorkDetail(item)")
 </template>
 
 <script>
@@ -41,7 +41,7 @@ export default {
             var self = this;
             var s = 5;
             var n = n ? n : '1';
-            this.$http.get("/api/invest/get?n=" + n + "&s=" + s).then(function (res) {
+            this.$http.get("http://localhost:8088/api/invest/get?n=" + n + "&s=" + s).then(function (res) {
                 self.newsData = res.data.data;
                 self.newsPage = res.data.page;
             });
@@ -51,7 +51,7 @@ export default {
             var self = this;
             var s = 4;
             var n = n ? n : '1';
-            this.$http.get("/api/work/get?n=" + n + "&s=" + s).then(function (res) {
+            this.$http.get("http://localhost:8088/api/work/get?n=" + n + "&s=" + s).then(function (res) {
                 self.workData = res.data.data;
             });
         },

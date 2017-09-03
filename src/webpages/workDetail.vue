@@ -123,7 +123,7 @@ export default {
         // 获取
         getNews: function () {
             var self = this;
-            this.$http.get('/api/work/get').then(function (res) {
+            this.$http.get('http://localhost:8088/api/work/get').then(function (res) {
                 if (res.data.code == 0 && res.data.data.length > 0) {
                     self.workData = res.data.data;
                     console.log(self.workData)

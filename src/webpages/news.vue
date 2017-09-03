@@ -68,7 +68,7 @@ export default {
             var self = this;
             var s = 6;
             var n = n ? n : '1';
-            this.$http.get("/api/news/get?n=" + n + "&s=" + s).then(function (res) {
+            this.$http.get("http://localhost:8088/api/news/get?n=" + n + "&s=" + s).then(function (res) {
                 self.newsData = res.data.data;
             });
         },
@@ -77,7 +77,7 @@ export default {
             var self = this;
             var s = 5;
             var n = n ? n : '1';
-            this.$http.get("/api/news/get?n=" + n + "&s=" + s + "&index=true").then(function (res) {
+            this.$http.get("http://localhost:8088/api/news/get?n=" + n + "&s=" + s + "&index=true").then(function (res) {
                 self.newsIndexData = res.data.data;
                 self.newsPage = res.data.page;
             });
@@ -88,7 +88,7 @@ export default {
             var s = 5;
             var t = type;
             var n = n ? n : '1';
-            this.$http.get("/api/news/get?n=" + n + "&s=" + s + "&t=" + t).then(function (res) {
+            this.$http.get("http://localhost:8088/api/news/get?n=" + n + "&s=" + s + "&t=" + t).then(function (res) {
                 self.newsIndexData = res.data.data;
                 self.newsPage = res.data.page;
             });

@@ -103,7 +103,7 @@ export default {
     // 获取
     getIndex: function () {
       var self = this;
-      this.$http.get('/api/index/get').then(function (res) {
+      this.$http.get('http://localhost:8088/api/index/get').then(function (res) {
         if (res.data.code == 0 && res.data.data.length > 0) {
           self.INDEX_ADD_FORM = res.data.data[0];
         }
@@ -115,7 +115,7 @@ export default {
       var params = {
         form: self.INDEX_ADD_FORM,
       };
-      this.$http.post('/api/index/create', params).then(function (res) {
+      this.$http.post('http://localhost:8088/api/index/create', params).then(function (res) {
         if (res.data.code == 0) {
           self.$message({
             type: 'success',

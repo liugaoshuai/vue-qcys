@@ -136,22 +136,22 @@ export default {
         // 获取
         getIndex: function () {
             var self = this;
-            this.$http.get('/api/index/get').then(function (res) {
+            this.$http.get('http://localhost:8088/api/index/get').then(function (res) {
                 if (res.data.code == 0 && res.data.data.length > 0) {
                     self.indexData = res.data.data[0];
                 }
             });
-            this.$http.get('/api/news/get').then(function (res) {
+            this.$http.get('http://localhost:8088/api/news/get').then(function (res) {
                 if (res.data.code == 0 && res.data.data.length > 0) {
                     self.newsData = res.data.data;
                 }
             });
-            this.$http.get('/api/wechat/get').then(function (res) {
+            this.$http.get('http://localhost:8088/api/wechat/get').then(function (res) {
                 if (res.data.code == 0 && res.data.data.length > 0) {
                     self.wechatData = res.data.data;
                 }
             });
-            this.$http.get('/api/work/get').then(function (res) {
+            this.$http.get('http://localhost:8088/api/work/get').then(function (res) {
                 if (res.data.code == 0 && res.data.data.length > 0) {
                     self.workData = res.data.data;
                 }
