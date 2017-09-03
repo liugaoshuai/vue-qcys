@@ -13,6 +13,8 @@ import nodeContact from '@/components/contact'
 import nodeContactAdd from '@/components/contactAdd'
 import nodeWechat from '@/components/wechat'
 import nodeWechatAdd from '@/components/wechatAdd'
+import nodeAbout from '@/components/about'
+import nodeAboutAdd from '@/components/aboutAdd'
 
 // pc端
 import webApp from '@/webpages/app'
@@ -22,11 +24,13 @@ import webInvest from '@/webpages/invest'
 import webWork from '@/webpages/work'
 import webContact from '@/webpages/contact'
 import webWechat from '@/webpages/wechat'
+import webAbout from '@/webpages/about'
 
 import webWechatDetail from '@/webpages/wechatDetail'
 import webWorkDetail from '@/webpages/workDetail'
 import webNewsDetail from '@/webpages/newsDetail'
 import webInvestDetail from '@/webpages/investDetail'
+
 
 
 
@@ -66,6 +70,9 @@ export default new Router({
           path: '/web/wechat',
           component: webWechat
         },{
+          path: '/web/about',
+          component: webAbout
+        },{
           path: '/web/wechat/detail',
           name: 'webWechatDetail',
           component: webWechatDetail
@@ -81,7 +88,7 @@ export default new Router({
           path: '/web/invest/detail',
           name: 'webInvestDetail',
           component: webInvestDetail
-        },
+        }
       ]
     },
 
@@ -129,6 +136,13 @@ export default new Router({
           path: '/node/wechat/add',
           name: 'nodeWechatAdd',
           component: nodeWechatAdd
+        },{
+          path: '/node/about',
+          component: nodeAbout
+        },{
+          path: '/node/about/add',
+          name: 'nodeAboutAdd',
+          component: nodeAboutAdd
         }
       ]
     },

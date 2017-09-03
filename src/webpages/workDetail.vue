@@ -92,6 +92,13 @@
                             img(style="height: 240px;",:src='workDetailData.workImg02')
                         li
                             img(style="height: 240px;",:src='workDetailData.workImg03')
+                        li
+                            img(style="height: 240px;",:src='workDetailData.workImg03')
+                        li
+                            img(style="height: 240px;",:src='workDetailData.workImg03')
+                        li
+                            img(style="height: 240px;",:src='workDetailData.workImg03')
+                            
 </template>
 
 <script>

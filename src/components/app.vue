@@ -12,6 +12,7 @@
 				<el-menu-item index="/node/wechat">公众号精选</el-menu-item>
 				<el-menu-item index="/node/news">新闻聚焦</el-menu-item>
 				<el-menu-item index="/node/invest">投资者关系</el-menu-item>
+				<el-menu-item index="/node/about">关于我们</el-menu-item>
 				<el-menu-item index="/node/contact">联系我们</el-menu-item>
 			</el-menu>
 		</div>

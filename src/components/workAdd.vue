@@ -160,13 +160,16 @@
             <el-form-item label="剧照(380x240)">
                 <el-input v-model="WORK_ADD_FORM.workImg05"></el-input>
             </el-form-item>
+            <el-form-item label="剧照(380x240)">
+                <el-input v-model="WORK_ADD_FORM.workImg06"></el-input>
+            </el-form-item>
             <el-form-item label="列表剧照(270x320)">
                 <el-input v-model="WORK_ADD_FORM.listImg"></el-input>
             </el-form-item>
             <el-form-item label="详情剧照(320x450)">
                 <el-input v-model="WORK_ADD_FORM.bigImg"></el-input>
             </el-form-item>
-            <el-form-item label="首页(160x200)">
+            <el-form-item label="首页剧照(160x200)">
                 <el-input v-model="WORK_ADD_FORM.indexImg"></el-input>
             </el-form-item>
             <el-form-item label="权重指数">
@@ -216,6 +219,8 @@ export default {
                 workImg03: '',// 剧照
                 workImg04: '',// 剧照
                 workImg05: '',// 剧照
+                workImg06: '',// 剧照
+                
 
                 starImg01: '',
                 starName01: '',

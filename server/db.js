@@ -78,6 +78,8 @@ const WORK_DATA = mongoose.Schema({
     workImg03: String,// 剧照
     workImg04: String,// 剧照
     workImg05: String,// 剧照
+    workImg06: String,// 剧照
+    
 
     starImg01: String,
     starName01: String,
@@ -159,6 +161,27 @@ const CONTACT_DATA = mongoose.Schema({
     name: String,// 职位名称
     content: String,// 内容
 });
+//联系我们
+const ABOUT_DATA = mongoose.Schema({
+    gsjs: String,// 公司介绍
+    gszz: String,// 公司宗旨
+    ywfw: String,// 业务范围
+    gstd: String,// 公司团队
+    fzzlTitle01: String,
+    fzzlContent01: String,
+    fzzlTitle02: String,
+    fzzlContent02: String,
+    fzzlTitle03: String,
+    fzzlContent03: String,
+    title: String,
+});
+const ABOUT_TABLE_DATA = mongoose.Schema({
+    date: String,
+    name: String,
+    award: String,
+    bjdw: String,
+});
+
 /************** 定义模型Model **************/
 const Models = {
     INDEX_DATA: mongoose.model('INDEX_DATA', INDEX_DATA),
@@ -168,6 +191,9 @@ const Models = {
     CONTACT_DATA: mongoose.model('CONTACT_DATA', CONTACT_DATA),
     WECHAT_DATA: mongoose.model('WECHAT_DATA', WECHAT_DATA),
     WECHAT_IMG_DATA: mongoose.model('WECHAT_IMG_DATA', WECHAT_IMG_DATA),
+    ABOUT_DATA: mongoose.model('ABOUT_DATA', ABOUT_DATA),
+    ABOUT_TABLE_DATA: mongoose.model('ABOUT_TABLE_DATA', ABOUT_TABLE_DATA),
+    
 }
 
 module.exports = Models;

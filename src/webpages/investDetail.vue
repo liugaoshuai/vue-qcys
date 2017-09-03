@@ -13,6 +13,7 @@
                     div(v-html="newsDetailData.content")
                 img.news-left-footimg(style="width: 100%;background: #25232b;",:src="newsDetailData.bottomImg",v-if="newsDetailData.bottomImg")
             div.news-right
+                img.news-right-work(v-for="item in workData",:src="item.bigImg",@click="getWorkDetail(item)")
 </template>
 
 <script>
@@ -23,10 +24,12 @@ export default {
             newsDetailData: {
 
             },
+            workData: [],
         }
     },
     mounted: function () {
         this.getNews();
+        this.getWork();
         if (this.$route.params.form) {
             this.newsDetailData = this.$route.params.form
         }
@@ -41,8 +44,17 @@ export default {
                 }
             });
         },
-        getDetail: function (item) {
-                        this.$router.go({ name: 'webInvestDetail', params: {form: item}})
+        // 获取
+        getWork: function (n) {
+            var self = this;
+            var s = 4;
+            var n = n ? n : '1';
+            this.$http.get("/api/work/get?n=" + n + "&s=" + s).then(function (res) {
+                self.workData = res.data.data;
+            });
+        },
+        getWorkDetail: function (item) {
+            this.$router.push({ name: 'webWorkDetail', params: { form: item } })
         }
     }
 }

@@ -184,12 +184,12 @@ router.get('/api/news/get', (req, res) => {
     var n = parseInt(req.query.n);
     var l;
     var t = {};
-    var sort = {'date': -1}
-    if(req.query.t){
-        t = {"type": req.query.t}
+    var sort = { 'date': -1 }
+    if (req.query.t) {
+        t = { "type": req.query.t }
     }
-    if(req.query.index){
-        sort = {'index': -1}
+    if (req.query.index) {
+        sort = { 'index': -1 }
     }
     models.NEWS_DATA.find(t).count((err, data) => {
         if (err) {
@@ -306,9 +306,9 @@ router.get('/api/work/get', (req, res) => {
     var s = parseInt(req.query.s);
     var n = parseInt(req.query.n);
     var l;
-    var sort = {'date': -1}
-    if(req.query.index){
-        sort = {'index': -1}
+    var sort = { 'date': -1 }
+    if (req.query.index) {
+        sort = { 'index': -1 }
     }
     models.WORK_DATA.count((err, data) => {
         if (err) {
@@ -348,7 +348,7 @@ router.get('/api/work/delete', (req, res) => {
     });
 });
 
-// 创建投资者关系
+// 创建招聘信息
 router.post('/api/contact/create', (req, res) => {
     let addContact = new models.CONTACT_DATA(req.body.form);
     addContact.save((err, data) => {
@@ -362,7 +362,7 @@ router.post('/api/contact/create', (req, res) => {
         }
     });
 });
-// 读取投资者关系
+// 读取招聘信息
 router.get('/api/contact/get', (req, res) => {
     models.CONTACT_DATA.find((err, data) => {
         if (err) {
@@ -375,7 +375,7 @@ router.get('/api/contact/get', (req, res) => {
         }
     });
 });
-// 删除投资者关系
+// 删除招聘信息
 router.get('/api/contact/delete', (req, res) => {
     models.CONTACT_DATA.findOneAndRemove({ _id: req.query.id }).exec((err, data) => {
         if (err) {
@@ -389,6 +389,90 @@ router.get('/api/contact/delete', (req, res) => {
         }
     });
 });
-
+// 读取关于我们
+router.get('/api/about/get', (req, res) => {
+    models.ABOUT_DATA.find((err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({
+                code: 0,
+                data: data
+            });
+        }
+    });
+});
+// 修改关于我们
+router.post('/api/about/create', (req, res) => {
+    console.log(req.body.form.gsjs)
+    // 原数据字段值
+    var oldValue = { title: "index" };
+    // 多条件更新
+    var newData = {
+        $set: {
+            gsjs: req.body.form.gsjs,// 公司介绍
+            gszz: req.body.form.gszz,// 公司宗旨
+            ywfw: req.body.form.ywfw,// 业务范围
+            gstd: req.body.form.gstd,// 公司团队
+            fzzlTitle01: req.body.form.fzzlTitle01,
+            fzzlContent01: req.body.form.fzzlContent01,
+            fzzlTitle02: req.body.form.fzzlTitle02,
+            fzzlContent02: req.body.form.fzzlContent02,
+            fzzlTitle03: req.body.form.fzzlTitle03,
+            fzzlContent03: req.body.form.fzzlContent03,
+        }
+    };
+    models.ABOUT_DATA.update(oldValue, newData, { upsert: true }, function (err, data) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({
+                code: 0,
+                data: data
+            });
+        }
+    });
+});
+// 读取微信公众号
+router.get('/api/about/table/get', (req, res) => {
+    models.ABOUT_TABLE_DATA.find().sort({ 'date': -1 }).exec((err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({
+                code: 0,
+                data: data,
+            });
+        }
+    });
+});
+// 创建微信公众号
+router.post('/api/about/table/create', (req, res) => {
+    let ABOUT_TABLE_DATA = new models.ABOUT_TABLE_DATA(req.body.form);
+    ABOUT_TABLE_DATA.save((err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({
+                code: 0,
+                data: data
+            });
+        }
+    });
+});
+// 删除微信公众号
+router.get('/api/about/table/delete', (req, res) => {
+    models.ABOUT_TABLE_DATA.findOneAndRemove({ _id: req.query.id }).exec((err, data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({
+                code: 0,
+                id: req.query.id,
+                message: '删除数据成功'
+            });
+        }
+    });
+});
 
 module.exports = router;
