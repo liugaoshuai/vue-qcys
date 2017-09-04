@@ -41,7 +41,6 @@ import webInvestDetail from '@/webpages/investDetail'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
   routes: [
 
     // pc
