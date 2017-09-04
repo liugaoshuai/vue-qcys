@@ -54,6 +54,8 @@ export default {
             });
         },
         getWorkDetail: function (item) {
+            document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
             this.$router.push({ name: 'webWorkDetail', params: { form: item } })
         }
     }

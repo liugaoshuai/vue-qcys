@@ -74,7 +74,10 @@ export default {
             });
         },
         getDetail: function (item) {
+            document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
             this.newsDetailData = item
+            
         }
     }
 }

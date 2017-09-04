@@ -11,7 +11,14 @@ div
             router-link(to='/web/about') 关于千乘
             router-link(to='/web/contact') 联系我们
             div.music
-                <embed class="" autoplay="true" src="http://oumlc5t88.bkt.clouddn.com/S-01%20%E4%B8%BB%E9%A2%98%E6%9B%B2.mp3"  width="200" height="60" />
+                //- <embed class="" autoplay="true" :src="http://oumlc5t88.bkt.clouddn.com/S-01%20%E4%B8%BB%E9%A2%98%E6%9B%B2.mp3"  width="200" height="60" />
+                <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/ swflash.cab#version=7,0,0,0" width="200" height="60" id="Untitled-1" align="center">
+                    <param name="allowScriptAccess" value="sameDomain" />
+                    <param name="movie" value="http://oumlc5t88.bkt.clouddn.com/S-01%20%E4%B8%BB%E9%A2%98%E6%9B%B2.mp3" />
+                    <param name="quality" value="high" />
+                    <param name="bgcolor" value="#ffffff" />
+                    <embed src="http://oumlc5t88.bkt.clouddn.com/S-01%20%E4%B8%BB%E9%A2%98%E6%9B%B2.mp3" quality="high" bgcolor="#ffffff" width="200" height="60" name="mymovie" align="center" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                </object>
     router-view
     div.footer
     div.footer-top

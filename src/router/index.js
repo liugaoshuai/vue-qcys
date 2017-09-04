@@ -41,6 +41,7 @@ import webInvestDetail from '@/webpages/investDetail'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
 
     // pc
@@ -48,42 +49,50 @@ export default new Router({
     {
       path: '/',
       component: webApp,
-      redirect:'/web/index',
+      name: 'webApp',
+      redirect: '/web/index',
       children: [
         {
           path: '/web/index',
+          name: 'webIndex',
           component: webIndex
-        },{
+        }, {
           path: '/web/news',
+          name: 'webNews',
           component: webNews
-        },{
+        }, {
           path: '/web/invest',
+          name: 'webInvest',
           component: webInvest
-        },{
+        }, {
           path: '/web/work',
+          name: 'webWork',
           component: webWork
-        },{
+        }, {
           path: '/web/contact',
+          name: 'webContact',
           component: webContact
-        },{
+        }, {
           path: '/web/wechat',
+          name: 'webWechat',
           component: webWechat
-        },{
+        }, {
           path: '/web/about',
+          name: 'webAbout',
           component: webAbout
-        },{
+        }, {
           path: '/web/wechat/detail',
           name: 'webWechatDetail',
           component: webWechatDetail
-        },{
+        }, {
           path: '/web/news/detail',
           name: 'webNewsDetail',
           component: webNewsDetail
-        },{
+        }, {
           path: '/web/work/detail',
           name: 'webWorkDetail',
           component: webWorkDetail
-        },{
+        }, {
           path: '/web/invest/detail',
           name: 'webInvestDetail',
           component: webInvestDetail
@@ -94,51 +103,55 @@ export default new Router({
     // node
     {
       path: '/node',
+      name: 'nodeApp',
       component: nodeApp,
-      redirect:'/node/index',
+      redirect: '/node/index',
       children: [
         {
           path: '/node/index',
+          name: 'nodeIndex',
           component: nodeIndex
-        },{
+        }, {
           path: '/node/news',
+          name: 'webAnodeNewspp',
           component: nodeNews
-        },{
+        }, {
           path: '/node/news/add',
           name: 'nodeNewsAdd',
           component: nodeNewsAdd
-        },{
+        }, {
           path: '/node/invest',
           component: nodeInvest
-        },{
+        }, {
           path: '/node/invest/add',
           name: 'nodeInvestAdd',
           component: nodeInvestAdd
-        },{
+        }, {
           path: '/node/work',
+          name: 'nodeWork',
           component: nodeWork
-        },{
+        }, {
           path: '/node/work/add',
           name: 'nodeWorkAdd',
           component: nodeWorkAdd
-        },{
+        }, {
           path: '/node/contact',
           component: nodeContact
-        },{
+        }, {
           path: '/node/contact/add',
           name: 'nodeContactAdd',
           component: nodeContactAdd
-        },{
+        }, {
           path: '/node/wechat',
           component: nodeWechat
-        },{
+        }, {
           path: '/node/wechat/add',
           name: 'nodeWechatAdd',
           component: nodeWechatAdd
-        },{
+        }, {
           path: '/node/about',
           component: nodeAbout
-        },{
+        }, {
           path: '/node/about/add',
           name: 'nodeAboutAdd',
           component: nodeAboutAdd

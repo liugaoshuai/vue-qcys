@@ -38,9 +38,11 @@
                     li(v-for="(item,index) in workData",@click="getWorkDetail(item)",v-if="index<6")
                         img.news-left-item-img(:src='item.indexImg',style="height: 200px;width: 160px;")
         div.video
-            div.video-box
+            div.video-box(style="height: 440px;width: 100%;background: 'url() no-repeat center'")
                 //- <iframe frameborder="0" width="800" height="320" src="https://v.qq.com/iframe/player.html?vid=l00201haat8&tiny=0&auto=0" allowfullscreen></iframe>
                 <embed :src="indexData.video" allowFullScreen="true" quality="high" width="800" height="320" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+
+                
         div.news
             div.common.clearfix
                 div.left
@@ -160,12 +162,18 @@ export default {
             
         },
         getNewsDetail: function (item) {
+            document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
             this.$router.push({ name: 'webNewsDetail', params: { form: item } })
         },
         getWechatDetail: function (item) {
+            document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
             this.$router.push({ name: 'webWechatDetail', params: { form: item } })
         },
         getWorkDetail: function (item) {
+            document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
             this.$router.push({ name: 'webWorkDetail', params: { form: item } })
         }
     }

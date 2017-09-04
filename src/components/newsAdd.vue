@@ -104,6 +104,8 @@ export default {
     methods: {
         // 新增新闻
         updateData: function (data) {
+            document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
             this.NEWS_ADD_FORM.content = data
         },
         addNews: function () {

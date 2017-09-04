@@ -64,7 +64,7 @@ export default {
             },
             currentIndex: 1,
             timer: '',
-            workPage:{}
+            workPage: {}
         }
     },
     mounted: function () {
@@ -100,6 +100,8 @@ export default {
             });
         },
         getDetail: function (item) {
+            document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
             this.$router.push({ name: 'webWorkDetail', params: { form: item } })
         }
     }

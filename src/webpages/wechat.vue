@@ -34,8 +34,9 @@
                                 p.orange.date {{item.date | date-filter}}
                     div.app-wechat-right-item-ewm
                         img(style="height: 270px;width: 270px;",src="http://ovdz4whc3.bkt.clouddn.com/%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg")
-                        p Follow Us
-                        p 联系我们
+                        p 阅读更多文章
+                        p 请关注微信公众号
+                            span.orange 麻小酱煲剧
 </template>
 
 <script>
@@ -83,6 +84,8 @@ export default {
         },
 
         getDetail: function (item) {
+            document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
             this.$router.push({ name: 'webWechatDetail', params: { form: item } })
         }
     }

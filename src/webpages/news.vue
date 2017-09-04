@@ -70,6 +70,8 @@ export default {
             var n = n ? n : '1';
             this.$http.get("/api/news/get?n=" + n + "&s=" + s).then(function (res) {
                 self.newsData = res.data.data;
+                document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
             });
         },
         // 获取
@@ -80,6 +82,8 @@ export default {
             this.$http.get("/api/news/get?n=" + n + "&s=" + s + "&index=true").then(function (res) {
                 self.newsIndexData = res.data.data;
                 self.newsPage = res.data.page;
+                document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
             });
         },
         // 获取
@@ -91,9 +95,13 @@ export default {
             this.$http.get("/api/news/get?n=" + n + "&s=" + s + "&t=" + t).then(function (res) {
                 self.newsIndexData = res.data.data;
                 self.newsPage = res.data.page;
+                document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
             });
         },
         getDetail: function (item) {
+            document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
                                     this.$router.push({ name: 'webNewsDetail', params: {form: item}})
         }
     }

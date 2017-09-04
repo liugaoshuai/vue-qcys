@@ -37,8 +37,8 @@ body{font-weight: 200!important;}
 /*element-ui*/
 .el-pager li.active{border-color: #eb6133;background-color: #eb6133;}
 /*主页*/
-.header{height: 130px;background: #3a3939;color: #fff;}
-.nav{background: #eaeaea;max-width: 1920px;}
+.header{height: 130px;background-color: #eaeaea;color: #fff;}
+.nav{background: #eaeaea;width: 100%;}
 /*.nav ul{padding: 0 100px;}*/
 .nav a{float: left;}
 .nav a{height: 60px;padding: 0 40px;line-height: 60px;display: inline-block;cursor: pointer;color: #333;}
@@ -205,12 +205,12 @@ body{font-weight: 200!important;}
 .app-about-header{height: 450px;background: #000;}
 .app-about-item{background: #e4e4e4;margin-bottom: 40px;}
 .app-about-item-name{height: 120px;line-height: 120px;background: #eb6233;color: #fff;text-align: center;float: left;width: 240px;}
-.app-about-item-content{padding-left: 50px;line-height: 40px;float: left;height: 120px;font-size: 16px;}
+.app-about-item-content{padding-left: 50px;line-height: 40px;float: left;height: 120px;font-size: 16px;width: 960px;}
 h2.app-about-title{height: 40px;line-height: 40px;text-align: center;background: #eb6233;color: #fff;margin: 20px 0;}
 .app-about-c table{text-align: center;line-height: 30px;border: 1px solid #8F8E8E;margin-bottom: 20px;}
 .app-about-a li{float: left;margin: 15px;cursor: pointer;}
 .app-about-b ul{padding: 40px 0;}
-.app-about-b li{float: left;width: 320px;height: 480px;background: #e4e4e4;padding: 100px 20px;position: relative;font-size: 16px;}
+.app-about-b li{float: left;width: 320px;height: 480px;background: #e4e4e4;padding: 100px 20px;position: relative;font-size: 16px;text-indent: 2em;line-height: 30px;}
 .app-about-b li+li{margin-left: 120px;}
 .app-about-b-title{background: #585656;line-height: 80px;height: 80px;width: 240px;position: absolute;top: -40px;right: 40px;color: #fff;text-align: center;font-size: 24px;}
 

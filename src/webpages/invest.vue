@@ -44,6 +44,8 @@ export default {
             this.$http.get("/api/invest/get?n=" + n + "&s=" + s).then(function (res) {
                 self.newsData = res.data.data;
                 self.newsPage = res.data.page;
+                document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
             });
         },
         // 获取
@@ -57,9 +59,13 @@ export default {
         },
        
         getDetail: function (item) {
+            document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
                                     this.$router.push({ name: 'webInvestDetail', params: {form: item}})
         },
         getWorkDetail: function (item) {
+            document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
                                     this.$router.push({ name: 'webWorkDetail', params: {form: item}})
         }
     }

@@ -10,20 +10,46 @@
                     div.app-works-detail-a-msg
                         h2.app-works-detail-a-msg-name {{workDetailData.name}}
                         div.app-works-detail-a-msg-left.app-works-detail-a-msg-item
-                            p(v-if="workDetailData.tag") 标签：{{workDetailData.tag}}
-                            p(v-if="workDetailData.producer") 出品人：{{workDetailData.producer}}
-                            p(v-if="workDetailData.scenario") 编剧：{{workDetailData.scenario}}
-                            p(v-if="workDetailData.starring") 主演：{{workDetailData.starring}}
-                            p(v-if="workDetailData.director") 导演：{{workDetailData.director}}
-                            p(v-if="workDetailData.filmer") 制片人：{{workDetailData.filmer}}
+                            p(v-if="workDetailData.tag") 
+                                span.orange 标签：
+                                span {{workDetailData.tag}}
+                            p(v-if="workDetailData.producer") 
+                                span.orange 出品人：
+                                span {{workDetailData.producer}}
+                            p(v-if="workDetailData.scenario") 
+                                span.orange 编剧：
+                                span {{workDetailData.scenario}}
+                            p(v-if="workDetailData.starring") 
+                                span.orange 主演：
+                                span {{workDetailData.starring}}
+                            p(v-if="workDetailData.director") 
+                                span.orange 导演：
+                                span {{workDetailData.director}}
+                            p(v-if="workDetailData.filmer") 
+                                span.orange 制片人：
+                                span {{workDetailData.filmer}}
                         div.app-works-detail-a-msg-right.app-works-detail-a-msg-item
-                            p(v-if="workDetailData.time") 首播时间：{{workDetailData.time | date-filter}}
-                            p(v-if="workDetailData.num") 集数：{{workDetailData.num}}集
-                            p(v-if="workDetailData.length") 每集长度：{{workDetailData.length}}分钟                        
-                            p(v-if="workDetailData.platform") 在线播放平台：{{workDetailData.platform}}                        
-                            p(v-if="workDetailData.original") 原著：{{workDetailData.original}}                        
-                            p(v-if="workDetailData.author") 作者：{{workDetailData.author}}                        
-                            p(v-if="workDetailData.broadcasting") 播出平台：{{workDetailData.broadcasting}}                        
+                            p(v-if="workDetailData.time") 
+                                span.orange 首播时间：
+                                span {{workDetailData.time | date-filter}}
+                            p(v-if="workDetailData.num") 
+                                span.orange 集数：
+                                span {{workDetailData.num}}集
+                            p(v-if="workDetailData.length") 
+                                span.orange 每集长度：
+                                span {{workDetailData.length}}分钟                        
+                            p(v-if="workDetailData.platform") 
+                                span.orange 在线播放平台：
+                                span {{workDetailData.platform}}                        
+                            p(v-if="workDetailData.original") 
+                                span.orange 原著：
+                                span {{workDetailData.original}}                        
+                            p(v-if="workDetailData.author") 
+                                span.orange 作者：
+                                span {{workDetailData.author}}                        
+                            p(v-if="workDetailData.broadcasting") 
+                                span.orange 播出平台：
+                                span {{workDetailData.broadcasting}}                        
                 div.app-works-detail-b.clearfix
                     div.app-works-detail-b-left
                         h3.orange 剧情简介：
@@ -93,11 +119,11 @@
                         li
                             img(style="height: 240px;",:src='workDetailData.workImg03')
                         li
-                            img(style="height: 240px;",:src='workDetailData.workImg03')
+                            img(style="height: 240px;",:src='workDetailData.workImg04')
                         li
-                            img(style="height: 240px;",:src='workDetailData.workImg03')
+                            img(style="height: 240px;",:src='workDetailData.workImg05')
                         li
-                            img(style="height: 240px;",:src='workDetailData.workImg03')
+                            img(style="height: 240px;",:src='workDetailData.workImg06')
                             
 </template>
 

@@ -24,8 +24,8 @@
                     p {{aboutData.fzzlContent03}}
             div.app-about-item
                 div.common.clearfix
-                    div.app-about-item-name 公司介绍
-                    div.app-about-item-content {{aboutData.gsjs}}
+                    div.app-about-item-name(style="height:240px;line-height:240px;") 公司介绍
+                    div.app-about-item-content(style="height:240px;") {{aboutData.gsjs}}
             div.app-about-item
                 div.common.clearfix
                     div.app-about-item-name 公司宗旨
