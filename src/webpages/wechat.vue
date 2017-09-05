@@ -3,8 +3,9 @@
     div
         div.app-wechat
             div.common.clearfix
-                div.app-wechat-header
-                    
+                div.app-wechat-header(
+                    :style="{background: 'url(http://ovdz4whc3.bkt.clouddn.com/%E5%85%AC%E4%BC%97%E5%8F%B7%E9%A1%B6%E9%83%A8%E5%9B%BE.jpg) no-repeat center'}"
+                )
                 div.app-wechat-left
                     div.app-wechat-item-a(v-if="wechatData01.length>0",@click="getDetail(wechatData01[0])")
                         img(style="height: 180px;width: 270px;",:src="wechatData01[0].img01")

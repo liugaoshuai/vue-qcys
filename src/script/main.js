@@ -14,6 +14,16 @@ export default {
                 return newdate
             }
         })
+        Vue.filter('year-filter', function (date) {
+            if (date == "" || date == null) {
+                return;
+            } else {
+                var d = new Date(date);
+                var newdate = "";
+                newdate = d.getFullYear();
+                return newdate
+            }
+        })
     }
 }
 

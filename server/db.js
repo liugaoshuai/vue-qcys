@@ -23,6 +23,10 @@ const INDEX_DATA = mongoose.Schema({
     boxImg06: String,// 剧照图
     boxImg07: String,// 剧照图
     boxImg08: String,// 剧照图
+    boxImg09: String,// 剧照图
+    boxImg10: String,// 剧照图
+    boxImg11: String,// 剧照图
+    boxImg12: String,// 剧照图
 
     boxTitle01: String,
     boxTitle02: String,

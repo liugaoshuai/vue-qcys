@@ -20,22 +20,23 @@ router.post('/api/index/create', (req, res) => {
             bannerImg02: req.body.form.bannerImg02,// 轮播图
             bannerImg03: req.body.form.bannerImg03,// 轮播图
 
-            workImg01: req.body.form.workImg01,// 作品图
-            workImg02: req.body.form.workImg02,// 作品图
-            workImg03: req.body.form.workImg03,// 作品图
-            workImg04: req.body.form.workImg04,// 作品图
-            workImg05: req.body.form.workImg05,// 作品图
-            workImg06: req.body.form.workImg06,// 作品图
-
             boxImg01: req.body.form.boxImg01,// 剧照图
             boxImg02: req.body.form.boxImg02,// 剧照图
             boxImg03: req.body.form.boxImg03,// 剧照图
             boxImg04: req.body.form.boxImg04,// 剧照图
+            boxImg05: req.body.form.boxImg05,// 剧照图
+            boxImg06: req.body.form.boxImg06,// 剧照图
+            boxImg07: req.body.form.boxImg07,// 剧照图
+            boxImg08: req.body.form.boxImg08,// 剧照图
+            boxImg09: req.body.form.boxImg09,// 剧照图
+            boxImg10: req.body.form.boxImg10,// 剧照图
+            boxImg11: req.body.form.boxImg11,// 剧照图
+            boxImg12: req.body.form.boxImg12,// 剧照图
 
             boxTitle01: req.body.form.boxTitle01,
             boxTitle02: req.body.form.boxTitle02,
             boxTitle03: req.body.form.boxTitle03,
-            boxTitle04: req.body.form.boxTitle04,
+            boxTitle08: req.body.form.boxTitle04,
             boxText01: req.body.form.boxText01,
             boxText02: req.body.form.boxText02,
             boxText03: req.body.form.boxText03,

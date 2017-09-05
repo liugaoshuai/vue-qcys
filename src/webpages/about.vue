@@ -47,7 +47,7 @@
                     th 所获奖项
                     th 获奖单位
                 tr(v-for="item in aboutTableList")
-                    td {{item.date | date-filter}}
+                    td {{item.date | year-filter}}
                     td {{item.name}}
                     td {{item.award}}
                     td {{item.bjdw}}
