@@ -5,19 +5,22 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
-import VueQuillEditor from 'vue-quill-editor'
 import axios from 'axios'
 import VueHtml5Editor from 'vue-html5-editor'
-import 'font-awesome/css/font-awesome.css'
 /* Pick one way between the 2 following ways */
-
+// http://apps.bdimg.com/libs/fontawesome/4.2.0/css/font-awesome.min.css
 
 // globally (in your main .js file)
 import './style/reset.css'
 import './style/common.css'
 import './style/main.css'
 
+import 'font-awesome/css/font-awesome.css'
+
 import Methods from './script/main.js'
+
+
+
 
 
 
