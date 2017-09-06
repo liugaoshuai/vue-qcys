@@ -1,6 +1,8 @@
 <template lang="pug">
     //- h1 #{title}
     div.app
+        div.music
+                <embed :src="indexData.music" autostart=true loop=true style="position: absolute;left: 200px;top: 0;">
         div.slide
             transition-group(tag="ul",class="slide-ul" name="list")
                 li(:key="1" v-show="1===currentIndex")
