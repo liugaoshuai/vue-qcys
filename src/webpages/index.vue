@@ -42,7 +42,7 @@
             )
         
             div.video-box
-                <iframe frameborder="0" width="800" height="320" :src="indexData.video" allowfullscreen></iframe>
+                <iframe frameborder="0" width="800" height="320" :src="https://v.qq.com/iframe/player.html?vid=l00201haat8&tiny=0&auto=0" allowfullscreen></iframe>
                 //- <embed :src="indexData.video" allowFullScreen="true" quality="high" width="800" height="320" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
                 
         div.news
