@@ -3,7 +3,7 @@
     div
         div.app-contact
         div.app-contact-header(
-                :style="{background: 'url(http://oumlc5t88.bkt.clouddn.com/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC%E9%A1%B61.jpg) no-repeat center'}"
+                :style="{background: 'url(http://oumlc5t88.bkt.clouddn.com/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E9%A1%B6%E5%9B%BE4.jpg) no-repeat center'}"
             )
         div.app-contact-con.common.clearfix
             h3 人才招聘

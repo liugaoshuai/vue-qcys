@@ -22,6 +22,12 @@
       <el-form-item label="剧照图09(800*300)">
         <el-input v-model="INDEX_ADD_FORM.boxImg09"></el-input>
       </el-form-item>
+      <el-form-item label="剧照图13(800*300)">
+        <el-input v-model="INDEX_ADD_FORM.boxImg13"></el-input>
+      </el-form-item>
+      <el-form-item label="剧照图17(800*300)">
+        <el-input v-model="INDEX_ADD_FORM.boxImg17"></el-input>
+      </el-form-item>
       <el-form-item label="剧照图01标题">
         <el-input v-model="INDEX_ADD_FORM.boxTitle01"></el-input>
       </el-form-item>
@@ -36,6 +42,12 @@
       </el-form-item>
       <el-form-item label="剧照图10(800*300)">
         <el-input v-model="INDEX_ADD_FORM.boxImg10"></el-input>
+      </el-form-item>
+      <el-form-item label="剧照图14(800*300)">
+        <el-input v-model="INDEX_ADD_FORM.boxImg14"></el-input>
+      </el-form-item>
+      <el-form-item label="剧照图18(800*300)">
+        <el-input v-model="INDEX_ADD_FORM.boxImg18"></el-input>
       </el-form-item>
       <el-form-item label="剧照图02标题">
         <el-input v-model="INDEX_ADD_FORM.boxTitle02"></el-input>
@@ -52,6 +64,12 @@
       <el-form-item label="剧照图03(400*600)">
         <el-input v-model="INDEX_ADD_FORM.boxImg11"></el-input>
       </el-form-item>
+      <el-form-item label="剧照图15(400*600)">
+        <el-input v-model="INDEX_ADD_FORM.boxImg15"></el-input>
+      </el-form-item>
+      <el-form-item label="剧照图19(400*600)">
+        <el-input v-model="INDEX_ADD_FORM.boxImg19"></el-input>
+      </el-form-item>
       <el-form-item label="剧照图03标题">
         <el-input v-model="INDEX_ADD_FORM.boxTitle03"></el-input>
       </el-form-item>
@@ -64,8 +82,11 @@
       <el-form-item label="剧照图04(1200*300)">
         <el-input v-model="INDEX_ADD_FORM.boxImg08"></el-input>
       </el-form-item>
-      <el-form-item label="剧照图04(1200*300)">
-        <el-input v-model="INDEX_ADD_FORM.boxImg12"></el-input>
+      <el-form-item label="剧照图16(1200*300)">
+        <el-input v-model="INDEX_ADD_FORM.boxImg16"></el-input>
+      </el-form-item>
+      <el-form-item label="剧照图20(1200*300)">
+        <el-input v-model="INDEX_ADD_FORM.boxImg20"></el-input>
       </el-form-item>
       <el-form-item label="剧照图04标题">
         <el-input v-model="INDEX_ADD_FORM.boxTitle04"></el-input>
@@ -112,6 +133,14 @@ export default {
         boxImg10: '',// 剧照图
         boxImg11: '',// 剧照图
         boxImg12: '',// 剧照图
+        boxImg13: '',// 剧照图
+        boxImg14: '',// 剧照图
+        boxImg15: '',// 剧照图
+        boxImg16: '',// 剧照图
+        boxImg17: '',// 剧照图
+        boxImg18: '',// 剧照图
+        boxImg19: '',// 剧照图
+        boxImg20: '',// 剧照图
 
         boxTitle01: '',
         boxTitle02: '',

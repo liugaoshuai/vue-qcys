@@ -1,8 +1,7 @@
 <template lang="pug">
     //- h1 #{title}
     div.app
-        div.music
-                <embed :src="indexData.music" autostart=true loop=true style="position: absolute;left: 200px;top: 0;">
+        
         div.slide
             transition-group(tag="ul",class="slide-ul" name="list")
                 li(:key="1" v-show="1===currentIndex")
@@ -69,6 +68,8 @@
                             img.photo-a-top(:src='indexData.boxImg03',style="width: 400px; height: 600px;",:key="0",v-show="0===slideIndex01")
                             img.photo-a-top(:src='indexData.boxImg07',style="width: 400px; height: 600px;",:key="1",v-show="1===slideIndex01")
                             img.photo-a-top(:src='indexData.boxImg11',style="width: 400px; height: 600px;",:key="2",v-show="2===slideIndex01")
+                            img.photo-a-top(:src='indexData.boxImg15',style="width: 400px; height: 600px;",:key="3",v-show="3===slideIndex01",v-if="indexData.boxImg15")
+                            img.photo-a-top(:src='indexData.boxImg19',style="width: 400px; height: 600px;",:key="4",v-show="4===slideIndex01",v-if="indexData.boxImg19")
                         i.photo-slide-right.iconfont(@click="back01") &#xe6a7;
                     div.photo-a-bottom(style="width: 400px; height: 160px;background: rgba(0,0,0,0.3);position: absolute;left: 0;bottom: 0;padding: 20px;")
                         h3 {{indexData.boxTitle03}}
@@ -82,6 +83,8 @@
                             img.photo-b-left(:src='indexData.boxImg01',style="width: 480px; height: 300px;",:key="0",v-show="0===slideIndex02")
                             img.photo-b-left(:src='indexData.boxImg05',style="width: 480px; height: 300px;",:key="1",v-show="1===slideIndex02")
                             img.photo-b-left(:src='indexData.boxImg09',style="width: 480px; height: 300px;",:key="2",v-show="2===slideIndex02")
+                            img.photo-b-left(:src='indexData.boxImg13',style="width: 480px; height: 300px;",:key="3",v-show="3===slideIndex02",v-if="indexData.boxImg13")
+                            img.photo-b-left(:src='indexData.boxImg17',style="width: 480px; height: 300px;",:key="4",v-show="4===slideIndex02",v-if="indexData.boxImg17")
                         i.photo-slide-right.iconfont(@click="back02") &#xe6a7;
                 div.photo-c.clearfix
                     div.photo-slide.clearfix.photo-c-left
@@ -89,6 +92,8 @@
                             img.photo-c-left(:src='indexData.boxImg02',style="width: 480px; height: 300px;",:key="0",v-show="0===slideIndex03")
                             img.photo-c-left(:src='indexData.boxImg06',style="width: 480px; height: 300px;",:key="1",v-show="1===slideIndex03")
                             img.photo-c-left(:src='indexData.boxImg10',style="width: 480px; height: 300px;",:key="2",v-show="2===slideIndex03")
+                            img.photo-c-left(:src='indexData.boxImg14',style="width: 480px; height: 300px;",:key="3",v-show="3===slideIndex03",v-if="indexData.boxImg14")
+                            img.photo-c-left(:src='indexData.boxImg18',style="width: 480px; height: 300px;",:key="4",v-show="4===slideIndex03",v-if="indexData.boxImg18")
                         i.photo-slide-right.iconfont(@click="back03") &#xe6a7;
                     div.photo-c-right(style="width: 320px; height: 300px;padding: 100px 20px 20px 60px;")
                         h3 {{indexData.boxTitle02}}
@@ -102,6 +107,8 @@
                             img.photo-d-left(:src='indexData.boxImg04',style="width: 720px; height: 300px;",:key="0",v-show="0===slideIndex04")
                             img.photo-d-left(:src='indexData.boxImg08',style="width: 720px; height: 300px;",:key="1",v-show="1===slideIndex04")
                             img.photo-d-left(:src='indexData.boxImg12',style="width: 720px; height: 300px;",:key="2",v-show="2===slideIndex04")
+                            img.photo-d-left(:src='indexData.boxImg16',style="width: 720px; height: 300px;",:key="3",v-show="3===slideIndex04",v-if="indexData.boxImg16")
+                            img.photo-d-left(:src='indexData.boxImg20',style="width: 720px; height: 300px;",:key="4",v-show="4===slideIndex04",v-if="indexData.boxImg20")
                         i.photo-slide-right.iconfont(@click="back04") &#xe6a7;
 </template>
 
@@ -118,6 +125,22 @@ export default {
                 boxImg02: '',// 剧照图
                 boxImg03: '',// 剧照图
                 boxImg04: '',// 剧照图
+                boxImg05: '',// 剧照图
+                boxImg06: '',// 剧照图
+                boxImg07: '',// 剧照图
+                boxImg08: '',// 剧照图
+                boxImg09: '',// 剧照图
+                boxImg10: '',// 剧照图
+                boxImg11: '',// 剧照图
+                boxImg12: '',// 剧照图
+                boxImg13: '',// 剧照图
+                boxImg14: '',// 剧照图
+                boxImg15: '',// 剧照图
+                boxImg16: '',// 剧照图
+                boxImg17: '',// 剧照图
+                boxImg18: '',// 剧照图
+                boxImg19: '',// 剧照图
+                boxImg20: '',// 剧照图
 
                 boxTitle01: '',
                 boxTitle02: '',
@@ -173,7 +196,7 @@ export default {
             console.log('back')
             this.slideIndex01--
             if (this.slideIndex01 < 0) {
-                this.slideIndex01 = 2
+                this.slideIndex01 = 4
             }
         },
         go02: function () {
@@ -187,7 +210,7 @@ export default {
             console.log('back')
             this.slideIndex02--
             if (this.slideIndex02 < 0) {
-                this.slideIndex02 = 2
+                this.slideIndex02 = 4
             }
         },
         go03: function () {
@@ -201,7 +224,7 @@ export default {
             console.log('back')
             this.slideIndex03--
             if (this.slideIndex03 < 0) {
-                this.slideIndex03 = 2
+                this.slideIndex03 = 4
             }
         },
         go04: function () {
@@ -215,7 +238,7 @@ export default {
             console.log('back')
             this.slideIndex04--
             if (this.slideIndex04 < 0) {
-                this.slideIndex04 = 2
+                this.slideIndex04 = 4
             }
         },
         // 获取

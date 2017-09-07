@@ -32,6 +32,14 @@ router.post('/api/index/create', (req, res) => {
             boxImg10: req.body.form.boxImg10,// 剧照图
             boxImg11: req.body.form.boxImg11,// 剧照图
             boxImg12: req.body.form.boxImg12,// 剧照图
+            boxImg13: req.body.form.boxImg13,// 剧照图
+            boxImg14: req.body.form.boxImg14,// 剧照图
+            boxImg15: req.body.form.boxImg15,// 剧照图
+            boxImg16: req.body.form.boxImg16,// 剧照图
+            boxImg17: req.body.form.boxImg17,// 剧照图
+            boxImg18: req.body.form.boxImg18,// 剧照图
+            boxImg19: req.body.form.boxImg19,// 剧照图
+            boxImg20: req.body.form.boxImg20,// 剧照图
 
             boxTitle01: req.body.form.boxTitle01,
             boxTitle02: req.body.form.boxTitle02,
