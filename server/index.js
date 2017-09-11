@@ -31,5 +31,5 @@ app.get('*', function(req, res) {
 })
 
 // 监听8088端口
-app.listen(80);
+app.listen(8000);
 console.log('success listen 8088');
