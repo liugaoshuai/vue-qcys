@@ -51,7 +51,7 @@
             <el-form-item>
                 <el-button type="primary"
                            @click="addNews">立即创建</el-button>
-                <el-button @click="$router.push('/node/news')">取消</el-button>
+                <el-button @click="$router.push('/qcys2017node/news')">取消</el-button>
             </el-form-item>
         </el-form>
     
@@ -122,7 +122,7 @@ export default {
                         type: 'success',
                         message: '添加成功!'
                     });
-                    self.$router.push('/node/news')
+                    self.$router.push('/qcys2017node/news')
                 }
             });
 

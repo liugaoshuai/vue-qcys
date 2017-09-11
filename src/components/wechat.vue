@@ -2,7 +2,7 @@
     <div id="wechat">
         <h2>微信公众号</h2>
         <div class="common-btn">
-            <el-button @click="$router.push('/node/wechat/add')">新增</el-button>
+            <el-button @click="$router.push('/qcys2017node/wechat/add')">新增</el-button>
         </div>
         <el-table :data="WECHAT_LIST"
                   border

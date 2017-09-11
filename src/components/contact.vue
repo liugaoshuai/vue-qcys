@@ -2,7 +2,7 @@
     <div id="news">
         <h2>联系我们</h2>
         <div class="common-btn">
-            <el-button @click="$router.push('/node/contact/add')">新增</el-button>
+            <el-button @click="$router.push('/qcys2017node/contact/add')">新增</el-button>
         </div>
         <el-table :data="CONTACT_LIST"
                   border
