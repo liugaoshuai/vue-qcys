@@ -101,57 +101,57 @@ export default new Router({
 
     // node
     {
-      path: '/node',
+      path: '/qcys2017node',
       name: 'nodeApp',
       component: nodeApp,
-      redirect: '/node/index',
+      redirect: '/qcys2017node/index',
       children: [
         {
-          path: '/node/index',
+          path: '/qcys2017node/index',
           name: 'nodeIndex',
           component: nodeIndex
         }, {
-          path: '/node/news',
+          path: '/qcys2017node/news',
           name: 'webAnodeNewspp',
           component: nodeNews
         }, {
-          path: '/node/news/add',
+          path: '/qcys2017node/news/add',
           name: 'nodeNewsAdd',
           component: nodeNewsAdd
         }, {
-          path: '/node/invest',
+          path: '/qcys2017node/invest',
           component: nodeInvest
         }, {
-          path: '/node/invest/add',
+          path: '/qcys2017node/invest/add',
           name: 'nodeInvestAdd',
           component: nodeInvestAdd
         }, {
-          path: '/node/work',
+          path: '/qcys2017node/work',
           name: 'nodeWork',
           component: nodeWork
         }, {
-          path: '/node/work/add',
+          path: '/qcys2017node/work/add',
           name: 'nodeWorkAdd',
           component: nodeWorkAdd
         }, {
-          path: '/node/contact',
+          path: '/qcys2017node/contact',
           component: nodeContact
         }, {
-          path: '/node/contact/add',
+          path: '/qcys2017node/contact/add',
           name: 'nodeContactAdd',
           component: nodeContactAdd
         }, {
-          path: '/node/wechat',
+          path: '/qcys2017node/wechat',
           component: nodeWechat
         }, {
-          path: '/node/wechat/add',
+          path: '/qcys2017node/wechat/add',
           name: 'nodeWechatAdd',
           component: nodeWechatAdd
         }, {
-          path: '/node/about',
+          path: '/qcys2017node/about',
           component: nodeAbout
         }, {
-          path: '/node/about/add',
+          path: '/qcys2017node/about/add',
           name: 'nodeAboutAdd',
           component: nodeAboutAdd
         }

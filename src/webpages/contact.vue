@@ -6,7 +6,7 @@
                 :style="{background: 'url(http://oumlc5t88.bkt.clouddn.com/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E9%A1%B6%E5%9B%BE4.jpg) no-repeat center'}"
             )
         div.app-contact-con.common.clearfix
-            h3 人才招聘
+            h3 联系我们
             div.app-contact-con-nav
                 ul.clearfix
                     li(v-for="(item,index) in contactData")
@@ -16,7 +16,7 @@
                             div.app-contact-con-post-div-topline
                             div.app-contact-con-post-div-bottomline
                 
-            h3 联系我们
+            h3 联系方式
             div.app-contact-con-tel
                 p 电话：0571-85159721
                 p 传真：0571-85159741
