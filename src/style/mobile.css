@@ -1,0 +1,92 @@
+@charset "utf-8";
+ 
+@media only screen and (max-width: 500px){
+  .common{width: 100%;}
+  .video{display: none;}
+  .photo{display: none;}
+  .slide{height: auto;}
+  .music{display: none;}
+  .slide li div{height: 320px!important;}
+  .nav a{
+      padding: 0 10px;
+      display: block;
+      float: none;
+  }
+
+  .news .left{width: 100%;}
+  .news .right{width: 100%;}
+  .footer-main{padding: 10px;}
+  .footer-main-left{width: 100%;}
+  .footer-main-right{display: none;}
+  .footer-bottom{display: none;}
+
+  .news li{
+    padding: 10px;
+  }
+  .work li{
+    margin: 10px;
+  }
+  /*影视作品列表页适配*/
+  .works-headimgDiv{
+    display: none;
+  }
+  .works-list-item{
+    margin: 0 auto 20px auto;
+    float: none;
+  }
+  .app-works-detail-a-msg{
+    width: auto;
+    padding-top: 20px;
+    /*background: #e4e4e4;*/
+  }
+  .app-works-detail{
+  }
+  .app-works-detail-bg{
+    display: none;
+  }
+  .app-works-detail-a-msg-item{
+    height: auto;
+  }
+  .app-works-detail-a-msg-item{
+    background: #fff;
+  }
+  .app-works-detail-c li{
+    margin: 10px auto;
+    float: none;
+  }
+  .app-works-detail-b-right{
+    float: none;
+    width: auto;
+  }
+  .app-works-detail-b{
+    padding: 0 10px;
+    overflow: hidden;
+  }
+  .app-works-detail-c h3{
+    padding: 0 10px;
+  }
+  .app-works-detail-c{
+    
+  }
+  .app-works-detail-b-left{
+    width: auto;
+    padding-right: 0;
+  }
+
+  /*新闻页*/
+  .news-left-item-imgDiv{
+    float: none;
+    margin: 0 auto;
+    width: 370px;
+  }
+  .app-news{
+    padding: 10px;
+  }
+  .news-left{
+    width: auto;
+    float: none;
+  }
+  .news-right{
+    display: none;
+  }
+}

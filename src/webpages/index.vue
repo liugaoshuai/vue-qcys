@@ -3,7 +3,7 @@
     div.app
         
         div.slide
-            transition-group(tag="ul",class="slide-ul" name="list")
+            transition-group(tag="ul",class="slide-ul clearfix" name="list")
                 li(:key="1" v-show="1===currentIndex")
                     div(
                         style="height: 640px;width: 100%;",
