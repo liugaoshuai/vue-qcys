@@ -26,6 +26,20 @@
   .work li{
     margin: 10px;
   }
+  .work{
+    padding: 0;
+  }
+  .work li+li{
+    margin-left: 10px;
+  }
+  .news .news-nav{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    cursor: pointer;
+  }
   /*影视作品列表页适配*/
   .works-headimgDiv{
     display: none;
@@ -72,7 +86,12 @@
     width: auto;
     padding-right: 0;
   }
-
+  .app-works-detail-a-msg-right{
+    width: auto;
+  }
+  .app-works-detail-a-img{
+    width: auto;
+  }
   /*新闻页*/
   .news-left-item-imgDiv{
     float: none;
@@ -88,5 +107,17 @@
   }
   .news-right{
     display: none;
+  }
+  .news-left-item-conDiv{
+    width: auto;
+  }
+  .news-left-item+.news-left-item{
+    padding: 0;
+  }
+  .news-left-item-conDiv a{
+    bottom: 0;
+  }
+  .news-left-item-title{
+    margin-top: 5px;
   }
 }
