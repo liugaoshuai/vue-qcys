@@ -50,7 +50,7 @@
   }
   .app-works-detail-a-msg{
     width: auto;
-    padding-top: 20px;
+    padding-top: 0px;
     /*background: #e4e4e4;*/
   }
   .app-works-detail{
@@ -95,7 +95,7 @@
   /*新闻页*/
   .news-left-item-imgDiv{
     float: none;
-    margin: 0 auto;
+    margin: 10px auto;
     width: 370px;
   }
   .app-news{
@@ -111,11 +111,16 @@
   .news-left-item-conDiv{
     width: auto;
   }
+  .news-left-item{
+    padding-bottom: 40px;
+  }
   .news-left-item+.news-left-item{
     padding: 0;
+    padding-bottom: 40px;
+    
   }
   .news-left-item-conDiv a{
-    bottom: 0;
+    bottom: 5px;
   }
   .news-left-item-title{
     margin-top: 5px;
