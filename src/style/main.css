@@ -54,8 +54,10 @@ body{font-weight: 200!important;}
 .video{padding: 60px 0;background: #bdbbbb;}
 .video-box{margin: 0 auto;width: 800px;height: 320px;background: #d8d3d3;position: relative;overflow: hidden;}
 .video-box embed{position: absolute;left: 0;top: 0;}
-
-
+.video{background: #BDBBBB url(http://oumlc5t88.bkt.clouddn.com/%E9%A6%96%E9%A1%B5%E8%A7%86%E9%A2%91%E8%83%8C%E6%99%AF%E7%B2%BE%E5%BD%A9%E7%89%87%E8%8A%B1.png) no-repeat center}
+@media only screen and (max-width: 500px){
+.video{background: #BDBBBB url(http://oupvnjvzs.bkt.clouddn.com/1623942879.jpg) no-repeat center}
+}
 .news{margin: 30px 0;}
 .news span{padding: 4px 10px;background: #eb6133;color: #fff;position: relative;top: -6px;}
 .news .left{width: 50%;float: left;border-top: 1px solid #d6d5d5;}
