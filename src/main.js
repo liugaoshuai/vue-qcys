@@ -14,7 +14,7 @@ import VueHtml5Editor from 'vue-html5-editor'
 import './style/reset.css'
 import './style/common.css'
 import './style/main.css'
-import './style/mobile.css'
+// import './style/mobile.css'
 
 
 import 'font-awesome/css/font-awesome.css'
