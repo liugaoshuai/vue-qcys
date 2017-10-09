@@ -279,4 +279,10 @@ ul.slide-ul li {
   .photo-slide img{position: absolute;}
   .photo-slide-left{position: absolute;left: 0;top: 50%;}
   .photo-slide-right{position: absolute;right: 0;top: 50%;font-size: 50px;line-height: 60px;margin-top: -30px;background: rgba(0,0,0,0.3);color: #fff;}
-  
+  .video.mobile{display: none;}
+.video.pc{display: block;}
+
+  .video.mobile{display: block;}
+  .video.pc{display: none;}
+  .music{display: none;}
+  #app{width: 1200px;}
