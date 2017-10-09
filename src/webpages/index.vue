@@ -1,7 +1,5 @@
 <template lang="pug">
-    //- h1 #{title}
     div.app
-        
         div.slide
             transition-group(tag="ul",class="slide-ul clearfix" name="list")
                 li(:key="1" v-show="1===currentIndex")
@@ -38,8 +36,13 @@
             ul.clearfix.common
                     li(v-for="(item,index) in workData",@click="getWorkDetail(item)",v-if="index<6")
                         img.news-left-item-img(:src='item.indexImg',style="height: 200px;width: 160px;")
-        div.video(
+        div.video.mobile(
                 style='background: url("http://oupvnjvzs.bkt.clouddn.com/1623942879.jpg") center center no-repeat;'
+            )
+            div.video-box
+                <iframe frameborder="0" width="800" height="320" :src="indexData.video" allowfullscreen></iframe>
+        div.video.pc(
+                style='background: url("http://oumlc5t88.bkt.clouddn.com/%E9%A6%96%E9%A1%B5%E8%A7%86%E9%A2%91%E8%83%8C%E6%99%AF%E7%B2%BE%E5%BD%A9%E7%89%87%E8%8A%B1.png") center center no-repeat;'
             )
             div.video-box
                 <iframe frameborder="0" width="800" height="320" :src="indexData.video" allowfullscreen></iframe>

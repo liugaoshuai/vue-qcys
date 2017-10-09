@@ -59,3 +59,10 @@ body,html{
 .app-con h2{
     line-height: 60px;
 }
+.video.mobile{display: none;}
+.video.pc{display: block;}
+@media only screen and (max-width: 500px){
+  .video.mobile{display: block;}
+  .video.pc{display: none;}
+  .music{display: none;}
+}
