@@ -283,7 +283,7 @@ ul.slide-ul li {
 .video.pc{display: block;}
 
   
-  @media screen and (min-width: 600px)  {
+  @media screen and (max-width: 600px)  {
     .video.mobile{display: block;}
   .video.pc{display: none;}
   .music{display: none;}
