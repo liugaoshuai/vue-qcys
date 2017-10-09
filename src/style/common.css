@@ -61,9 +61,4 @@ body,html{
 }
 .video.mobile{display: none;}
 .video.pc{display: block;}
-@media only screen and (max-width: 500px){
-  .video.mobile{display: block;}
-  .video.pc{display: none;}
-  .music{display: none;}
-  #app{width: 1200px;}
-}
+
