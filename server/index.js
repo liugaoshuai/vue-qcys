@@ -30,6 +30,6 @@ app.get('*', function(req, res) {
     res.send(html)
 })
 
-// 监听8088端口
-app.listen(8000);
-console.log('success listen 8000');
+// 监听80端口
+app.listen(80);
+console.log('success listen 80');
