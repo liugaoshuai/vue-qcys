@@ -6,6 +6,12 @@
 
 ## 进展
 
+### 引入额外的css
+
+```
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+```
+
 ### Day1
 
         选好技术栈Webpack脚手架直接生成项目，引入ElementUI框架，样式设计参考AdminLTE的风格设计。
