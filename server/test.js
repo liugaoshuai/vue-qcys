@@ -12,5 +12,5 @@ const app = express();
 const models = require('./db');
 
 // 监听80端口
-app.listen(80);
-console.log('success listen 80');
+app.listen(8080);
+console.log('success listen 8080');
