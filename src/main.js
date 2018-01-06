@@ -17,7 +17,7 @@ import './style/main.css'
 import './style/mobile.css'
 
 
-import 'font-awesome/css/font-awesome.css'
+// import 'font-awesome/css/font-awesome.css'
 
 import Methods from './script/main.js'
 
