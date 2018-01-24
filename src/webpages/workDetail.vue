@@ -6,7 +6,7 @@
             div.common
                 div.app-works-detail-a.clearfix
                     div.app-works-detail-a-img.boxshadow
-                        img(style="height: 450px;",:src='workDetailData.bigImg')
+                        img(style="width: 380px;",:src='workDetailData.bigImg')
                     div.app-works-detail-a-msg
                         h2.app-works-detail-a-msg-name {{workDetailData.name}}
                         div.app-works-detail-a-msg-left.app-works-detail-a-msg-item

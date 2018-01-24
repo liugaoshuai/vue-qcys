@@ -78,8 +78,6 @@ export default {
                             self.wechatData03.push(arr[i]);
                         }
                     }
-                    console.log(self.wechatData02)
-
                 }
             });
         },

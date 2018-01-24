@@ -16,7 +16,7 @@
                         a.orange(@click="") 阅读全文
                 el-pagination(@current-change="getNews",:page-size="5",layout="total, prev, pager, next",:total="newsPage.length",style="text-align: center;padding-top: 20px;")
             div.news-right
-                img.news-right-work.boxshadow(v-for="item in workData",:src="item.bigImg",@click="getWorkDetail(item)")
+                img.news-right-work(v-for="item in workData",:src="item.bigImg",@click="getWorkDetail(item)")
 </template>
 
 <script>
