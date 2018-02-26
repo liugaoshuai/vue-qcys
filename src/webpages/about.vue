@@ -45,7 +45,7 @@
                     th 时间
                     th 获奖作品
                     th 所获奖项
-                    th 获奖单位
+                    th 颁奖单位
                 tr(v-for="item in aboutTableList")
                     td {{item.date | year-filter}}
                     td {{item.name}}

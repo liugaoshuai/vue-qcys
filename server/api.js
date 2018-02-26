@@ -44,7 +44,7 @@ router.post('/api/index/create', (req, res) => {
             boxTitle01: req.body.form.boxTitle01,
             boxTitle02: req.body.form.boxTitle02,
             boxTitle03: req.body.form.boxTitle03,
-            boxTitle08: req.body.form.boxTitle04,
+            boxTitle04: req.body.form.boxTitle04,
             boxText01: req.body.form.boxText01,
             boxText02: req.body.form.boxText02,
             boxText03: req.body.form.boxText03,
