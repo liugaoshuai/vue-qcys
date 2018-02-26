@@ -37,7 +37,7 @@
                             )
                 div.works-list.clearfix
                     div.works-list-item.boxshadow(v-for="item in workData",@click="getDetail(item)")
-                        img.works-list-item-img(style="height: 320px;background: #25232b;",:src='item.bigImg')
+                        img.works-list-item-img(style="width: 270px;background: #25232b;",:src='item.bigImg')
                         div.works-list-item-name.orange {{item.name}}
                         div.works-list-item-actor
                             span.orange 主演:

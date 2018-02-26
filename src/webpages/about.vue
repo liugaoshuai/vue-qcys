@@ -7,7 +7,7 @@
         div.app-about-a
             h2.app-about-title 影视作品
             ul.clearfix.common
-                li(v-for="item in workData")    
+                li(v-for="(item,index) in workData",v-if="index<6")    
                     img(:src="item.bigImg",@click="getWorkDetail(item)")
 
         div.app-about-b
